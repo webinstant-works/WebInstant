@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - WebInstant</title>
+    <meta name="description" content="Get in touch with WebInstant for website design, development, and SEO services. Let's launch your online presence today.">
+    <meta name="keywords" content="Contact WebInstant, getwebinstant.com, web design help, hire web developer">
+    <meta name="author" content="WebInstant">
+    <meta property="og:title" content="Contact WebInstant">
+    <meta property="og:description" content="Reach out to WebInstant to start your journey toward a stunning, high-performing website.">
+    <meta property="og:image" content="https://getwebinstant.com/images/og-contact.jpg">
+    <meta property="og:url" content="https://getwebinstant.com/contact.html">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="WebInstant-Logo-Icon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://getwebinstant.com/contact.html">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div id="reading-progress"></div>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html">
+                <img src="WebInstant-Logo-02.png" alt="WebInstant Logo" class="logo" />
+            </a>
+            <div class="hamburger" id="hamburger">☰</div>
+            <nav class="main-nav" id="mainNav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="plans.html" class="nav-link">Plans</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="contact.html" class="nav-link cta active">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ── Hero ── -->
+    <div class="contact-hero">
+        <div class="contact-hero-content">
+            <h1>Let's Build <span>Together</span></h1>
+            <p class="hero-sub">Ready to launch? Tell us about your project and we'll get back to you within 48 hours — usually much faster.</p>
+            <div class="hero-contact-chips">
+                <a href="mailto:businesswebinstant@gmail.com" class="hero-chip">
+                    <i class="fas fa-envelope"></i> businesswebinstant@gmail.com
+                </a>
+                <a href="https://wa.me/919871072210" target="_blank" rel="noopener" class="hero-chip">
+                    <i class="fab fa-whatsapp"></i> +91 98710 72210
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <main class="contact-page">
+
+        <!-- ── Main Grid ── -->
+        <div class="contact-grid reveal">
+
+            <!-- ── Form Card ── -->
+            <div class="form-card">
+                <h2 class="form-title">Send a Message</h2>
+                <p class="form-sub">Fill in the details below and we'll reach out to discuss your project.</p>
+
+                <form id="contactForm" action="https://formspree.io/f/mjgkbyok" method="POST" novalidate>
+
+                    <div class="form-row">
+                        <div class="field-group" id="fg-name">
+                            <label for="name">Full Name <span class="req">*</span></label>
+                            <div class="input-wrap">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="name" name="name" placeholder="Your full name" required autocomplete="name">
+                            </div>
+                            <span class="field-error">Please enter your name.</span>
+                        </div>
+                        <div class="field-group" id="fg-email">
+                            <label for="email">Email Address <span class="req">*</span></label>
+                            <div class="input-wrap">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="email" name="_replyto" placeholder="you@example.com" required autocomplete="email">
+                            </div>
+                            <span class="field-error">Please enter a valid email.</span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="field-group" id="fg-phone">
+                            <label for="phone">Phone Number <span class="req">*</span></label>
+                            <div class="input-wrap">
+                                <i class="fas fa-phone"></i>
+                                <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" required autocomplete="tel">
+                            </div>
+                            <span class="field-error">Please enter your phone number.</span>
+                        </div>
+                        <div class="field-group" id="fg-service">
+                            <label for="service">Service Needed</label>
+                            <div class="input-wrap">
+                                <i class="fas fa-briefcase"></i>
+                                <select id="service" name="service" style="padding-left:40px;">
+                                    <option value="" disabled selected>Select a service…</option>
+                                    <option>Portfolio Website</option>
+                                    <option>Business Website</option>
+                                    <option>E-Commerce Website</option>
+                                    <option>Website Redesign</option>
+                                    <option>Maintenance &amp; Support</option>
+                                    <option>Hosting &amp; Domain Setup</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field-group" id="fg-message">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell us about your project — goals, timeline, budget, any special requirements…"></textarea>
+                    </div>
+
+                    <div id="formStatus" aria-live="polite"></div>
+
+                    <button class="submit-btn" type="submit" id="submitBtn">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+
+                    <a href="https://wa.me/919871072210?text=Hi, I'd like to discuss a project with WebInstant!" target="_blank" rel="noopener" class="wa-alt">
+                        <i class="fab fa-whatsapp"></i> Or reach us instantly on WhatsApp
+                    </a>
+                </form>
+            </div><!-- /.form-card -->
+
+            <!-- ── Info Column ── -->
+            <div class="info-column">
+
+                <!-- Contact Info Card -->
+                <div class="info-card">
+
+
+                    <h3>Reach Us Directly</h3>
+
+                    <a href="mailto:businesswebinstant@gmail.com" class="contact-item-row">
+                        <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="ci-body">
+                            <span class="ci-label">Email</span>
+                            <span class="ci-value">businesswebinstant@gmail.com</span>
+                        </div>
+                    </a>
+
+                    <a href="tel:+919871072210" class="contact-item-row">
+                        <div class="ci-icon"><i class="fas fa-phone"></i></div>
+                        <div class="ci-body">
+                            <span class="ci-label">Phone &amp; WhatsApp</span>
+                            <span class="ci-value">+91 98710 72210</span>
+                        </div>
+                    </a>
+
+                    <div class="response-badge">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <span class="rb-title">Response Time</span>
+                            <span class="rb-sub">Usually within 12–18 business hours</span>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top:22px;">Follow Us</h3>
+                    <div class="social-row">
+                        <a href="https://www.linkedin.com/company/web-instant-agency/posts/?feedView=all" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61578298170309" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/thewebinstant/" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/TheWebInstant" target="_blank" rel="noopener" class="social-btn" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Info Card -->
+                <div class="info-card">
+                    <h3 style="margin:0 0 16px;"><i class="fas fa-info-circle" style="color:#1a60fe;margin-right:8px;"></i> Quick Info</h3>
+                    <div style="display:flex;flex-direction:column;gap:10px;">
+                        <div style="display:flex;align-items:center;gap:10px;font-size:0.88rem;color:#444;">
+                            <i class="fas fa-globe" style="color:#1a60fe;width:16px;text-align:center;"></i>
+                            <span><strong>Location:</strong> India (Remote-First)</span>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:10px;font-size:0.88rem;color:#444;">
+                            <i class="fas fa-language" style="color:#1a60fe;width:16px;text-align:center;"></i>
+                            <span><strong>Languages:</strong> English, Hindi</span>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:10px;font-size:0.88rem;color:#444;">
+                            <i class="fas fa-dollar-sign" style="color:#1a60fe;width:16px;text-align:center;"></i>
+                            <span><strong>Payments:</strong> UPI, Bank Transfer, PayPal</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <img src="WebInstant-Logo-02.png" alt="WebInstant Logo" class="footer-logo">
+            </div>
+            <div class="footer-section">
+                <h5>Contact</h5>
+                <p>Email: <a href="mailto:businesswebinstant@gmail.com">businesswebinstant@gmail.com</a></p>
+                <p>Phone: <a href="tel:+919871072210">+91 98710 72210</a></p>
+            </div>
+            <div class="footer-section">
+                <h5>Legal</h5>
+                <ul class="footer-links">
+                    <li><a href="t&c.html">Terms &amp; Conditions</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="refund.html">Refund Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <small>© <span id="year"></span> WebInstant • All rights reserved.</small>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // ── Footer year & nav ──
+        document.getElementById('year').textContent = new Date().getFullYear();
+        document.getElementById('hamburger').addEventListener('click', () =>
+            document.getElementById('mainNav').classList.toggle('show'));
+
+        // ── Reading progress ──
+        const bar = document.getElementById('reading-progress');
+        window.addEventListener('scroll', () => {
+            const h = document.documentElement.scrollHeight - window.innerHeight;
+            bar.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+        });
+
+        // ── Scroll reveal ──
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+        // ── Form submission with validation ──
+        document.addEventListener('DOMContentLoaded', () => {
+            const form    = document.getElementById('contactForm');
+            const status  = document.getElementById('formStatus');
+            const btn     = document.getElementById('submitBtn');
+
+            function validateField(id, condition) {
+                const fg = document.getElementById('fg-' + id);
+                if (!fg) return condition;
+                if (condition) { fg.classList.remove('has-error'); fg.querySelector('input,textarea') && fg.querySelector('input,textarea').classList.remove('error'); }
+                else            { fg.classList.add('has-error');    fg.querySelector('input,textarea') && fg.querySelector('input,textarea').classList.add('error'); }
+                return condition;
+            }
+
+            // Live validation
+            ['name','email','phone'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.addEventListener('blur', () => {
+                    if (id === 'email') validateField(id, /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim()));
+                    else validateField(id, el.value.trim().length > 0);
+                });
+            });
+
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                // Validate
+                const name  = document.getElementById('name');
+                const email = document.getElementById('email');
+                const phone = document.getElementById('phone');
+                const v1 = validateField('name',  name.value.trim().length > 0);
+                const v2 = validateField('email', /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim()));
+                const v3 = validateField('phone', phone.value.trim().length > 0);
+                if (!v1 || !v2 || !v3) return;
+
+                btn.disabled = true;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
+
+                try {
+                    const res = await fetch(form.action, {
+                        method: 'POST',
+                        body: new FormData(form),
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    if (res.ok) {
+                        status.innerHTML = '<div class="status-success"><i class="fas fa-check-circle"></i> Message sent successfully! We\'ll be in touch soon.</div>';
+                        form.reset();
+                    } else {
+                        const json = await res.json().catch(() => null);
+                        status.innerHTML = `<div class="status-error"><i class="fas fa-exclamation-circle"></i> ${json?.error || 'Something went wrong. Please try again.'}</div>`;
+                    }
+                } catch {
+                    status.innerHTML = '<div class="status-error"><i class="fas fa-exclamation-circle"></i> Network error — please check your connection and retry.</div>';
+                } finally {
+                    btn.disabled = false;
+                    btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+                }
+            });
+        });
+
+        // ── FAQ Accordion ──
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.querySelector('.faq-q').addEventListener('click', () => {
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item.open').forEach(o => o.classList.remove('open'));
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+    </script>
+</body>
+</html>
