@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>WebInstant - Launch Fast. Look Great.</title>
+    <title>WebInstant — Websites That Help Businesses Grow</title>
     <meta name="description"
-        content="WebInstant helps creators, freelancers, and businesses launch beautiful, mobile-first, SEO-ready websites quickly and affordably.">
+        content="WebInstant builds fast, responsive, and conversion-focused websites for businesses, professionals, clinics, and startups. Modern design. Fast delivery. Real results.">
     <meta name="keywords"
-        content="WebInstant, website design, web development, SEO, mobile friendly, getwebinstant.com">
+        content="WebInstant, website design, web development, business website, clinic website, SEO, mobile friendly, getwebinstant.com">
     <meta name="author" content="WebInstant">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="WebInstant - Launch Fast. Look Great.">
+    <meta property="og:title" content="WebInstant — Websites That Help Businesses Grow">
     <meta property="og:description"
-        content="Get sleek, modern, and SEO-ready websites from WebInstant. Launch your dream site today.">
+        content="We design websites that turn visitors into customers. Fast delivery, mobile-first, SEO-ready.">
     <meta property="og:image" content="https://getwebinstant.com/images/og-home.jpg">
     <meta property="og:url" content="https://getwebinstant.com/">
     <meta property="og:type" content="website">
@@ -36,7 +36,285 @@
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
     <style>
+        /* ── Industry Badges ── */
+        .industry-badges {
+            background: #f8f9ff;
+            padding: 28px 0 24px;
+            border-bottom: 1px solid #e8ecf5;
+        }
 
+        .industry-badges .inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .industry-badges .label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-right: 6px;
+            white-space: nowrap;
+        }
+
+        .industry-badges .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .industry-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #fff;
+            border: 1.5px solid #dde2f0;
+            border-radius: 50px;
+            padding: 6px 14px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: #444;
+            white-space: nowrap;
+        }
+
+        .industry-badge i {
+            color: #5a6bff;
+            font-size: 0.78rem;
+        }
+
+        /* ── Redesigned Stats as Feature Pills ── */
+        .stats-section .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .stat-item {
+            background: linear-gradient(135deg, #f8f9ff 0%, #fff 100%);
+            border: 1.5px solid #e8ecf5;
+            border-radius: 14px;
+            padding: 28px 20px;
+            text-align: center;
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(90, 107, 255, 0.1);
+        }
+
+        .stat-icon {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .stat-item .stat-number {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+
+        .stat-item .stat-label {
+            font-size: 0.82rem;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        /* ── How It Works ── */
+        .process-section {
+            background: #fff;
+            padding: 80px 0;
+        }
+
+        .process-section .section-header {
+            text-align: center;
+            margin-bottom: 52px;
+        }
+
+        .process-steps-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .process-steps-row::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 12.5%;
+            right: 12.5%;
+            height: 2px;
+            background: linear-gradient(90deg, #5a6bff, #a78bfa);
+            z-index: 0;
+        }
+
+        .process-step-item {
+            text-align: center;
+            padding: 0 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #5a6bff, #a78bfa);
+            color: #fff;
+            font-size: 1.25rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            box-shadow: 0 6px 20px rgba(90, 107, 255, 0.3);
+        }
+
+        .process-step-item h4 {
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 6px;
+        }
+
+        .process-step-item p {
+            font-size: 0.8rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* ── Technologies ── */
+        .tech-section {
+            background: #f8f9ff;
+            padding: 70px 0;
+        }
+
+        .tech-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+            max-width: 780px;
+            margin: 40px auto 0;
+        }
+
+        .tech-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fff;
+            border: 1.5px solid #dde2f0;
+            border-radius: 50px;
+            padding: 9px 18px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: #333;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .tech-pill:hover {
+            border-color: #5a6bff;
+            transform: translateY(-2px);
+        }
+
+        .tech-pill .tech-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #5a6bff;
+            flex-shrink: 0;
+        }
+
+        /* ── Final CTA Section ── */
+        .final-cta-section {
+            background: linear-gradient(135deg, #1a1a2e 0%, #2d2d5e 100%);
+            padding: 90px 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .final-cta-section h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+
+        .final-cta-section p {
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.75);
+            max-width: 600px;
+            margin: 0 auto 36px;
+            line-height: 1.7;
+        }
+
+        .final-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #5a6bff;
+            color: #fff;
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .final-cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 40px rgba(90, 107, 255, 0.4);
+        }
+
+        .final-cta-sub {
+            margin-top: 16px;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* ── Improved plan reminder note ── */
+        .reminder-note {
+            font-size: 0.78rem;
+            color: #888;
+            margin-top: 8px;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .stats-section .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-steps-row {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 32px;
+            }
+
+            .process-steps-row::before {
+                display: none;
+            }
+
+            .final-cta-section h2 {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-section .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
     </style>
 </head>
 
@@ -58,18 +336,17 @@
 </header>
 
 <main>
-    <!-- Hero Section -->
+    <!-- ── Hero Section ── -->
     <section class="hero">
         <div class="hero-overlay"></div>
         <div class="container hero-grid">
             <div class="hero-content">
                 <h1>Launch Fast. Look Great.</h1>
                 <p class="lead">
-                    We craft stunning, high performance websites for creators, startups, and businesses,
-                    launched fast and optimized to convert.
+                    WebInstant builds fast, responsive, and conversion-focused websites for businesses, professionals, clinics, and startups.
                 </p>
                 <div class="hero-cta">
-                    <a href="http://wa.me/919871072210?text=Can%20you%20please%20tell%20me%20in%20detail%20about%20your%20services."
+                    <a href="http://wa.me/919871072210?text=Hi!%20I%27d%20like%20to%20get%20a%20free%20quote%20for%20my%20website."
                         target="_blank" class="btn primary">Get a Free Quote</a>
                     <a href="services.html" class="btn outline">Explore Services</a>
                 </div>
@@ -91,68 +368,74 @@
                     <div class="slide">
                         <img src="kanha-portfolio-website.png" alt="Portfolio Website - Kanha Sharma">
                     </div>
-                    <!-- <div class="slide">
-                        <img src="kam-the-designer-website.png" alt="Business Website - Kam The Designer">
-                    </div>
                     <div class="slide">
-                        <img src="luxuryestates-portfolio.png" alt="Portfolio Website - Kanha Sharma">
-                    </div>
-                    <div class="slide">
-                        <img src="edugrowth-website.png" alt="Business Website - Kam The Designer">
-                    </div> -->
-                    <div class="slide">
-                        <img src="mittimart-e-commerce-website.png" alt="Business Website - Kam The Designer">
+                        <img src="mittimart-e-commerce-website.png" alt="MittiMart E-Commerce Website">
                     </div>
                 </div>
-
-                <!-- Navigation Buttons -->
                 <button class="slider-btn prev">&#10094;</button>
                 <button class="slider-btn next">&#10095;</button>
-
-                <!-- Dots Navigation -->
                 <div class="slider-dots"></div>
             </div>
         </div>
     </section>
 
+    <!-- ── Industry Badges ── -->
+    <div class="industry-badges">
+        <div class="inner">
+            <span class="label">Trusted For:</span>
+            <div class="badges">
+                <span class="industry-badge"><i class="fas fa-check"></i> Clinics</span>
+                <span class="industry-badge"><i class="fas fa-check"></i> Dentists</span>
+                <span class="industry-badge"><i class="fas fa-check"></i> Gyms</span>
+                <span class="industry-badge"><i class="fas fa-check"></i> Real Estate</span>
+                <span class="industry-badge"><i class="fas fa-check"></i> Lawyers</span>
+                <span class="industry-badge"><i class="fas fa-check"></i> Startups</span>
+                <span class="industry-badge"><i class="fas fa-check"></i> Portfolios</span>
+                <span class="industry-badge"><i class="fas fa-check"></i> E-commerce</span>
+            </div>
+        </div>
+    </div>
 
-    <!-- Stats Section -->
+    <!-- ── Stats Section ── -->
     <section class="stats-section">
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item">
-                    <div class="stat-number" data-count="4">0</div>
-                    <div class="stat-label">Projects Completed</div>
+                    <span class="stat-icon">📱</span>
+                    <div class="stat-number">Responsive</div>
+                    <div class="stat-label">Websites — Every Device</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number" data-count="85">0</div>
-                    <div class="stat-label">% Client Satisfaction</div>
+                    <span class="stat-icon">💬</span>
+                    <div class="stat-number">WhatsApp</div>
+                    <div class="stat-label">Direct Support</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number" data-count="4"></div>
-                    <div class="stat-label">Day Avg. Delivery</div>
+                    <span class="stat-icon">🔍</span>
+                    <div class="stat-number">SEO Ready</div>
+                    <div class="stat-label">Built-in from Day One</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number" data-count="100">0</div>
-                    <div class="stat-label">% Responsive Design</div>
+                    <span class="stat-icon">⚡</span>
+                    <div class="stat-number">Fast Delivery</div>
+                    <div class="stat-label">Most Projects in Days</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services preview -->
+    <!-- ── Services Preview ── -->
     <section class="section container services-section">
         <div class="section-header">
             <h2 class="section-title">Our Services</h2>
-            <p class="section-sub">From single page landing pages to full e-commerce stores, we cover it end to end.
-            </p>
+            <p class="section-sub">From single-page landing pages to full e-commerce stores, we cover it end to end.</p>
         </div>
 
         <div class="services-grid">
             <div class="service-card">
                 <div class="icon">💼</div>
                 <h3>Portfolio Websites</h3>
-                <p>Beautiful, responsive portfolios for creators and freelancers.</p>
+                <p>Showcase your work with a clean, compelling portfolio that opens doors to better clients and opportunities.</p>
                 <ul>
                     <li>📂 CMS Integration</li>
                     <li>🔍 Filterable Projects</li>
@@ -161,43 +444,74 @@
             <div class="service-card">
                 <div class="icon">🏢</div>
                 <h3>Business Websites</h3>
-                <p>Professional, SEO ready websites for agencies and local businesses.</p>
+                <p>Professional websites that help businesses generate leads and build trust online from day one.</p>
                 <ul>
-                    <li>📈 SEO Aware Structure</li>
+                    <li>📈 SEO-Aware Structure</li>
                     <li>📝 Lead Capture Forms</li>
                 </ul>
             </div>
             <div class="service-card">
                 <div class="icon">🌐</div>
                 <h3>Hosting & Domains</h3>
-                <p>Fast, secure hosting and domain setup assistance.</p>
+                <p>Complete domain, hosting, and deployment setup without the technical hassle — we handle everything.</p>
                 <ul>
                     <li>⚙️ Complete Setup & Configuration</li>
-                    <li>⚙️ Find a Perfect domain name</li>
+                    <li>⚙️ Find the Perfect Domain Name</li>
                 </ul>
             </div>
             <div class="service-card">
                 <div class="icon">🔧</div>
                 <h3>Maintenance & Support</h3>
-                <p>Ongoing updates, backups, and technical assistance.</p>
+                <p>We stay by your side after launch — updates, fixes, and technical help whenever you need it.</p>
                 <ul>
                     <li>🛠️ Edit & Manage Your Website Anytime</li>
                     <li>🛠️ Solve Bugs and Errors</li>
                 </ul>
             </div>
         </div>
-        </div>
         <div class="center">
             <a href="services.html" class="btn outline">View All 8 Services</a>
         </div>
     </section>
 
-    <!-- Why choose us -->
+    <!-- ── How It Works ── -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-sub">A clear, simple process so you always know what's happening next.</p>
+            </div>
+            <div class="process-steps-row">
+                <div class="process-step-item">
+                    <div class="step-circle">1</div>
+                    <h4>Discuss Your Requirements</h4>
+                    <p>We chat on WhatsApp or email to understand your goals, audience, and vision.</p>
+                </div>
+                <div class="process-step-item">
+                    <div class="step-circle">2</div>
+                    <h4>Receive Design Proposal</h4>
+                    <p>We share a tailored design concept and plan for your approval.</p>
+                </div>
+                <div class="process-step-item">
+                    <div class="step-circle">3</div>
+                    <h4>Development Begins</h4>
+                    <p>Our team builds your site with clean code, speed, and SEO in mind.</p>
+                </div>
+                <div class="process-step-item">
+                    <div class="step-circle">4</div>
+                    <h4>Revisions & Launch</h4>
+                    <p>We refine based on your feedback, then launch your site live.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Why Choose Us ── -->
     <section class="why-choose-us">
         <div class="container">
             <div class="why-grid">
                 <div class="why-content">
-                    <h2 >Why Choose WebInstant?</h2>
+                    <h2>Why Choose WebInstant?</h2>
                     <div class="why-features">
                         <div class="service-card">
                             <div class="icon">🚀</div>
@@ -206,8 +520,8 @@
                         </div>
                         <div class="service-card">
                             <div class="icon">🎧</div>
-                            <h3>Support</h3>
-                            <p>We stay available after delivery. Have a question? We've got you covered.</p>
+                            <h3>Personal Support</h3>
+                            <p>Direct WhatsApp access to your project team — no support tickets, no waiting.</p>
                         </div>
                         <div class="service-card">
                             <div class="icon">💲</div>
@@ -215,20 +529,45 @@
                             <p>Premium quality without the premium price tag.</p>
                         </div>
                     </div>
-                    <a href="http://wa.me/919871072210?text=Hey!%20I%20want%20to%20start%20project%20with%20you."
-                        target="_blank" class="btn primary">Start Your Project Today</a>
+                    <a href="http://wa.me/919871072210?text=Hi!%20I%27d%20like%20to%20start%20a%20project%20with%20WebInstant."
+                        target="_blank" class="btn primary">
+                        Start Your Project
+                        <span style="font-size:0.78rem;display:block;font-weight:400;opacity:0.8;margin-top:2px;">
+                            Discuss your requirements instantly on WhatsApp
+                        </span>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
-    </center>
-    <br>
-    <!-- Testimonials Section -->
+
+    <!-- ── Technologies ── -->
+    <section class="tech-section">
+        <div class="container">
+            <div class="section-header" style="text-align:center;">
+                <h2 class="section-title">Built With</h2>
+                <p class="section-sub">Modern tools and best practices for fast, reliable, future-ready websites.</p>
+            </div>
+            <div class="tech-grid">
+                <span class="tech-pill"><span class="tech-dot"></span>HTML5</span>
+                <span class="tech-pill"><span class="tech-dot"></span>CSS3</span>
+                <span class="tech-pill"><span class="tech-dot"></span>JavaScript</span>
+                <span class="tech-pill"><span class="tech-dot"></span>React</span>
+                <span class="tech-pill"><span class="tech-dot"></span>Next.js</span>
+                <span class="tech-pill"><span class="tech-dot"></span>Node.js</span>
+                <span class="tech-pill"><span class="tech-dot"></span>Firebase</span>
+                <span class="tech-pill"><span class="tech-dot"></span>Responsive Design</span>
+                <span class="tech-pill"><span class="tech-dot"></span>SEO Best Practices</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Testimonials Section ── -->
     <section class="testimonials-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">What Our Clients Say</h2>
-                <p class="section-sub">Don't just take our word for it, hear from our satisfied clients</p>
+                <p class="section-sub">Real results from real projects — here's what our clients have experienced.</p>
             </div>
 
             <div class="testimonials-slider-container">
@@ -239,21 +578,16 @@
                                 <i class="fas fa-quote-left"></i>
                             </div>
                             <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
-                            <p class="testimonial-text">"WebInstant delivered my website faster than expected, and it's
-                                helped me land 3 new clients already! The quality exceeded my expectations."</p>
+                            <p class="testimonial-text">"WebInstant delivered my website faster than expected, and it's helped me land 3 new clients already! The quality exceeded my expectations."</p>
                             <div class="testimonial-author">
-                                <div class="author-avatar">
-                                    <i class="fas fa-user-circle"></i>
-                                </div>
+                                <div class="author-avatar" style="background:linear-gradient(135deg,#5a6bff,#a78bfa);color:#fff;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;">AS</div>
                                 <div class="author-info">
                                     <h4>Aayush Sharma</h4>
-                                    <p>Founder of Think Visual</p>
+                                    <p>Founder, Think Visual — <a href="https://thinkvisual.in/" target="_blank" rel="noopener" style="color:#5a6bff;font-size:0.8rem;">thinkvisual.in</a></p>
+                                    <span style="font-size:0.75rem;color:#888;background:#f0f2ff;padding:2px 8px;border-radius:20px;">Portfolio Website</span>
                                 </div>
                             </div>
                         </div>
@@ -265,21 +599,16 @@
                                 <i class="fas fa-quote-left"></i>
                             </div>
                             <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
-                            <p class="testimonial-text">"Smooth, affordable, and delivered in just three days.
-                                WebInstant shows the right mindset to turn ideas into production ready websites."</p>
+                            <p class="testimonial-text">"Smooth, affordable, and delivered in just three days. WebInstant shows the right mindset to turn ideas into production-ready websites."</p>
                             <div class="testimonial-author">
-                                <div class="author-avatar">
-                                    <i class="fas fa-user-circle"></i>
-                                </div>
+                                <div class="author-avatar" style="background:linear-gradient(135deg,#f59e0b,#ef4444);color:#fff;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;">TA</div>
                                 <div class="author-info">
                                     <h4>Tony Aar</h4>
-                                    <p>Founder of MittiMart</p>
+                                    <p>Founder, MittiMart</p>
+                                    <span style="font-size:0.75rem;color:#888;background:#f0f2ff;padding:2px 8px;border-radius:20px;">E-Commerce Website</span>
                                 </div>
                             </div>
                         </div>
@@ -288,168 +617,52 @@
             </div>
         </div>
     </section>
-    <script>
-        // ========================================
-        // ENHANCED TESTIMONIALS SLIDER
-        // ========================================
 
+    <script>
         function initTestimonialsSlider() {
             const testimonialsContainer = document.getElementById('testimonialsGrid');
             if (!testimonialsContainer) return;
-
             const testimonials = Array.from(testimonialsContainer.children);
-            const dots = document.querySelectorAll('.testimonial-dots .dot');
-            const prevBtn = document.querySelector('.testimonial-nav.prev');
-            const nextBtn = document.querySelector('.testimonial-nav.next');
-
             let currentSlide = 0;
             let autoSlideInterval;
             let isMobile = window.innerWidth <= 640;
 
-            // Function to update slides based on screen size
             function updateSlideDisplay() {
                 const newIsMobile = window.innerWidth <= 640;
-
                 if (newIsMobile !== isMobile) {
                     isMobile = newIsMobile;
-                    if (isMobile) {
-                        // On mobile: show only one slide at a time
-                        testimonials.forEach((card, index) => {
-                            card.style.display = index === currentSlide ? 'flex' : 'none';
-                        });
-                        if (testimonialsContainer.classList) {
-                            testimonialsContainer.classList.add('mobile-slider');
-                        }
-                    } else {
-                        // On desktop: show all slides in grid
-                        testimonials.forEach(card => {
-                            card.style.display = 'flex';
-                        });
-                        if (testimonialsContainer.classList) {
-                            testimonialsContainer.classList.remove('mobile-slider');
-                        }
-                    }
+                    testimonials.forEach(card => { card.style.display = isMobile ? 'none' : 'flex'; });
+                    if (isMobile) { testimonials[currentSlide].style.display = 'flex'; }
                 }
             }
 
-            // Function to show specific slide (mobile only)
             function showSlide(index) {
                 if (!isMobile) return;
-
-                testimonials.forEach((card, i) => {
-                    card.style.display = i === index ? 'flex' : 'none';
-                    card.style.animation = 'none';
-                    setTimeout(() => {
-                        card.style.animation = '';
-                    }, 10);
-                });
-
-                // Update active dot
-                dots.forEach((dot, i) => {
-                    dot.classList.toggle('active', i === index);
-                });
-
+                testimonials.forEach((card, i) => { card.style.display = i === index ? 'flex' : 'none'; });
                 currentSlide = index;
             }
 
-            // Next slide
             function nextSlide() {
                 if (!isMobile) return;
-                const newIndex = (currentSlide + 1) % testimonials.length;
-                showSlide(newIndex);
-                resetAutoSlide();
+                showSlide((currentSlide + 1) % testimonials.length);
             }
 
-            // Previous slide
-            function prevSlide() {
-                if (!isMobile) return;
-                const newIndex = (currentSlide - 1 + testimonials.length) % testimonials.length;
-                showSlide(newIndex);
-                resetAutoSlide();
-            }
+            function startAutoSlide() { if (isMobile) autoSlideInterval = setInterval(nextSlide, 5000); }
+            function stopAutoSlide() { clearInterval(autoSlideInterval); }
 
-            // Auto slide
-            function startAutoSlide() {
-                if (!isMobile) return;
-                autoSlideInterval = setInterval(nextSlide, 5000);
-            }
-
-            function resetAutoSlide() {
-                clearInterval(autoSlideInterval);
-                startAutoSlide();
-            }
-
-            function stopAutoSlide() {
-                clearInterval(autoSlideInterval);
-            }
-
-            // Event listeners for controls
-            if (prevBtn) {
-                prevBtn.addEventListener('click', () => {
-                    prevSlide();
-                });
-            }
-
-            if (nextBtn) {
-                nextBtn.addEventListener('click', () => {
-                    nextSlide();
-                });
-            }
-
-            // Dot navigation
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    if (isMobile) {
-                        showSlide(index);
-                        resetAutoSlide();
-                    }
-                });
-            });
-
-            // Pause auto-slide on hover (mobile only)
-            if (testimonialsContainer) {
-                testimonialsContainer.addEventListener('mouseenter', () => {
-                    if (isMobile) stopAutoSlide();
-                });
-
-                testimonialsContainer.addEventListener('mouseleave', () => {
-                    if (isMobile) startAutoSlide();
-                });
-            }
-
-            // Handle window resize
             let resizeTimeout;
             window.addEventListener('resize', () => {
                 clearTimeout(resizeTimeout);
-                resizeTimeout = setTimeout(() => {
-                    updateSlideDisplay();
-                    if (isMobile) {
-                        showSlide(currentSlide);
-                        startAutoSlide();
-                    } else {
-                        stopAutoSlide();
-                    }
-                }, 250);
+                resizeTimeout = setTimeout(() => { updateSlideDisplay(); if (isMobile) startAutoSlide(); else stopAutoSlide(); }, 250);
             });
 
-            // Initialize
             updateSlideDisplay();
-            if (isMobile) {
-                showSlide(0);
-                startAutoSlide();
-            }
+            if (isMobile) { showSlide(0); startAutoSlide(); }
         }
 
-        // Initialize when DOM is ready
         document.addEventListener('DOMContentLoaded', function () {
             initTestimonialsSlider();
-
-            // Add intersection observer for testimonial animations
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
+            const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -459,92 +672,108 @@
                     }
                 });
             }, observerOptions);
-
             document.querySelectorAll('.testimonial-card').forEach(card => {
                 card.style.opacity = '0';
-                // card.style.transform = 'translateY(30px);
                 card.style.transition = 'all 0.6s ease';
                 observer.observe(card);
             });
         });
     </script>
-    <br>
-    <br>
-    <!-- Recommended Plans Section -->
+
+    <!-- ── Recommended Plans Section ── -->
     <section class="recommended-plans">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Recommended Plans</h2>
-                <p class="section-sub">Our most popular and value packed plans to kickstart your website journey.
-                </p>
+                <p class="section-sub">Our most popular and value-packed plans to kickstart your website journey.</p>
             </div>
 
             <div class="plans-grid">
                 <!-- Plan 1 -->
-                <div class="plan-card">
-                    <div class="plan-badge">Best Value</div>
-                    <div class="plan-header">
-                        <h3>Starter Personal Portfolio Package</h3>
-                        <div class="price">₹999 <span class="currency">/ $12</span></div>
-                        <p class="price-note">One-Time Payment</p>
-                    </div>
-                    <ul class="plan-features">
-                        <li><i class="fas fa-check"></i> Single-page portfolio website</li>
-                        <li><i class="fas fa-check"></i> Skills, projects, and profile showcase</li>
-                        <li><i class="fas fa-check"></i> Mobile-friendly & responsive design</li>
-                        <li><i class="fas fa-check"></i> Fast loading layout</li>
-                        <li><i class="fas fa-check"></i> Contact section included</li>
-                        <li><i class="fas fa-check"></i> 2 free revisions</li>
-                    </ul>
-                    <div class="plan-cta">
-                        <p class="delivery-note"><i class="fas fa-clock"></i> Delivery Time: 2–4 days</p>
-                        <p class="warning-note"><i class="fas fa-exclamation-triangle"></i> Can take 1–2 extra days if
-                            project is large or content heavy</p>
-                        <a href="https://wa.me/919871072210?text=I want to work with you with your Starter Personal Portfolio Package"
-                            target="_blank" class="btn primary">Choose Plan</a>
-                        <div class="reminder-note">Note: Clicking 'Choose Plan' will redirect you to WhatsApp.</div>
-                    </div>
-                </div>
-                <!-- Plan 2 -->
-                <div class="plan-card">
-                    <div class="plan-badge">Most Popular</div>
-                    <div class="plan-header">
-                        <h3>Business Pro Plan</h3>
-                        <div class="price">₹7,999 <span class="currency">/ $95</span></div>
-                        <p class="price-note">One-Time Payment</p>
-                    </div>
-                    <ul class="plan-features">
-                        <li><i class="fas fa-check"></i> Advanced business website (5–7 pages)</li>
-                        <li><i class="fas fa-check"></i> Premium UI/UX design</li>
-                        <li><i class="fas fa-check"></i> Speed optimization</li>
-                        <li><i class="fas fa-check"></i> Lead generation features</li>
-                        <li><i class="fas fa-check"></i> Better SEO structure</li>
-                        <li><i class="fas fa-check"></i> Free Maintenance: 30 Days</li>
-                        <li><i class="fas fa-check"></i> 4 free revisions</li>
-                    </ul>
-                    <div class="plan-cta">
-                        <p class="delivery-note"><i class="fas fa-clock"></i> Delivery Time: 6–10 days</p>
-                        <p class="warning-note"><i class="fas fa-exclamation-triangle"></i> Can take 1–2 extra days if
-                            project is large or custom features needed</p>
-                        <a href="https://wa.me/919871072210?text=I want to work with you with your Business Pro Plan"
-                            target="_blank" class="btn primary">Choose Plan</a>
-                        <div class="reminder-note">Note: Clicking 'Choose Plan' will redirect you to WhatsApp.</div>
-                    </div>
-                </div>
+           <div class="plan-card">
+            <div class="plan-header">
+              <h3>Professional Portfolio</h3>
+              <div class="price">₹7,000</div>
+              <p class="price-note">One-Time Payment</p>
             </div>
-
+            <ul class="plan-features">
+              <li><i class="fas fa-check"></i> Multi-page Website</li>
+              <li>
+                <i class="fas fa-check"></i> About, Skills, Projects, Contact
+              </li>
+              <li><i class="fas fa-check"></i> Blog Section</li>
+              <li><i class="fas fa-check"></i> Resume Download</li>
+              <li><i class="fas fa-check"></i> Premium Animations</li>
+              <li><i class="fas fa-check"></i> SEO Setup</li>
+            </ul>
+            <div class="plan-cta">
+              <p class="delivery-note">
+                <i class="fas fa-clock"></i> Delivery Time: 4–6 Days
+              </p>
+              <p class="warning-note">
+                <i class="fas fa-exclamation-triangle"></i> Can take 1–2 extra
+                days if project is large or custom design needed
+              </p>
+              <a
+                href="https://wa.me/919871072210?text=I want to work with you with your Professional Portfolio Package"
+                target="_blank"
+                class="btn primary"
+                >Choose Plan</a
+              >
+              <div class="reminder-note">
+                Clicking 'Choose Plan' will redirect you to WhatsApp
+              </div>
+            </div>
+          </div>
+            <!-- Plan 2 -->
+                          <div class="plan-card">
+            <div class="plan-header">
+              <h3>Business Professional</h3>
+              <div class="price">₹15,000</div>
+              <p class="price-note">One-Time Payment</p>
+            </div>
+            <ul class="plan-features">
+              <li><i class="fas fa-check"></i> 6–8 Pages</li>
+              <li><i class="fas fa-check"></i> Premium UI/UX</li>
+              <li><i class="fas fa-check"></i> Lead Generation Features</li>
+              <li><i class="fas fa-check"></i> Speed Optimization</li>
+              <li><i class="fas fa-check"></i> SEO Structure</li>
+              <li><i class="fas fa-check"></i> Blog System</li>
+              <li><i class="fas fa-check"></i> 30 Days Support</li>
+            </ul>
+            <div class="plan-cta">
+              <p class="delivery-note">
+                <i class="fas fa-clock"></i> Delivery Time: 7–10 Days
+              </p>
+              <p class="warning-note">
+                <i class="fas fa-exclamation-triangle"></i> Can take 1–2 extra
+                days if project is large or custom features needed
+              </p>
+              <a
+                href="https://wa.me/919871072210?text=I want to work with you with your Business Professional Plan"
+                target="_blank"
+                class="btn primary"
+                >Choose Plan</a
+              >
+              <div class="reminder-note">
+                Clicking 'Choose Plan' will redirect you to WhatsApp
+              </div>
+            </div>
+            
+        </div>
+        </div>
             <div class="center">
                 <a href="plans.html" class="btn outline">View All Plans</a>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio preview -->
+    <!-- ── Portfolio Preview ── -->
     <br>
     <section class="portfolio-preview">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Recent Project</h2>
+                <h2 class="section-title">Recent Projects</h2>
                 <p class="section-sub">A glimpse of our latest creative and high-performing work</p>
             </div>
 
@@ -552,55 +781,23 @@
                 <article class="project-card">
                     <div class="project-image">
                         <img src="mittimart-e-commerce-website.png" alt="MittiMart E-Commerce Website">
-                        <div class="project-overlay">
-                        </div>
+                        <div class="project-overlay"></div>
                     </div>
                     <div class="project-info">
                         <h4>MittiMart E-Commerce Website</h4>
-                        <p>MittiMart is a sophisticated, fully-responsive multi-page e-commerce platform dedicated to
-                            championing sustainable living through ethically sourced, handmade clay, pottery, and
-                            artisanal
-                            soil-based products.</p>
+                        <p>A fully-responsive multi-page e-commerce platform for sustainable, handmade clay and artisanal products.</p>
                     </div>
                 </article>
                 <article class="project-card">
                     <div class="project-image">
-                        <img src="Aayush-Portfolio.png" alt="Aayush-Portfolio">
-                        <div class="project-overlay">
-                        </div>
+                        <img src="Aayush-Portfolio.png" alt="Think Visual Portfolio">
+                        <div class="project-overlay"></div>
                     </div>
                     <div class="project-info">
                         <h4>Think Visual — Portfolio</h4>
-                        <p>A refined, cinematic portfolio for video editor Aayush Sharma. Smooth interactions and elegant
-                    typography highlight creative work.</p>
+                        <p>A cinematic portfolio for video editor Aayush Sharma, with smooth interactions and elegant typography.</p>
                     </div>
                 </article>
-
-                <!-- <article class="project-card">
-                    <div class="project-image">
-                        <img src="kanha-portfolio-website.png" alt="Kanha Sharma-Portfolio">
-                        <div class="project-overlay">
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h4>Kanha Sharma-Portfolio</h4>
-                        <p>A professional portfolio website built for WebInstant. It showcases services, design, and
-                            features
-                            that align with business goals. The layout is fully responsive and visually modern.</p>
-                    </div>
-                </article>
-                <article class="project-card">
-                    <div class="project-image">
-                        <img src="Aayush-Portfolio.png" alt="Think-Visual Portfolio – Video Editor Showcase">
-                        <div class="project-overlay">
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h4>Think Visual — Portfolio</h4>
-                        <p>A refined, cinematic portfolio for video editor Aayush Sharma. Smooth interactions and
-                            elegant typography highlight creative work.</p>
-                    </div>
-                </article> -->
             </div>
 
             <div class="center">
@@ -608,7 +805,8 @@
             </div>
         </div>
     </section>
-    <!-- FAQ Accordion Section -->
+
+    <!-- ── FAQ Section ── -->
     <section class="faq-section fade-in-up">
         <div class="section-header">
             <div class="container">
@@ -622,9 +820,8 @@
                         <i class="fas fa-plus faq-icon"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>Domain and hosting are not included by default, but they can be arranged separately as an
-                            add-on.
-                            We'll guide you through the entire process so you don't have to figure it out alone.</p>
+                        <p>Domain and hosting are not included by default, but can be arranged separately as an add-on.
+                            We'll guide you through the entire setup so you don't have to figure it out alone.</p>
                     </div>
                 </div>
                 <div class="faq-item-acc">
@@ -634,8 +831,7 @@
                     </button>
                     <div class="faq-answer">
                         <p>Yes, every website we build is fully responsive and tested across mobile, tablet, and
-                            desktop.
-                            Your visitors will get a great experience on any screen size.</p>
+                            desktop. Your visitors will get a great experience on any screen size.</p>
                     </div>
                 </div>
                 <div class="faq-item-acc">
@@ -645,10 +841,7 @@
                     </button>
                     <div class="faq-answer">
                         <p>Absolutely. Minor revisions are included with every plan. The number of free revisions
-                            depends on
-                            the package you choose and we're always flexible to ensure you're happy with the final
-                            result.
-                        </p>
+                            depends on your package, and we're always flexible to ensure you're happy with the result.</p>
                     </div>
                 </div>
                 <div class="faq-item-acc">
@@ -657,52 +850,44 @@
                         <i class="fas fa-plus faq-icon"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>All project discussions, updates, and deliveries happen through WhatsApp and email. It's
-                            fast,
-                            convenient, and keeps everything in one place so nothing gets missed.</p>
+                        <p>All discussions, updates, and deliveries happen through WhatsApp and email — fast, convenient,
+                            and everything in one place so nothing gets missed.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <script>
-        // FAQ Accordion functionality
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const faqItem = button.closest('.faq-item-acc');
-                const isActive = faqItem.classList.contains('active');
-                // Close all others if desired? We'll allow multiple open for better UX but style is fine.
-                if (!isActive) {
-                    faqItem.classList.add('active');
-                    button.setAttribute('aria-expanded', 'true');
-                } else {
-                    faqItem.classList.remove('active');
-                    button.setAttribute('aria-expanded', 'false');
-                }
-            });
-        });
 
-        // Set current year in footer (if not already)
-        if (document.getElementById('year')) {
-            document.getElementById('year').innerText = new Date().getFullYear();
-        }
-
-        // Mobile hamburger toggle (ensure existing script works)
-        const hamburgerBtn = document.getElementById('hamburger');
-        const navMenu = document.getElementById('mainNav');
-        if (hamburgerBtn && navMenu) {
-            hamburgerBtn.addEventListener('click', () => {
-                navMenu.classList.toggle('show');
-            });
-        }
-    </script>
+    <!-- ── Final CTA Section ── -->
+    <section class="final-cta-section">
+        <h2>Ready to Build Your Website?</h2>
+        <p>Whether you're a business owner, doctor, gym owner, lawyer, or startup — we'll help you create a modern online presence that actually works.</p>
+        <a href="https://wa.me/919871072210?text=Hi!%20I%27d%20like%20to%20get%20a%20free%20quote%20for%20my%20website."
+            target="_blank" class="final-cta-btn">
+            <i class="fab fa-whatsapp"></i> Get Free Quote
+        </a>
+        <br>
+        <br>
+        <p class="final-cta-sub">No commitment needed. We'll respond within a few hours.</p>
+    </section>
 </main>
 
 <footer class="site-footer">
     <div class="footer-container">
         <div class="footer-section">
             <img src="WebInstant-Logo-02.png" alt="WebInstant Logo" class="footer-logo">
-            <p class="footer-tagline">Launch Fast. Look Great.</p>
+            <p class="footer-tagline">Websites That Help Businesses Grow.</p>
+        </div>
+        <div class="footer-section">
+            <h5>Services</h5>
+            <ul class="footer-links">
+                <li><a href="services.html">Portfolio Websites</a></li>
+                <li><a href="services.html">Business Websites</a></li>
+                <li><a href="services.html">Clinic Websites</a></li>
+                <li><a href="services.html">Real Estate Websites</a></li>
+                <li><a href="services.html">Landing Pages</a></li>
+                <li><a href="services.html">Website Redesign</a></li>
+            </ul>
         </div>
         <div class="footer-section">
             <h5>Contact</h5>
@@ -712,7 +897,7 @@
         <div class="footer-section">
             <h5>Legal</h5>
             <ul class="footer-links">
-                <li><a href="t&c.html">Terms & Conditions</a></li>
+                <li><a href="t_c.html">Terms & Conditions</a></li>
                 <li><a href="privacy.html">Privacy Policy</a></li>
                 <li><a href="refund.html">Refund Policy</a></li>
             </ul>
@@ -725,28 +910,32 @@
 
 <script src="script.js"></script>
 <script>
-    // Counter animation for stats
-    document.addEventListener('DOMContentLoaded', function () {
-        const counters = document.querySelectorAll('.stat-number');
-        const speed = 200;
-
-        counters.forEach(counter => {
-            const updateCount = () => {
-                const target = +counter.getAttribute('data-count');
-                const count = +counter.innerText;
-                const increment = target / speed;
-
-                if (count < target) {
-                    counter.innerText = Math.ceil(count + increment);
-                    setTimeout(updateCount, 1);
-                } else {
-                    counter.innerText = target;
-                }
-            };
-
-            updateCount();
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(button => {
+        button.addEventListener('click', () => {
+            const faqItem = button.closest('.faq-item-acc');
+            const isActive = faqItem.classList.contains('active');
+            if (!isActive) {
+                faqItem.classList.add('active');
+                button.setAttribute('aria-expanded', 'true');
+            } else {
+                faqItem.classList.remove('active');
+                button.setAttribute('aria-expanded', 'false');
+            }
         });
     });
+
+    // Footer year
+    if (document.getElementById('year')) {
+        document.getElementById('year').innerText = new Date().getFullYear();
+    }
+
+    // Mobile nav
+    const hamburgerBtn = document.getElementById('hamburger');
+    const navMenu = document.getElementById('mainNav');
+    if (hamburgerBtn && navMenu) {  
+        hamburgerBtn.addEventListener('click', () => navMenu.classList.toggle('show'));
+    }
 </script>
 </body>
 
