@@ -1,0 +1,1682 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>Pipeline — Lead &amp; Customer CRM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   PIPELINE CRM — DESIGN TOKENS
+   Display: Sora  ·  Body: Inter  ·  Data/mono: JetBrains Mono
+   ============================================================ */
+:root{
+  --bg:#FAFAF8;
+  --surface:#FFFFFF;
+  --surface-2:#F1F0EC;
+  --surface-3:#E9E7E0;
+  --ink:#191B22;
+  --ink-soft:#5B5F6B;
+  --ink-faint:#9498A3;
+  --border:#E4E2DC;
+  --border-strong:#D4D1C8;
+
+  --primary:#3D5A80;
+  --primary-dark:#233246;
+  --primary-soft:#E7EDF4;
+
+  --warm:#E08A3C;
+  --warm-soft:#FBEADA;
+  --future:#7B6CC7;
+  --future-soft:#EDEAFA;
+  --lost:#C4554D;
+  --lost-soft:#FAE4E2;
+  --won:#1FA394;
+  --won-soft:#DDF2EE;
+
+  --shadow-sm: 0 1px 2px rgba(25,27,34,0.06);
+  --shadow-md: 0 4px 16px rgba(25,27,34,0.08);
+  --shadow-lg: 0 12px 40px rgba(25,27,34,0.14);
+
+  --radius-sm:6px;
+  --radius-md:10px;
+  --radius-lg:16px;
+
+  --font-display:'Sora',sans-serif;
+  --font-body:'Inter',sans-serif;
+  --font-mono:'JetBrains Mono',monospace;
+
+  --sidebar-w:230px;
+  color-scheme: light;
+}
+
+[data-theme="dark"]{
+  --bg:#14161C;
+  --surface:#1C1F27;
+  --surface-2:#232733;
+  --surface-3:#2B303D;
+  --ink:#EDEEF2;
+  --ink-soft:#A2A6B3;
+  --ink-faint:#6B6F7C;
+  --border:#2C303C;
+  --border-strong:#3A3F4D;
+
+  --primary:#7FA1C9;
+  --primary-dark:#B9CEE6;
+  --primary-soft:#232C38;
+
+  --warm-soft:#3A2C1E;
+  --future-soft:#292541;
+  --lost-soft:#3A2422;
+  --won-soft:#17332E;
+  color-scheme: dark;
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+html,body{height:100%;}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:14px;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  overflow:hidden;
+}
+button{font-family:inherit; cursor:pointer;}
+input,select,textarea{font-family:inherit; font-size:inherit; color:inherit;}
+a{color:inherit;}
+::selection{background:var(--primary-soft);}
+:focus-visible{outline:2px solid var(--primary); outline-offset:2px;}
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+}
+
+/* ---------- App shell ---------- */
+#app{display:flex; height:100vh; width:100vw;}
+
+/* ---------- Sidebar ---------- */
+.sidebar{
+  width:var(--sidebar-w);
+  min-width:var(--sidebar-w);
+  background:var(--primary-dark);
+  color:#EDEFF4;
+  display:flex;
+  flex-direction:column;
+  padding:20px 14px;
+  transition:transform .25s ease;
+}
+.brand{
+  display:flex; align-items:center; gap:10px;
+  padding:6px 8px 22px 8px;
+}
+.brand-mark{
+  width:30px; height:30px; border-radius:8px;
+  background:linear-gradient(135deg,var(--won),var(--future));
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--font-display); font-weight:800; font-size:15px; color:#0E1116;
+  flex-shrink:0;
+}
+.brand-name{font-family:var(--font-display); font-weight:700; font-size:17px; letter-spacing:-0.01em;}
+.brand-sub{font-size:10.5px; color:#9AA3B8; font-family:var(--font-mono); letter-spacing:.04em;}
+
+.nav-section-label{
+  font-size:10.5px; text-transform:uppercase; letter-spacing:.08em;
+  color:#7C86A0; margin:16px 10px 6px;
+  font-weight:600;
+}
+.nav-item{
+  display:flex; align-items:center; gap:10px;
+  padding:9px 10px; border-radius:8px;
+  color:#C9CFDD; font-size:13.5px; font-weight:500;
+  background:none; border:none; width:100%; text-align:left;
+  transition:background .12s ease, color .12s ease;
+}
+.nav-item svg{width:16px; height:16px; flex-shrink:0; opacity:.85;}
+.nav-item:hover{background:rgba(255,255,255,0.06); color:#fff;}
+.nav-item.active{background:rgba(255,255,255,0.12); color:#fff;}
+.nav-item .count{
+  margin-left:auto; font-family:var(--font-mono); font-size:11px;
+  background:rgba(255,255,255,0.09); padding:1px 7px; border-radius:20px;
+}
+
+.sidebar-footer{margin-top:auto; display:flex; flex-direction:column; gap:6px;}
+
+/* ---------- Main ---------- */
+.main{
+  flex:1; display:flex; flex-direction:column; min-width:0; height:100vh;
+  background:var(--bg);
+}
+.topbar{
+  display:flex; align-items:center; gap:14px;
+  padding:14px 24px; border-bottom:1px solid var(--border);
+  background:var(--surface);
+  flex-wrap:wrap;
+}
+.hamburger{display:none; background:none; border:none; color:var(--ink); padding:6px;}
+.page-title{font-family:var(--font-display); font-weight:700; font-size:19px; letter-spacing:-0.01em; white-space:nowrap;}
+.search-wrap{
+  flex:1; max-width:420px; min-width:160px;
+  display:flex; align-items:center; gap:8px;
+  background:var(--surface-2); border:1px solid var(--border);
+  border-radius:8px; padding:8px 12px;
+}
+.search-wrap svg{width:15px; height:15px; color:var(--ink-faint); flex-shrink:0;}
+.search-wrap input{background:none; border:none; width:100%; color:var(--ink); font-size:13.5px;}
+.search-wrap input::placeholder{color:var(--ink-faint);}
+.topbar-spacer{flex:1;}
+.icon-btn{
+  display:flex; align-items:center; justify-content:center;
+  width:36px; height:36px; border-radius:8px;
+  background:var(--surface-2); border:1px solid var(--border); color:var(--ink-soft);
+  transition:background .12s ease, color .12s;
+}
+.icon-btn:hover{background:var(--surface-3); color:var(--ink);}
+.icon-btn svg{width:16px; height:16px;}
+
+.btn{
+  display:inline-flex; align-items:center; gap:7px;
+  padding:9px 15px; border-radius:8px; border:1px solid transparent;
+  font-size:13.5px; font-weight:600; white-space:nowrap;
+  transition:transform .08s ease, box-shadow .12s ease, background .12s ease;
+}
+.btn svg{width:15px; height:15px;}
+.btn:active{transform:scale(0.97);}
+.btn-primary{background:var(--primary); color:#fff; box-shadow:var(--shadow-sm);}
+.btn-primary:hover{background:var(--primary-dark); box-shadow:var(--shadow-md);}
+.btn-ghost{background:var(--surface-2); color:var(--ink); border-color:var(--border);}
+.btn-ghost:hover{background:var(--surface-3);}
+.btn-danger{background:var(--lost-soft); color:var(--lost);}
+.btn-danger:hover{background:var(--lost); color:#fff;}
+.btn-sm{padding:6px 11px; font-size:12.5px;}
+.btn:disabled{opacity:.45; cursor:not-allowed;}
+
+/* ---------- Content scroll area ---------- */
+.content{flex:1; overflow-y:auto; padding:24px;}
+.content-inner{max-width:1180px; margin:0 auto;}
+
+/* ---------- Dashboard ---------- */
+.stat-grid{
+  display:grid; grid-template-columns:repeat(5,1fr); gap:14px; margin-bottom:22px;
+}
+.stat-card{
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md);
+  padding:16px 18px; position:relative; overflow:hidden;
+}
+.stat-card .stat-label{font-size:12px; color:var(--ink-soft); font-weight:600; margin-bottom:8px; display:flex; align-items:center; gap:6px;}
+.stat-card .stat-value{font-family:var(--font-display); font-size:28px; font-weight:700; letter-spacing:-0.02em;}
+.stat-dot{width:8px; height:8px; border-radius:50%; display:inline-block;}
+.stat-card.total{border-top:3px solid var(--primary);}
+.stat-card.warm{border-top:3px solid var(--warm);}
+.stat-card.future{border-top:3px solid var(--future);}
+.stat-card.lost{border-top:3px solid var(--lost);}
+.stat-card.won{border-top:3px solid var(--won);}
+
+.section-heading{
+  font-family:var(--font-display); font-weight:700; font-size:15px; margin:26px 0 12px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.section-heading .hint{font-family:var(--font-body); font-weight:400; font-size:12px; color:var(--ink-faint);}
+
+/* Pipeline funnel — signature element */
+.pipeline-flow{
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md);
+  padding:20px 22px;
+}
+.pipeline-track{display:flex; align-items:center; gap:0; height:46px; border-radius:8px; overflow:hidden;}
+.pipeline-seg{height:100%; display:flex; align-items:center; justify-content:center; font-family:var(--font-mono); font-size:12px; font-weight:600; color:#fff; min-width:2%; transition:flex-basis .4s ease;}
+.pipeline-legend{display:flex; gap:18px; margin-top:12px; flex-wrap:wrap;}
+.pipeline-legend-item{display:flex; align-items:center; gap:7px; font-size:12.5px; color:var(--ink-soft);}
+.pipeline-legend-item .sw{width:10px; height:10px; border-radius:3px;}
+
+.two-col{display:grid; grid-template-columns:1.4fr 1fr; gap:18px; margin-top:22px;}
+@media (max-width:900px){.two-col{grid-template-columns:1fr;}}
+
+/* Activity feed / ledger */
+.feed{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md); padding:6px 18px;}
+.feed-item{
+  display:flex; gap:12px; padding:13px 0; border-bottom:1px solid var(--border);
+  position:relative;
+}
+.feed-item:last-child{border-bottom:none;}
+.feed-icon{
+  width:30px; height:30px; border-radius:50%; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center; font-size:13px;
+  background:var(--surface-2); margin-top:1px;
+}
+.feed-body{flex:1; min-width:0;}
+.feed-title{font-size:13px; font-weight:600;}
+.feed-title span{font-weight:400; color:var(--ink-soft);}
+.feed-desc{font-size:12.5px; color:var(--ink-soft); margin-top:2px;}
+.feed-time{font-family:var(--font-mono); font-size:11px; color:var(--ink-faint); margin-top:4px;}
+.empty-note{color:var(--ink-faint); font-size:13px; padding:22px 4px; text-align:center;}
+
+/* Follow-ups list */
+.followup-item{
+  display:flex; align-items:center; gap:10px; padding:11px 0; border-bottom:1px solid var(--border);
+}
+.followup-item:last-child{border-bottom:none;}
+.followup-date{
+  font-family:var(--font-mono); font-size:11px; font-weight:600; color:var(--primary);
+  background:var(--primary-soft); padding:4px 8px; border-radius:6px; white-space:nowrap;
+}
+.followup-date.overdue{color:var(--lost); background:var(--lost-soft);}
+.followup-name{font-size:13px; font-weight:600; flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.followup-name span{font-weight:400; color:var(--ink-soft); font-size:12px;}
+
+/* ---------- Toolbar (leads page) ---------- */
+.toolbar{
+  display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:16px;
+}
+.select{
+  background:var(--surface); border:1px solid var(--border); border-radius:8px;
+  padding:8px 10px; font-size:13px; color:var(--ink);
+}
+.chip-row{display:flex; gap:7px; flex-wrap:wrap;}
+.chip{
+  padding:6px 12px; border-radius:20px; font-size:12.5px; font-weight:600;
+  border:1px solid var(--border); background:var(--surface); color:var(--ink-soft);
+}
+.chip.active{background:var(--ink); color:var(--bg); border-color:var(--ink);}
+
+/* ---------- Lead table / cards ---------- */
+.lead-table-wrap{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md); overflow:hidden;}
+table{width:100%; border-collapse:collapse;}
+thead th{
+  text-align:left; font-size:11px; text-transform:uppercase; letter-spacing:.05em;
+  color:var(--ink-faint); font-weight:600; padding:11px 16px; border-bottom:1px solid var(--border);
+  background:var(--surface-2); white-space:nowrap; cursor:pointer; user-select:none;
+}
+thead th:hover{color:var(--ink);}
+thead th .arrow{opacity:.5; font-size:9px; margin-left:3px;}
+tbody tr{border-bottom:1px solid var(--border); transition:background .1s ease; cursor:pointer;}
+tbody tr:last-child{border-bottom:none;}
+tbody tr:hover{background:var(--surface-2);}
+tbody td{padding:12px 16px; font-size:13px; vertical-align:middle;}
+.lead-name-cell{display:flex; align-items:center; gap:10px;}
+.avatar{
+  width:32px; height:32px; border-radius:50%; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--font-display); font-weight:700; font-size:12px; color:#fff;
+}
+.lead-name{font-weight:600;}
+.lead-company{font-size:12px; color:var(--ink-soft);}
+.status-pill{
+  display:inline-flex; align-items:center; gap:5px;
+  padding:4px 10px; border-radius:20px; font-size:11.5px; font-weight:700;
+}
+.status-pill .dot{width:6px; height:6px; border-radius:50%;}
+.status-Warm{background:var(--warm-soft); color:var(--warm);}
+.status-Future{background:var(--future-soft); color:var(--future);}
+.status-Lost{background:var(--lost-soft); color:var(--lost);}
+.status-Won{background:var(--won-soft); color:var(--won);}
+.mono-date{font-family:var(--font-mono); font-size:12px; color:var(--ink-soft);}
+.row-actions{display:flex; gap:6px; justify-content:flex-end;}
+.row-actions button{
+  width:28px; height:28px; border-radius:6px; border:1px solid var(--border);
+  background:var(--surface); display:flex; align-items:center; justify-content:center; color:var(--ink-soft);
+}
+.row-actions button:hover{background:var(--surface-3); color:var(--ink);}
+.row-actions svg{width:13px; height:13px;}
+
+/* card view for mobile */
+.lead-cards{display:none; flex-direction:column; gap:10px;}
+.lead-card{
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md);
+  padding:14px 16px;
+}
+.lead-card-top{display:flex; justify-content:space-between; align-items:flex-start; gap:10px;}
+.lead-card-meta{display:flex; gap:14px; margin-top:10px; font-size:12px; color:var(--ink-soft); flex-wrap:wrap;}
+.lead-card-meta span{font-family:var(--font-mono);}
+
+/* ---------- Modal ---------- */
+.modal-overlay{
+  position:fixed; inset:0; background:rgba(15,17,22,0.5); backdrop-filter:blur(2px);
+  display:none; align-items:flex-start; justify-content:center; z-index:100; padding:5vh 16px; overflow-y:auto;
+}
+.modal-overlay.open{display:flex; animation:fadeIn .15s ease;}
+@keyframes fadeIn{from{opacity:0} to{opacity:1}}
+.modal{
+  background:var(--surface); border-radius:var(--radius-lg); width:100%; max-width:560px;
+  box-shadow:var(--shadow-lg); animation:modalIn .18s ease; margin-bottom:5vh;
+}
+.modal.wide{max-width:720px;}
+@keyframes modalIn{from{opacity:0; transform:translateY(8px) scale(.98)} to{opacity:1; transform:none}}
+.modal-header{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:18px 22px; border-bottom:1px solid var(--border);
+}
+.modal-title{font-family:var(--font-display); font-weight:700; font-size:16px;}
+.modal-close{background:none; border:none; color:var(--ink-soft); width:30px; height:30px; border-radius:8px; display:flex; align-items:center; justify-content:center;}
+.modal-close:hover{background:var(--surface-2); color:var(--ink);}
+.modal-close svg{width:16px; height:16px;}
+.modal-body{padding:20px 22px; max-height:70vh; overflow-y:auto;}
+.modal-footer{
+  display:flex; justify-content:flex-end; gap:10px; padding:16px 22px; border-top:1px solid var(--border);
+}
+
+.form-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+.form-grid.single{grid-template-columns:1fr;}
+.field{display:flex; flex-direction:column; gap:6px; margin-bottom:14px;}
+.field.full{grid-column:1/-1;}
+.field label{font-size:12px; font-weight:600; color:var(--ink-soft);}
+.field label .req{color:var(--lost);}
+.field input, .field select, .field textarea{
+  border:1px solid var(--border); border-radius:8px; padding:9px 11px; background:var(--surface);
+  color:var(--ink);
+}
+.field input:focus, .field select:focus, .field textarea:focus{border-color:var(--primary);}
+.field textarea{resize:vertical; min-height:70px;}
+.field-error{font-size:11.5px; color:var(--lost); display:none;}
+.field.invalid input, .field.invalid textarea{border-color:var(--lost);}
+.field.invalid .field-error{display:block;}
+
+/* Lead detail modal */
+.detail-header{display:flex; gap:14px; align-items:center;}
+.detail-avatar{width:52px; height:52px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-weight:700; font-size:18px; color:#fff; flex-shrink:0;}
+.detail-name{font-family:var(--font-display); font-weight:700; font-size:18px;}
+.detail-company{font-size:12.5px; color:var(--ink-soft);}
+.detail-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px 20px; margin:18px 0; font-size:13px;}
+.detail-grid .k{color:var(--ink-faint); font-size:11px; text-transform:uppercase; letter-spacing:.04em; margin-bottom:2px;}
+.detail-grid .v{font-weight:500;}
+.detail-notes{background:var(--surface-2); border-radius:8px; padding:12px 14px; font-size:13px; color:var(--ink-soft); margin-bottom:18px; white-space:pre-wrap;}
+
+.timeline-add{display:flex; gap:8px; margin-bottom:16px; flex-wrap:wrap;}
+.timeline-add select, .timeline-add input{flex:1; min-width:110px;}
+.timeline{display:flex; flex-direction:column;}
+.tl-item{display:flex; gap:12px; position:relative; padding-bottom:18px;}
+.tl-item:last-child{padding-bottom:0;}
+.tl-rail{display:flex; flex-direction:column; align-items:center;}
+.tl-dot{width:9px; height:9px; border-radius:50%; background:var(--primary); margin-top:5px; flex-shrink:0;}
+.tl-line{width:1.5px; flex:1; background:var(--border); margin-top:4px;}
+.tl-content{flex:1; padding-bottom:2px;}
+.tl-type{font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.03em; color:var(--primary);}
+.tl-desc{font-size:13px; margin-top:2px;}
+.tl-time{font-family:var(--font-mono); font-size:11px; color:var(--ink-faint); margin-top:3px;}
+.tl-del{background:none; border:none; color:var(--ink-faint); width:24px; height:24px; border-radius:6px; flex-shrink:0;}
+.tl-del:hover{background:var(--lost-soft); color:var(--lost);}
+.tl-del svg{width:12px; height:12px;}
+.load-more-btn{width:100%; margin-top:6px;}
+
+/* ---------- Confirm dialog ---------- */
+.confirm-box{max-width:380px;}
+.confirm-icon{width:44px; height:44px; border-radius:50%; background:var(--lost-soft); color:var(--lost); display:flex; align-items:center; justify-content:center; margin-bottom:14px;}
+.confirm-icon svg{width:20px; height:20px;}
+
+/* ---------- Toasts ---------- */
+#toast-stack{position:fixed; bottom:20px; right:20px; display:flex; flex-direction:column; gap:8px; z-index:200;}
+.toast{
+  background:var(--ink); color:var(--bg); padding:11px 16px; border-radius:9px;
+  font-size:13px; font-weight:500; box-shadow:var(--shadow-lg);
+  display:flex; align-items:center; gap:9px; min-width:220px;
+  animation:toastIn .2s ease;
+}
+[data-theme="dark"] .toast{background:var(--surface-3); color:var(--ink);}
+@keyframes toastIn{from{opacity:0; transform:translateY(8px)} to{opacity:1; transform:none}}
+.toast.success .toast-dot{background:var(--won);}
+.toast.error .toast-dot{background:var(--lost);}
+.toast.info .toast-dot{background:var(--future);}
+.toast-dot{width:7px; height:7px; border-radius:50%; flex-shrink:0;}
+
+/* ---------- Empty state ---------- */
+.empty-state{
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  padding:60px 20px; text-align:center; color:var(--ink-faint);
+}
+.empty-state svg{width:40px; height:40px; margin-bottom:12px; opacity:.5;}
+.empty-state h3{font-family:var(--font-display); color:var(--ink-soft); font-size:15px; margin-bottom:4px;}
+
+/* ---------- PIN lock ---------- */
+#lock-screen{
+  position:fixed; inset:0; background:var(--bg); z-index:500; display:none;
+  align-items:center; justify-content:center; flex-direction:column; gap:16px;
+}
+#lock-screen.open{display:flex;}
+.lock-card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:32px; width:280px; text-align:center; box-shadow:var(--shadow-lg);}
+.lock-dots{display:flex; gap:10px; justify-content:center; margin:16px 0;}
+.lock-dots .d{width:12px; height:12px; border-radius:50%; border:1.5px solid var(--border-strong);}
+.lock-dots .d.filled{background:var(--primary); border-color:var(--primary);}
+.pin-pad{display:grid; grid-template-columns:repeat(3,1fr); gap:8px;}
+.pin-pad button{padding:14px 0; border-radius:10px; border:1px solid var(--border); background:var(--surface-2); font-size:16px; font-weight:600; color:var(--ink);}
+.pin-pad button:hover{background:var(--surface-3);}
+
+/* ---------- Loading ---------- */
+.skeleton{background:linear-gradient(90deg,var(--surface-2) 25%,var(--surface-3) 37%,var(--surface-2) 63%); background-size:400% 100%; animation:shimmer 1.4s ease infinite; border-radius:6px;}
+@keyframes shimmer{0%{background-position:100% 0} 100%{background-position:0 0}}
+
+/* ---------- Responsive ---------- */
+@media (max-width:860px){
+  .sidebar{position:fixed; top:0; left:0; bottom:0; z-index:150; transform:translateX(-100%); box-shadow:var(--shadow-lg);}
+  .sidebar.open{transform:translateX(0);}
+  .hamburger{display:flex;}
+  .stat-grid{grid-template-columns:repeat(2,1fr);}
+  .lead-table-wrap{display:none;}
+  .lead-cards{display:flex;}
+  .form-grid{grid-template-columns:1fr;}
+  .detail-grid{grid-template-columns:1fr 1fr;}
+  #toast-stack{left:12px; right:12px; bottom:12px;}
+  .toast{min-width:0;}
+}
+.sidebar-scrim{display:none; position:fixed; inset:0; background:rgba(0,0,0,.35); z-index:140;}
+.sidebar-scrim.open{display:block;}
+
+.hidden{display:none !important;}
+kbd{font-family:var(--font-mono); font-size:10.5px; background:var(--surface-3); border-radius:4px; padding:1px 5px; border:1px solid var(--border-strong);}
+</style>
+</head>
+<body>
+
+<div id="app">
+  <div class="sidebar-scrim" id="scrim"></div>
+  <!-- ============ SIDEBAR ============ -->
+  <nav class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-mark">P</div>
+      <div>
+        <div class="brand-name">Pipeline</div>
+        <div class="brand-sub">CRM · LOCAL</div>
+      </div>
+    </div>
+
+    <div class="nav-section-label">Workspace</div>
+    <button class="nav-item active" data-view="dashboard">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+      Dashboard
+    </button>
+    <button class="nav-item" data-view="leads">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      Leads <span class="count" id="nav-lead-count">0</span>
+    </button>
+    <button class="nav-item" data-view="reports">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-4"/></svg>
+      Reports
+    </button>
+    <button class="nav-item" data-view="templates">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg>
+      Email templates
+    </button>
+
+    <div class="nav-section-label">Filter by status</div>
+    <button class="nav-item" data-quickfilter="Warm"><span class="stat-dot" style="background:var(--warm)"></span>&nbsp;Warm <span class="count" id="qc-Warm">0</span></button>
+    <button class="nav-item" data-quickfilter="Future"><span class="stat-dot" style="background:var(--future)"></span>&nbsp;Future <span class="count" id="qc-Future">0</span></button>
+    <button class="nav-item" data-quickfilter="Lost"><span class="stat-dot" style="background:var(--lost)"></span>&nbsp;Lost <span class="count" id="qc-Lost">0</span></button>
+    <button class="nav-item" data-quickfilter="Won"><span class="stat-dot" style="background:var(--won)"></span>&nbsp;Won <span class="count" id="qc-Won">0</span></button>
+
+    <div class="sidebar-footer">
+      <button class="nav-item" id="btn-export">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Export data
+      </button>
+      <button class="nav-item" id="btn-import">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        Import data
+      </button>
+      <input type="file" id="import-file" accept="application/json" class="hidden">
+      <button class="nav-item" id="btn-guide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 2-3 4"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        User guide
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============ MAIN ============ -->
+  <div class="main">
+    <header class="topbar">
+      <button class="hamburger" id="btn-hamburger">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <div class="page-title" id="page-title">Dashboard</div>
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="global-search" placeholder="Search leads, companies, notes…  (/)">
+      </div>
+      <div class="topbar-spacer"></div>
+      <button class="icon-btn" id="btn-theme" title="Toggle dark mode">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="theme-icon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="icon-btn" id="btn-lock" title="Lock now">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      </button>
+      <button class="btn btn-primary" id="btn-new-lead">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        New lead
+      </button>
+    </header>
+
+    <div class="content"><div class="content-inner" id="view-root">
+      <!-- rendered dynamically -->
+    </div></div>
+  </div>
+</div>
+
+<div id="toast-stack"></div>
+
+<!-- ============ LEAD FORM MODAL ============ -->
+<div class="modal-overlay" id="modal-lead">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title" id="lead-modal-title">New lead</div>
+      <button class="modal-close" data-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <form id="lead-form">
+      <div class="modal-body">
+        <div class="form-grid">
+          <div class="field full" id="f-name">
+            <label>Full name <span class="req">*</span></label>
+            <input type="text" name="name" placeholder="Jordan Lee" required>
+            <div class="field-error">Full name is required.</div>
+          </div>
+          <div class="field">
+            <label>Company / organization</label>
+            <input type="text" name="company" placeholder="Acme Corp">
+          </div>
+          <div class="field" id="f-email">
+            <label>Email address</label>
+            <input type="email" name="email" placeholder="jordan@acme.com">
+            <div class="field-error">Enter a valid email address.</div>
+          </div>
+          <div class="field">
+            <label>Phone number</label>
+            <input type="tel" name="phone" placeholder="+1-555-123-4567">
+          </div>
+          <div class="field">
+            <label>Status</label>
+            <select name="status">
+              <option value="Warm">🟢 Warm</option>
+              <option value="Future">🔵 Future</option>
+              <option value="Lost">🔴 Lost</option>
+              <option value="Won">🟡 Won</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Source</label>
+            <input type="text" name="source" placeholder="Website, referral, event…">
+          </div>
+          <div class="field">
+            <label>Assigned to</label>
+            <input type="text" name="assignedTo" placeholder="Sarah">
+          </div>
+          <div class="field">
+            <label>Next follow-up date</label>
+            <input type="date" name="nextFollowUp">
+          </div>
+          <div class="field full">
+            <label>Tags <span style="font-weight:400; color:var(--ink-faint);">(comma separated)</span></label>
+            <input type="text" name="tags" placeholder="enterprise, priority">
+          </div>
+          <div class="field full">
+            <label>Notes</label>
+            <textarea name="notes" placeholder="Context, requirements, anything worth remembering…"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-ghost" data-close>Cancel</button>
+        <button type="submit" class="btn btn-primary">Save lead</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ============ LEAD DETAIL MODAL ============ -->
+<div class="modal-overlay" id="modal-detail">
+  <div class="modal wide">
+    <div class="modal-header">
+      <div class="modal-title">Lead details</div>
+      <div style="display:flex; gap:8px; align-items:center;">
+        <button class="btn btn-ghost btn-sm" id="detail-edit">Edit</button>
+        <button class="btn btn-danger btn-sm" id="detail-delete">Delete</button>
+        <button class="modal-close" data-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      </div>
+    </div>
+    <div class="modal-body" id="detail-body">
+      <!-- rendered dynamically -->
+    </div>
+  </div>
+</div>
+
+<!-- ============ CONFIRM MODAL ============ -->
+<div class="modal-overlay" id="modal-confirm">
+  <div class="modal confirm-box">
+    <div class="modal-body">
+      <div class="confirm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+      <div class="modal-title" id="confirm-title" style="margin-bottom:6px;">Delete this lead?</div>
+      <div style="color:var(--ink-soft); font-size:13px;" id="confirm-msg">This action can't be undone.</div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" data-close>Cancel</button>
+      <button class="btn btn-danger" id="confirm-ok">Delete</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ TEMPLATES MODAL ============ -->
+<div class="modal-overlay" id="modal-template">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">Email template</div>
+      <button class="modal-close" data-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <form id="template-form">
+      <div class="modal-body">
+        <div class="field full">
+          <label>Template name <span class="req">*</span></label>
+          <input type="text" name="tname" required placeholder="Intro follow-up">
+        </div>
+        <div class="field full">
+          <label>Subject</label>
+          <input type="text" name="tsubject" placeholder="Following up on our chat">
+        </div>
+        <div class="field full">
+          <label>Body</label>
+          <textarea name="tbody" style="min-height:140px;" placeholder="Hi {{name}}, ..."></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-ghost" data-close>Cancel</button>
+        <button type="submit" class="btn btn-primary">Save template</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ============ USER GUIDE MODAL ============ -->
+<div class="modal-overlay" id="modal-guide">
+  <div class="modal wide">
+    <div class="modal-header">
+      <div class="modal-title">User guide</div>
+      <button class="modal-close" data-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div class="modal-body" style="font-size:13.5px; line-height:1.7;">
+      <p style="margin-bottom:12px;"><strong>Pipeline</strong> keeps every lead, contact, and interaction on this device only — nothing is sent anywhere. All data lives in your browser's local storage under the key <code>webinstant_crm_data</code>.</p>
+      <p style="margin-bottom:6px;"><strong>Add a lead</strong> — click "New lead" in the top bar, fill in the fields, and save. Only the full name is required.</p>
+      <p style="margin-bottom:6px;"><strong>Log an interaction</strong> — open a lead's detail view and use the timeline box to add a call, email, meeting, note, or task. Mark "needs follow-up" to surface it on the dashboard.</p>
+      <p style="margin-bottom:6px;"><strong>Search &amp; filter</strong> — the top search box matches name, company, email, and notes. Use the status chips or the sidebar quick filters to narrow the list further.</p>
+      <p style="margin-bottom:6px;"><strong>Bulk actions</strong> — tick the checkboxes on the leads table, then update status or delete several leads at once from the bar that appears.</p>
+      <p style="margin-bottom:6px;"><strong>Back up your data</strong> — use "Export data" to download a JSON snapshot, and "Import data" to restore it (or move it to another computer).</p>
+      <p style="margin-bottom:6px;"><strong>Lock the screen</strong> — set a PIN under the lock icon; the app auto-locks after 5 minutes idle.</p>
+      <p style="margin-bottom:0;"><strong>Shortcuts</strong> — <kbd>/</kbd> focus search, <kbd>N</kbd> new lead, <kbd>Esc</kbd> close dialogs.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SET PIN MODAL ============ -->
+<div class="modal-overlay" id="modal-setpin">
+  <div class="modal confirm-box">
+    <div class="modal-header">
+      <div class="modal-title">Set a lock PIN</div>
+      <button class="modal-close" data-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:12.5px; color:var(--ink-soft); margin-bottom:12px;">Choose a 4-digit PIN to lock this CRM. Leave blank and save to remove an existing PIN.</p>
+      <div class="field full">
+        <label>4-digit PIN</label>
+        <input type="password" id="setpin-input" maxlength="4" inputmode="numeric" placeholder="••••">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" data-close>Cancel</button>
+      <button class="btn btn-primary" id="setpin-save">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ LOCK SCREEN ============ -->
+<div id="lock-screen">
+  <div class="lock-card">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="26" height="26" style="color:var(--primary); margin-bottom:6px;"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+    <div style="font-family:var(--font-display); font-weight:700; font-size:15px;">Pipeline is locked</div>
+    <div style="font-size:12px; color:var(--ink-soft);">Enter your PIN to continue</div>
+    <div class="lock-dots" id="lock-dots">
+      <div class="d"></div><div class="d"></div><div class="d"></div><div class="d"></div>
+    </div>
+    <div class="pin-pad" id="pin-pad">
+      <button data-k="1">1</button><button data-k="2">2</button><button data-k="3">3</button>
+      <button data-k="4">4</button><button data-k="5">5</button><button data-k="6">6</button>
+      <button data-k="7">7</button><button data-k="8">8</button><button data-k="9">9</button>
+      <button data-k="clear">C</button><button data-k="0">0</button><button data-k="back">⌫</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* ==================================================================
+   STATE & STORAGE
+   ================================================================== */
+const STORAGE_KEY = "webinstant_crm_data";
+const SETTINGS_KEY = "webinstant_crm_settings";
+
+const AVATAR_COLORS = ["#3D5A80","#7B6CC7","#E08A3C","#1FA394","#C4554D","#5B7C99","#9C7ABF"];
+const STATUS_COLORS = {Warm:"var(--warm)", Future:"var(--future)", Lost:"var(--lost)", Won:"var(--won)"};
+const STATUS_HEX = {Warm:"#E08A3C", Future:"#7B6CC7", Lost:"#C4554D", Won:"#1FA394"};
+
+let state = {
+  leads: [],
+  templates: []
+};
+let settings = {
+  theme: "light",
+  pin: null
+};
+
+let ui = {
+  view: "dashboard",
+  search: "",
+  statusFilter: "All",
+  assigneeFilter: "All",
+  sortBy: "createdAt",
+  sortDir: "desc",
+  quickFilter: null,
+  selectedLeadIds: new Set(),
+  timelineShown: 10,
+  currentDetailId: null,
+  editingId: null,
+  pendingPin: "",
+  idleTimer: null
+};
+
+function uid(prefix){ return prefix + "_" + Date.now().toString(36) + Math.random().toString(36).slice(2,8); }
+function nowIso(){ return new Date().toISOString(); }
+
+function loadState(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if(raw){ state = JSON.parse(raw); }
+    else { seedSampleData(); saveState(); }
+  }catch(e){ console.error("Load failed", e); seedSampleData(); }
+  if(!state.templates) state.templates = [];
+}
+function saveState(){
+  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+  catch(e){ toast("Couldn't save — storage may be full.", "error"); }
+}
+function loadSettings(){
+  try{
+    const raw = localStorage.getItem(SETTINGS_KEY);
+    if(raw) settings = Object.assign(settings, JSON.parse(raw));
+  }catch(e){}
+  document.documentElement.setAttribute("data-theme", settings.theme);
+}
+function saveSettings(){ localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings)); }
+
+function seedSampleData(){
+  const days = n => new Date(Date.now() - n*86400000).toISOString();
+  const inDays = n => new Date(Date.now() + n*86400000).toISOString().slice(0,10);
+  state.leads = [
+    {id:uid("lead"), name:"Amara Okafor", company:"Northstar Retail", email:"amara@northstarretail.com", phone:"+1-415-555-0114", status:"Warm", source:"Website", notes:"Interested in the enterprise plan, wants a demo for her ops team.", assignedTo:"Sarah", tags:["enterprise","priority"], createdAt:days(21), lastContact:days(2), nextFollowUp:inDays(3),
+      interactions:[
+        {id:uid("int"), date:days(2), type:"Call", description:"Walked through pricing tiers, she'll loop in finance.", followUp:true},
+        {id:uid("int"), date:days(9), type:"Email", description:"Sent case study for retail customers.", followUp:false},
+      ]},
+    {id:uid("lead"), name:"Devon Park", company:"Kestrel Logistics", email:"devon.park@kestrellog.com", phone:"+1-212-555-0199", status:"Future", source:"Referral", notes:"Not ready until next fiscal year, but stay in touch quarterly.", assignedTo:"Marcus", tags:["long-term"], createdAt:days(60), lastContact:days(14), nextFollowUp:inDays(30),
+      interactions:[
+        {id:uid("int"), date:days(14), type:"Meeting", description:"Intro call, budget locked until Q1.", followUp:true},
+      ]},
+    {id:uid("lead"), name:"Priya Chandran", company:"Bloomfield & Co.", email:"priya@bloomfieldco.com", phone:"+1-312-555-0142", status:"Won", source:"Trade show", notes:"Signed annual contract — 40 seats.", assignedTo:"Sarah", tags:["closed","annual"], createdAt:days(45), lastContact:days(1), nextFollowUp:inDays(90),
+      interactions:[
+        {id:uid("int"), date:days(1), type:"Note", description:"Contract signed, kickoff scheduled with CS team.", followUp:false},
+        {id:uid("int"), date:days(6), type:"Call", description:"Negotiated final seat count and pricing.", followUp:false},
+      ]},
+    {id:uid("lead"), name:"Marcus Webb", company:"Iron Gate Security", email:"mwebb@irongatesec.com", phone:"+1-713-555-0177", status:"Lost", source:"Cold outreach", notes:"Went with a competitor on price.", assignedTo:"Jordan", tags:[], createdAt:days(70), lastContact:days(40), nextFollowUp:"",
+      interactions:[
+        {id:uid("int"), date:days(40), type:"Email", description:"Confirmed they signed with another vendor.", followUp:false},
+      ]},
+    {id:uid("lead"), name:"Liu Wei", company:"Cascade Biotech", email:"liu.wei@cascadebio.com", phone:"+1-206-555-0163", status:"Warm", source:"Webinar", notes:"Evaluating three vendors, technical eval next week.", assignedTo:"Marcus", tags:["technical-eval"], createdAt:days(10), lastContact:days(0), nextFollowUp:inDays(1),
+      interactions:[
+        {id:uid("int"), date:days(0), type:"Meeting", description:"Technical deep-dive with their IT lead.", followUp:true},
+      ]},
+    {id:uid("lead"), name:"Sofia Martinez", company:"Harborline Freight", email:"sofia@harborlinefreight.com", phone:"+1-305-555-0188", status:"Future", source:"Website", notes:"", assignedTo:"Jordan", tags:[], createdAt:days(5), lastContact:days(5), nextFollowUp:inDays(14),
+      interactions:[]},
+    {id:uid("lead"), name:"Tom Bergqvist", company:"Nordwind Energy", email:"tom.b@nordwindenergy.com", phone:"+46-70-555-0121", status:"Warm", source:"Partner referral", notes:"Wants multi-region rollout, legal reviewing MSA.", assignedTo:"Sarah", tags:["enterprise"], createdAt:days(15), lastContact:days(3), nextFollowUp:inDays(5),
+      interactions:[
+        {id:uid("int"), date:days(3), type:"Task", description:"Send updated MSA redline to their legal team.", followUp:true},
+      ]},
+  ];
+  state.templates = [
+    {id:uid("tpl"), name:"Intro follow-up", subject:"Great speaking with you", body:"Hi {{name}},\n\nThanks for the time today — following up as promised with more detail on next steps.\n\nBest,\n"},
+    {id:uid("tpl"), name:"Re-engagement", subject:"Checking back in", body:"Hi {{name}},\n\nIt's been a little while — wanted to check if now's a better time to revisit this.\n\nBest,\n"}
+  ];
+}
+
+/* ==================================================================
+   TOASTS
+   ================================================================== */
+function toast(msg, type){
+  type = type || "info";
+  const stack = document.getElementById("toast-stack");
+  const el = document.createElement("div");
+  el.className = "toast " + type;
+  el.innerHTML = '<span class="toast-dot"></span><span></span>';
+  el.querySelector("span:last-child").textContent = msg;
+  stack.appendChild(el);
+  setTimeout(()=>{ el.style.transition="opacity .25s ease, transform .25s ease"; el.style.opacity="0"; el.style.transform="translateY(6px)"; setTimeout(()=>el.remove(),260); }, 3200);
+}
+
+/* ==================================================================
+   HELPERS
+   ================================================================== */
+function fmtDate(iso){
+  if(!iso) return "—";
+  const d = new Date(iso);
+  if(isNaN(d)) return "—";
+  return d.toLocaleDateString(undefined,{month:"short", day:"numeric", year:"numeric"});
+}
+function fmtDateTime(iso){
+  if(!iso) return "—";
+  const d = new Date(iso);
+  if(isNaN(d)) return "—";
+  return d.toLocaleDateString(undefined,{month:"short", day:"numeric"}) + " · " + d.toLocaleTimeString(undefined,{hour:"numeric", minute:"2-digit"});
+}
+function timeAgo(iso){
+  const diff = Date.now() - new Date(iso).getTime();
+  const m = Math.floor(diff/60000);
+  if(m < 1) return "just now";
+  if(m < 60) return m + "m ago";
+  const h = Math.floor(m/60);
+  if(h < 24) return h + "h ago";
+  const d = Math.floor(h/24);
+  if(d < 30) return d + "d ago";
+  return fmtDate(iso);
+}
+function initials(name){
+  return name.trim().split(/\s+/).map(p=>p[0]).slice(0,2).join("").toUpperCase();
+}
+function avatarColor(name){
+  let sum=0; for(let i=0;i<name.length;i++) sum += name.charCodeAt(i);
+  return AVATAR_COLORS[sum % AVATAR_COLORS.length];
+}
+function escapeHtml(str){
+  return String(str||"").replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+function debounce(fn, ms){
+  let t; return function(...args){ clearTimeout(t); t=setTimeout(()=>fn.apply(this,args), ms); };
+}
+
+/* ==================================================================
+   DERIVED DATA
+   ================================================================== */
+function getFilteredLeads(){
+  let list = state.leads.slice();
+  const q = ui.search.trim().toLowerCase();
+  if(q){
+    list = list.filter(l =>
+      (l.name||"").toLowerCase().includes(q) ||
+      (l.company||"").toLowerCase().includes(q) ||
+      (l.email||"").toLowerCase().includes(q) ||
+      (l.notes||"").toLowerCase().includes(q)
+    );
+  }
+  const statusFilter = ui.quickFilter || (ui.statusFilter !== "All" ? ui.statusFilter : null);
+  if(statusFilter) list = list.filter(l => l.status === statusFilter);
+  if(ui.assigneeFilter !== "All") list = list.filter(l => l.assignedTo === ui.assigneeFilter);
+
+  list.sort((a,b)=>{
+    let av = a[ui.sortBy] || "", bv = b[ui.sortBy] || "";
+    if(ui.sortBy === "name" || ui.sortBy === "company"){ av = av.toLowerCase(); bv = bv.toLowerCase(); }
+    if(av < bv) return ui.sortDir === "asc" ? -1 : 1;
+    if(av > bv) return ui.sortDir === "asc" ? 1 : -1;
+    return 0;
+  });
+  return list;
+}
+function getAssignees(){
+  return [...new Set(state.leads.map(l=>l.assignedTo).filter(Boolean))].sort();
+}
+function statusCounts(){
+  const c = {Warm:0, Future:0, Lost:0, Won:0};
+  state.leads.forEach(l => { if(c[l.status] !== undefined) c[l.status]++; });
+  return c;
+}
+
+/* ==================================================================
+   RENDER: ROUTER
+   ================================================================== */
+const titles = {dashboard:"Dashboard", leads:"Leads", reports:"Reports", templates:"Email templates"};
+function render(){
+  document.getElementById("page-title").textContent = titles[ui.view] || "Pipeline";
+  document.querySelectorAll(".nav-item[data-view]").forEach(el=>{
+    el.classList.toggle("active", el.dataset.view === ui.view);
+  });
+  updateSidebarCounts();
+  const root = document.getElementById("view-root");
+  if(ui.view === "dashboard") root.innerHTML = renderDashboard();
+  else if(ui.view === "leads") root.innerHTML = renderLeadsView();
+  else if(ui.view === "reports") root.innerHTML = renderReports();
+  else if(ui.view === "templates") root.innerHTML = renderTemplates();
+  attachViewHandlers();
+}
+function updateSidebarCounts(){
+  document.getElementById("nav-lead-count").textContent = state.leads.length;
+  const c = statusCounts();
+  ["Warm","Future","Lost","Won"].forEach(s => document.getElementById("qc-"+s).textContent = c[s]);
+}
+
+/* ---------- Dashboard ---------- */
+function renderDashboard(){
+  const c = statusCounts();
+  const total = state.leads.length;
+  const pct = v => total ? Math.max(v/total*100, v>0?4:0) : 0;
+
+  const segs = ["Warm","Future","Won","Lost"].map(s=>{
+    const w = pct(c[s]);
+    if(w<=0) return "";
+    return `<div class="pipeline-seg" style="flex-basis:${w}%; background:${STATUS_HEX[s]};">${c[s]>0? c[s]:""}</div>`;
+  }).join("");
+
+  const recentInteractions = [];
+  state.leads.forEach(l => (l.interactions||[]).forEach(i => recentInteractions.push({...i, leadName:l.name, leadId:l.id})));
+  recentInteractions.sort((a,b)=> new Date(b.date) - new Date(a.date));
+  const feedHtml = recentInteractions.slice(0,8).map(i => `
+    <div class="feed-item">
+      <div class="feed-icon">${typeEmoji(i.type)}</div>
+      <div class="feed-body">
+        <div class="feed-title">${escapeHtml(i.leadName)} <span>· ${escapeHtml(i.type)}</span></div>
+        <div class="feed-desc">${escapeHtml(i.description||"")}</div>
+        <div class="feed-time">${timeAgo(i.date)}</div>
+      </div>
+    </div>`).join("") || `<div class="empty-note">No interactions logged yet.</div>`;
+
+  const today = new Date().toISOString().slice(0,10);
+  const followUps = state.leads.filter(l=>l.nextFollowUp).sort((a,b)=> new Date(a.nextFollowUp)-new Date(b.nextFollowUp)).slice(0,8);
+  const fuHtml = followUps.map(l=>{
+    const overdue = l.nextFollowUp < today;
+    return `<div class="followup-item" data-open-lead="${l.id}" style="cursor:pointer;">
+      <span class="followup-date ${overdue?"overdue":""}">${fmtDate(l.nextFollowUp)}</span>
+      <span class="followup-name">${escapeHtml(l.name)} <span>${escapeHtml(l.company||"")}</span></span>
+    </div>`;
+  }).join("") || `<div class="empty-note">No follow-ups scheduled.</div>`;
+
+  return `
+    <div class="stat-grid">
+      ${statCard("total","Total leads", total)}
+      ${statCard("warm","Warm", c.Warm)}
+      ${statCard("future","Future", c.Future)}
+      ${statCard("lost","Lost", c.Lost)}
+      ${statCard("won","Won", c.Won)}
+    </div>
+
+    <div class="section-heading">Pipeline flow <span class="hint">share of leads by current status</span></div>
+    <div class="pipeline-flow">
+      <div class="pipeline-track">${segs || `<div class="pipeline-seg" style="flex-basis:100%; background:var(--surface-3); color:var(--ink-faint);">No leads yet</div>`}</div>
+      <div class="pipeline-legend">
+        ${["Warm","Future","Won","Lost"].map(s=>`<div class="pipeline-legend-item"><span class="sw" style="background:${STATUS_HEX[s]}"></span>${s} — ${c[s]}</div>`).join("")}
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <div class="section-heading">Recent activity</div>
+        <div class="feed">${feedHtml}</div>
+      </div>
+      <div>
+        <div class="section-heading">Upcoming follow-ups</div>
+        <div class="feed">${fuHtml}</div>
+      </div>
+    </div>
+  `;
+}
+function statCard(cls,label,value){
+  return `<div class="stat-card ${cls}"><div class="stat-label">${label}</div><div class="stat-value">${value}</div></div>`;
+}
+function typeEmoji(t){
+  return {Call:"📞", Email:"✉️", Meeting:"🗓️", Note:"📝", Task:"✅"}[t] || "•";
+}
+
+/* ---------- Leads view ---------- */
+function renderLeadsView(){
+  const leads = getFilteredLeads();
+  const assignees = getAssignees();
+  const arrow = col => ui.sortBy===col ? `<span class="arrow">${ui.sortDir==="asc"?"▲":"▼"}</span>` : "";
+
+  const chips = ["All","Warm","Future","Lost","Won"].map(s=>{
+    const active = (ui.quickFilter||ui.statusFilter) === s || (s==="All" && !ui.quickFilter && ui.statusFilter==="All");
+    return `<button class="chip ${active?"active":""}" data-chip="${s}">${s}</button>`;
+  }).join("");
+
+  const rowsHtml = leads.map(l => leadRowHtml(l)).join("");
+  const cardsHtml = leads.map(l => leadCardHtml(l)).join("");
+
+  const bulkBar = ui.selectedLeadIds.size > 0 ? `
+    <div class="toolbar" style="background:var(--primary-soft); padding:9px 14px; border-radius:8px;">
+      <strong style="font-size:13px;">${ui.selectedLeadIds.size} selected</strong>
+      <select class="select" id="bulk-status">
+        <option value="">Set status…</option>
+        <option value="Warm">Warm</option><option value="Future">Future</option>
+        <option value="Lost">Lost</option><option value="Won">Won</option>
+      </select>
+      <button class="btn btn-danger btn-sm" id="bulk-delete">Delete selected</button>
+      <button class="btn btn-ghost btn-sm" id="bulk-clear">Clear</button>
+    </div>` : "";
+
+  return `
+    <div class="toolbar">
+      <div class="chip-row">${chips}</div>
+      <div class="topbar-spacer"></div>
+      <select class="select" id="filter-assignee">
+        <option value="All">All employees</option>
+        ${assignees.map(a=>`<option value="${escapeHtml(a)}" ${ui.assigneeFilter===a?"selected":""}>${escapeHtml(a)}</option>`).join("")}
+      </select>
+      <select class="select" id="sort-by">
+        <option value="name" ${ui.sortBy==="name"?"selected":""}>Sort: Name</option>
+        <option value="createdAt" ${ui.sortBy==="createdAt"?"selected":""}>Sort: Date added</option>
+        <option value="lastContact" ${ui.sortBy==="lastContact"?"selected":""}>Sort: Last contact</option>
+        <option value="nextFollowUp" ${ui.sortBy==="nextFollowUp"?"selected":""}>Sort: Next follow-up</option>
+      </select>
+    </div>
+    ${bulkBar}
+    <div style="margin-top:12px;">
+    ${leads.length===0 ? emptyState() : `
+    <div class="lead-table-wrap">
+      <table>
+        <thead><tr>
+          <th style="width:34px;"><input type="checkbox" id="select-all"></th>
+          <th data-sort="name">Lead ${arrow("name")}</th>
+          <th>Status</th>
+          <th>Contact</th>
+          <th data-sort="lastContact">Last contact ${arrow("lastContact")}</th>
+          <th data-sort="nextFollowUp">Next follow-up ${arrow("nextFollowUp")}</th>
+          <th>Assigned</th>
+          <th style="text-align:right;">Actions</th>
+        </tr></thead>
+        <tbody>${rowsHtml}</tbody>
+      </table>
+    </div>
+    <div class="lead-cards">${cardsHtml}</div>
+    `}
+    </div>
+  `;
+}
+function emptyState(){
+  return `<div class="empty-state">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <h3>No leads match</h3>
+    <div>Try clearing filters or add a new lead.</div>
+  </div>`;
+}
+function leadRowHtml(l){
+  const checked = ui.selectedLeadIds.has(l.id) ? "checked" : "";
+  return `<tr data-open="${l.id}">
+    <td onclick="event.stopPropagation()"><input type="checkbox" class="row-check" data-id="${l.id}" ${checked}></td>
+    <td>
+      <div class="lead-name-cell">
+        <div class="avatar" style="background:${avatarColor(l.name)}">${initials(l.name)}</div>
+        <div><div class="lead-name">${escapeHtml(l.name)}</div><div class="lead-company">${escapeHtml(l.company||"—")}</div></div>
+      </div>
+    </td>
+    <td>${statusPill(l.status)}</td>
+    <td><div style="font-size:12.5px;">${escapeHtml(l.email||"—")}</div><div style="font-size:11.5px; color:var(--ink-faint);">${escapeHtml(l.phone||"")}</div></td>
+    <td class="mono-date">${fmtDate(l.lastContact)}</td>
+    <td class="mono-date">${fmtDate(l.nextFollowUp)}</td>
+    <td>${escapeHtml(l.assignedTo||"—")}</td>
+    <td onclick="event.stopPropagation()">
+      <div class="row-actions">
+        <button data-edit="${l.id}" title="Edit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+        <button data-delete="${l.id}" title="Delete"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/></svg></button>
+      </div>
+    </td>
+  </tr>`;
+}
+function leadCardHtml(l){
+  return `<div class="lead-card" data-open="${l.id}">
+    <div class="lead-card-top">
+      <div class="lead-name-cell">
+        <div class="avatar" style="background:${avatarColor(l.name)}">${initials(l.name)}</div>
+        <div><div class="lead-name">${escapeHtml(l.name)}</div><div class="lead-company">${escapeHtml(l.company||"—")}</div></div>
+      </div>
+      ${statusPill(l.status)}
+    </div>
+    <div class="lead-card-meta">
+      <span>Last: ${fmtDate(l.lastContact)}</span>
+      <span>Next: ${fmtDate(l.nextFollowUp)}</span>
+      <span>${escapeHtml(l.assignedTo||"Unassigned")}</span>
+    </div>
+  </div>`;
+}
+function statusPill(status){
+  return `<span class="status-pill status-${status}"><span class="dot" style="background:${STATUS_HEX[status]||"#999"}"></span>${status}</span>`;
+}
+
+/* ---------- Reports view ---------- */
+function renderReports(){
+  const c = statusCounts();
+  const total = state.leads.length;
+  const bySource = {};
+  state.leads.forEach(l => { const s = l.source||"Unknown"; bySource[s] = (bySource[s]||0)+1; });
+  const byAssignee = {};
+  state.leads.forEach(l => { const a = l.assignedTo||"Unassigned"; byAssignee[a] = (byAssignee[a]||0)+1; });
+  const winRate = total ? Math.round((c.Won/total)*100) : 0;
+
+  const barList = (obj) => Object.entries(obj).sort((a,b)=>b[1]-a[1]).map(([k,v])=>{
+    const pct = total ? Math.round(v/total*100) : 0;
+    return `<div style="margin-bottom:10px;">
+      <div style="display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:4px;"><span>${escapeHtml(k)}</span><span style="color:var(--ink-soft)">${v}</span></div>
+      <div style="height:7px; background:var(--surface-2); border-radius:4px; overflow:hidden;"><div style="height:100%; width:${pct}%; background:var(--primary);"></div></div>
+    </div>`;
+  }).join("") || `<div class="empty-note">No data yet.</div>`;
+
+  return `
+    <div class="stat-grid" style="grid-template-columns:repeat(3,1fr);">
+      ${statCard("total","Total leads", total)}
+      ${statCard("won","Win rate", winRate + "%")}
+      ${statCard("lost","Lost this period", c.Lost)}
+    </div>
+    <div class="two-col">
+      <div>
+        <div class="section-heading">Leads by source</div>
+        <div class="feed" style="padding:16px 18px;">${barList(bySource)}</div>
+      </div>
+      <div>
+        <div class="section-heading">Leads by employee</div>
+        <div class="feed" style="padding:16px 18px;">${barList(byAssignee)}</div>
+      </div>
+    </div>
+    <div class="section-heading">Printable summary <span class="hint">use your browser's print dialog to save as PDF</span></div>
+    <div class="feed" style="padding:18px; display:flex; justify-content:space-between; align-items:center;">
+      <div style="font-size:13px; color:var(--ink-soft);">Generates a clean, print-friendly report of all current leads.</div>
+      <button class="btn btn-primary btn-sm" id="btn-print-report">Print report</button>
+    </div>
+  `;
+}
+
+/* ---------- Templates view ---------- */
+function renderTemplates(){
+  const list = state.templates.map(t => `
+    <div class="feed-item" style="align-items:flex-start;">
+      <div class="feed-icon">✉️</div>
+      <div class="feed-body">
+        <div class="feed-title">${escapeHtml(t.name)}</div>
+        <div class="feed-desc"><strong>${escapeHtml(t.subject||"")}</strong></div>
+        <div class="feed-desc" style="white-space:pre-wrap;">${escapeHtml((t.body||"").slice(0,160))}${(t.body||"").length>160?"…":""}</div>
+      </div>
+      <div class="row-actions">
+        <button data-copy-tpl="${t.id}" title="Copy body"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        <button data-del-tpl="${t.id}" title="Delete"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg></button>
+      </div>
+    </div>`).join("") || `<div class="empty-note">No templates yet — create one to speed up outreach.</div>`;
+
+  return `
+    <div class="section-heading">Templates <span class="hint">use {{name}} to personalize</span></div>
+    <div style="margin-bottom:14px;"><button class="btn btn-primary" id="btn-new-template">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      New template</button></div>
+    <div class="feed">${list}</div>
+  `;
+}
+
+/* ==================================================================
+   MODALS: open/close
+   ================================================================== */
+function openModal(id){ document.getElementById(id).classList.add("open"); }
+function closeModal(id){ document.getElementById(id).classList.remove("open"); }
+function closeAllModals(){ document.querySelectorAll(".modal-overlay").forEach(m=>m.classList.remove("open")); }
+
+document.querySelectorAll("[data-close]").forEach(btn=>{
+  btn.addEventListener("click", (e)=> closeModal(e.target.closest(".modal-overlay").id));
+});
+document.querySelectorAll(".modal-overlay").forEach(ov=>{
+  ov.addEventListener("click", (e)=>{ if(e.target === ov) closeModal(ov.id); });
+});
+document.addEventListener("keydown", (e)=>{
+  if(e.key === "Escape") closeAllModals();
+  if(e.key === "/" && document.activeElement.tagName !== "INPUT" && document.activeElement.tagName !== "TEXTAREA"){
+    e.preventDefault(); document.getElementById("global-search").focus();
+  }
+  if((e.key === "n" || e.key === "N") && document.activeElement.tagName !== "INPUT" && document.activeElement.tagName !== "TEXTAREA"){
+    openLeadForm(null);
+  }
+});
+
+/* ==================================================================
+   LEAD FORM
+   ================================================================== */
+function openLeadForm(leadId){
+  ui.editingId = leadId;
+  const form = document.getElementById("lead-form");
+  form.reset();
+  ["f-name","f-email"].forEach(id=>document.getElementById(id).classList.remove("invalid"));
+  document.getElementById("lead-modal-title").textContent = leadId ? "Edit lead" : "New lead";
+  if(leadId){
+    const l = state.leads.find(x=>x.id===leadId);
+    if(l){
+      form.name.value = l.name||"";
+      form.company.value = l.company||"";
+      form.email.value = l.email||"";
+      form.phone.value = l.phone||"";
+      form.status.value = l.status||"Warm";
+      form.source.value = l.source||"";
+      form.assignedTo.value = l.assignedTo||"";
+      form.nextFollowUp.value = l.nextFollowUp||"";
+      form.tags.value = (l.tags||[]).join(", ");
+      form.notes.value = l.notes||"";
+    }
+  }
+  openModal("modal-lead");
+  setTimeout(()=>form.name.focus(), 50);
+}
+
+document.getElementById("lead-form").addEventListener("submit", function(e){
+  e.preventDefault();
+  const form = e.target;
+  const name = form.name.value.trim();
+  const email = form.email.value.trim();
+  let valid = true;
+  const fName = document.getElementById("f-name"), fEmail = document.getElementById("f-email");
+  fName.classList.toggle("invalid", !name);
+  if(!name) valid = false;
+  const emailOk = !email || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  fEmail.classList.toggle("invalid", !emailOk);
+  if(!emailOk) valid = false;
+  if(!valid) return;
+
+  const tags = form.tags.value.split(",").map(t=>t.trim()).filter(Boolean);
+
+  if(ui.editingId){
+    const l = state.leads.find(x=>x.id===ui.editingId);
+    Object.assign(l, {
+      name, company: form.company.value.trim(), email, phone: form.phone.value.trim(),
+      status: form.status.value, source: form.source.value.trim(), assignedTo: form.assignedTo.value.trim(),
+      nextFollowUp: form.nextFollowUp.value, tags, notes: form.notes.value.trim()
+    });
+    toast("Lead updated", "success");
+  } else {
+    state.leads.unshift({
+      id: uid("lead"), name, company: form.company.value.trim(), email, phone: form.phone.value.trim(),
+      status: form.status.value, source: form.source.value.trim(), assignedTo: form.assignedTo.value.trim(),
+      notes: form.notes.value.trim(), tags,
+      createdAt: nowIso(), lastContact: nowIso(), nextFollowUp: form.nextFollowUp.value,
+      interactions: []
+    });
+    toast("Lead added", "success");
+  }
+  saveState();
+  closeModal("modal-lead");
+  render();
+});
+
+/* ==================================================================
+   LEAD DETAIL
+   ================================================================== */
+function openLeadDetail(id){
+  ui.currentDetailId = id;
+  ui.timelineShown = 10;
+  renderDetail();
+  openModal("modal-detail");
+}
+function renderDetail(){
+  const l = state.leads.find(x=>x.id===ui.currentDetailId);
+  if(!l){ closeModal("modal-detail"); return; }
+  const interactions = (l.interactions||[]).slice().sort((a,b)=> new Date(b.date)-new Date(a.date));
+  const shown = interactions.slice(0, ui.timelineShown);
+  const tlHtml = shown.map((i,idx)=>`
+    <div class="tl-item">
+      <div class="tl-rail"><div class="tl-dot"></div>${idx<shown.length-1?'<div class="tl-line"></div>':""}</div>
+      <div class="tl-content">
+        <div style="display:flex; justify-content:space-between; gap:8px;">
+          <div>
+            <div class="tl-type">${typeEmoji(i.type)} ${escapeHtml(i.type)}${i.followUp?' <span style="color:var(--warm)">· follow-up needed</span>':""}</div>
+            <div class="tl-desc">${escapeHtml(i.description||"")}</div>
+            <div class="tl-time">${fmtDateTime(i.date)}</div>
+          </div>
+          <button class="tl-del" data-del-int="${i.id}" title="Delete"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+        </div>
+      </div>
+    </div>`).join("") || `<div class="empty-note">No interactions logged yet.</div>`;
+
+  const loadMore = interactions.length > ui.timelineShown ? `<button class="btn btn-ghost btn-sm load-more-btn" id="tl-load-more">Load more (${interactions.length - ui.timelineShown} remaining)</button>` : "";
+
+  document.getElementById("detail-body").innerHTML = `
+    <div class="detail-header">
+      <div class="detail-avatar" style="background:${avatarColor(l.name)}">${initials(l.name)}</div>
+      <div>
+        <div class="detail-name">${escapeHtml(l.name)}</div>
+        <div class="detail-company">${escapeHtml(l.company||"No company listed")}</div>
+      </div>
+      <div style="margin-left:auto;">${statusPill(l.status)}</div>
+    </div>
+    <div class="detail-grid">
+      <div><div class="k">Email</div><div class="v">${escapeHtml(l.email||"—")}</div></div>
+      <div><div class="k">Phone</div><div class="v">${escapeHtml(l.phone||"—")}</div></div>
+      <div><div class="k">Source</div><div class="v">${escapeHtml(l.source||"—")}</div></div>
+      <div><div class="k">Assigned to</div><div class="v">${escapeHtml(l.assignedTo||"—")}</div></div>
+      <div><div class="k">Created</div><div class="v">${fmtDate(l.createdAt)}</div></div>
+      <div><div class="k">Last contact</div><div class="v">${fmtDate(l.lastContact)}</div></div>
+      <div><div class="k">Next follow-up</div><div class="v">${fmtDate(l.nextFollowUp)}</div></div>
+      <div><div class="k">Tags</div><div class="v">${(l.tags||[]).map(t=>escapeHtml(t)).join(", ")||"—"}</div></div>
+    </div>
+    ${l.notes ? `<div class="detail-notes">${escapeHtml(l.notes)}</div>` : ""}
+
+    <div class="section-heading" style="margin-top:6px;">Log an interaction</div>
+    <form id="interaction-form">
+      <div class="timeline-add">
+        <select name="itype">
+          <option>Call</option><option>Email</option><option>Meeting</option><option>Note</option><option>Task</option>
+        </select>
+        <input type="text" name="idesc" placeholder="What happened?" required style="flex:2;">
+        <label style="display:flex; align-items:center; gap:6px; font-size:12px; color:var(--ink-soft); white-space:nowrap;">
+          <input type="checkbox" name="ifollow" style="width:auto;"> Needs follow-up
+        </label>
+        <button class="btn btn-primary btn-sm" type="submit">Add</button>
+      </div>
+    </form>
+
+    <div class="section-heading">Timeline</div>
+    <div class="timeline">${tlHtml}</div>
+    ${loadMore}
+  `;
+
+  document.getElementById("interaction-form").addEventListener("submit", function(e){
+    e.preventDefault();
+    const f = e.target;
+    const desc = f.idesc.value.trim();
+    if(!desc) return;
+    l.interactions = l.interactions || [];
+    l.interactions.push({id:uid("int"), date: nowIso(), type: f.itype.value, description: desc, followUp: f.ifollow.checked});
+    l.lastContact = nowIso();
+    saveState();
+    toast("Interaction logged", "success");
+    renderDetail();
+    render();
+  });
+
+  document.querySelectorAll("[data-del-int]").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      l.interactions = (l.interactions||[]).filter(i=>i.id !== btn.dataset.delInt);
+      saveState();
+      renderDetail();
+      render();
+      toast("Interaction removed", "info");
+    });
+  });
+  const loadMoreBtn = document.getElementById("tl-load-more");
+  if(loadMoreBtn) loadMoreBtn.addEventListener("click", ()=>{ ui.timelineShown += 10; renderDetail(); });
+}
+
+document.getElementById("detail-edit").addEventListener("click", ()=>{
+  closeModal("modal-detail");
+  openLeadForm(ui.currentDetailId);
+});
+document.getElementById("detail-delete").addEventListener("click", ()=>{
+  confirmDialog("Delete this lead?", "This removes the lead and its full interaction history. This can't be undone.", ()=>{
+    state.leads = state.leads.filter(l=>l.id !== ui.currentDetailId);
+    saveState();
+    closeModal("modal-detail");
+    render();
+    toast("Lead deleted", "info");
+  });
+});
+
+/* ==================================================================
+   CONFIRM DIALOG
+   ================================================================== */
+let confirmCallback = null;
+function confirmDialog(title, msg, onConfirm){
+  document.getElementById("confirm-title").textContent = title;
+  document.getElementById("confirm-msg").textContent = msg;
+  confirmCallback = onConfirm;
+  openModal("modal-confirm");
+}
+document.getElementById("confirm-ok").addEventListener("click", ()=>{
+  if(confirmCallback) confirmCallback();
+  confirmCallback = null;
+  closeModal("modal-confirm");
+});
+
+/* ==================================================================
+   VIEW-LEVEL EVENT HANDLERS (re-attached on every render)
+   ================================================================== */
+function attachViewHandlers(){
+  document.querySelectorAll("[data-open]").forEach(el=>{
+    el.addEventListener("click", ()=> openLeadDetail(el.dataset.open));
+  });
+  document.querySelectorAll("[data-open-lead]").forEach(el=>{
+    el.addEventListener("click", ()=> openLeadDetail(el.dataset.openLead));
+  });
+  document.querySelectorAll("[data-edit]").forEach(el=>{
+    el.addEventListener("click", ()=> openLeadForm(el.dataset.edit));
+  });
+  document.querySelectorAll("[data-delete]").forEach(el=>{
+    el.addEventListener("click", ()=>{
+      const id = el.dataset.delete;
+      const l = state.leads.find(x=>x.id===id);
+      confirmDialog("Delete this lead?", `This removes ${l?l.name:"this lead"} and its interaction history.`, ()=>{
+        state.leads = state.leads.filter(x=>x.id!==id);
+        saveState(); render();
+        toast("Lead deleted", "info");
+      });
+    });
+  });
+  document.querySelectorAll("[data-chip]").forEach(el=>{
+    el.addEventListener("click", ()=>{
+      const v = el.dataset.chip;
+      ui.quickFilter = null;
+      ui.statusFilter = v;
+      render();
+    });
+  });
+  document.querySelectorAll("[data-sort]").forEach(el=>{
+    el.addEventListener("click", ()=>{
+      const col = el.dataset.sort;
+      if(ui.sortBy === col) ui.sortDir = ui.sortDir === "asc" ? "desc" : "asc";
+      else { ui.sortBy = col; ui.sortDir = "asc"; }
+      render();
+    });
+  });
+  const assigneeSel = document.getElementById("filter-assignee");
+  if(assigneeSel) assigneeSel.addEventListener("change", ()=>{ ui.assigneeFilter = assigneeSel.value; render(); });
+  const sortSel = document.getElementById("sort-by");
+  if(sortSel) sortSel.addEventListener("change", ()=>{ ui.sortBy = sortSel.value; render(); });
+
+  document.querySelectorAll(".row-check").forEach(cb=>{
+    cb.addEventListener("change", ()=>{
+      if(cb.checked) ui.selectedLeadIds.add(cb.dataset.id);
+      else ui.selectedLeadIds.delete(cb.dataset.id);
+      render();
+    });
+  });
+  const selectAll = document.getElementById("select-all");
+  if(selectAll) selectAll.addEventListener("change", ()=>{
+    const visible = getFilteredLeads();
+    if(selectAll.checked) visible.forEach(l=>ui.selectedLeadIds.add(l.id));
+    else visible.forEach(l=>ui.selectedLeadIds.delete(l.id));
+    render();
+  });
+  const bulkDel = document.getElementById("bulk-delete");
+  if(bulkDel) bulkDel.addEventListener("click", ()=>{
+    confirmDialog("Delete selected leads?", `This removes ${ui.selectedLeadIds.size} lead(s) permanently.`, ()=>{
+      state.leads = state.leads.filter(l=>!ui.selectedLeadIds.has(l.id));
+      ui.selectedLeadIds.clear();
+      saveState(); render();
+      toast("Selected leads deleted", "info");
+    });
+  });
+  const bulkClear = document.getElementById("bulk-clear");
+  if(bulkClear) bulkClear.addEventListener("click", ()=>{ ui.selectedLeadIds.clear(); render(); });
+  const bulkStatus = document.getElementById("bulk-status");
+  if(bulkStatus) bulkStatus.addEventListener("change", ()=>{
+    const v = bulkStatus.value;
+    if(!v) return;
+    state.leads.forEach(l=>{ if(ui.selectedLeadIds.has(l.id)) l.status = v; });
+    saveState(); ui.selectedLeadIds.clear(); render();
+    toast(`Updated status to ${v}`, "success");
+  });
+
+  const printBtn = document.getElementById("btn-print-report");
+  if(printBtn) printBtn.addEventListener("click", ()=> window.print());
+
+  const newTpl = document.getElementById("btn-new-template");
+  if(newTpl) newTpl.addEventListener("click", ()=>{ document.getElementById("template-form").reset(); openModal("modal-template"); });
+  document.querySelectorAll("[data-del-tpl]").forEach(el=>{
+    el.addEventListener("click", ()=>{
+      state.templates = state.templates.filter(t=>t.id!==el.dataset.delTpl);
+      saveState(); render();
+    });
+  });
+  document.querySelectorAll("[data-copy-tpl]").forEach(el=>{
+    el.addEventListener("click", ()=>{
+      const t = state.templates.find(x=>x.id===el.dataset.copyTpl);
+      if(t && navigator.clipboard){ navigator.clipboard.writeText(t.body||""); toast("Template copied", "success"); }
+    });
+  });
+}
+
+document.getElementById("template-form").addEventListener("submit", (e)=>{
+  e.preventDefault();
+  const f = e.target;
+  state.templates.push({id:uid("tpl"), name:f.tname.value.trim(), subject:f.tsubject.value.trim(), body:f.tbody.value});
+  saveState();
+  closeModal("modal-template");
+  render();
+  toast("Template saved", "success");
+});
+
+/* ==================================================================
+   TOP-LEVEL NAV / SEARCH / THEME
+   ================================================================== */
+document.querySelectorAll(".nav-item[data-view]").forEach(el=>{
+  el.addEventListener("click", ()=>{
+    ui.view = el.dataset.view; ui.quickFilter=null;
+    closeSidebarMobile();
+    render();
+  });
+});
+document.querySelectorAll("[data-quickfilter]").forEach(el=>{
+  el.addEventListener("click", ()=>{
+    ui.view = "leads"; ui.quickFilter = el.dataset.quickfilter; ui.statusFilter="All";
+    closeSidebarMobile();
+    render();
+  });
+});
+document.getElementById("global-search").addEventListener("input", debounce(function(e){
+  ui.search = e.target.value;
+  if(ui.view !== "leads"){ ui.view = "leads"; }
+  render();
+  document.getElementById("global-search").focus();
+}, 220));
+
+document.getElementById("btn-new-lead").addEventListener("click", ()=> openLeadForm(null));
+
+document.getElementById("btn-theme").addEventListener("click", ()=>{
+  settings.theme = settings.theme === "dark" ? "light" : "dark";
+  document.documentElement.setAttribute("data-theme", settings.theme);
+  saveSettings();
+});
+
+/* Mobile sidebar */
+document.getElementById("btn-hamburger").addEventListener("click", ()=>{
+  document.getElementById("sidebar").classList.add("open");
+  document.getElementById("scrim").classList.add("open");
+});
+document.getElementById("scrim").addEventListener("click", closeSidebarMobile);
+function closeSidebarMobile(){
+  document.getElementById("sidebar").classList.remove("open");
+  document.getElementById("scrim").classList.remove("open");
+}
+
+/* ==================================================================
+   EXPORT / IMPORT
+   ================================================================== */
+document.getElementById("btn-export").addEventListener("click", ()=>{
+  const blob = new Blob([JSON.stringify(state, null, 2)], {type:"application/json"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url; a.download = `pipeline-crm-backup-${new Date().toISOString().slice(0,10)}.json`;
+  document.body.appendChild(a); a.click(); a.remove();
+  URL.revokeObjectURL(url);
+  toast("Data exported", "success");
+});
+document.getElementById("btn-import").addEventListener("click", ()=> document.getElementById("import-file").click());
+document.getElementById("import-file").addEventListener("change", function(e){
+  const file = e.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = function(ev){
+    try{
+      const data = JSON.parse(ev.target.result);
+      if(!data.leads || !Array.isArray(data.leads)) throw new Error("Invalid format");
+      confirmDialog("Import data?", "This replaces all current leads and templates with the imported file.", ()=>{
+        state = data;
+        if(!state.templates) state.templates = [];
+        saveState();
+        render();
+        toast("Data imported", "success");
+      });
+    }catch(err){
+      toast("Import failed — invalid file.", "error");
+    }
+  };
+  reader.readAsText(file);
+  e.target.value = "";
+});
+document.getElementById("btn-guide").addEventListener("click", ()=> openModal("modal-guide"));
+
+/* ==================================================================
+   PIN LOCK
+   ================================================================== */
+document.getElementById("btn-lock").addEventListener("click", (e)=>{
+  if(e.shiftKey || e.altKey){ openModal("modal-setpin"); return; }
+  if(settings.pin) lockNow();
+  else openModal("modal-setpin");
+});
+document.getElementById("setpin-save").addEventListener("click", ()=>{
+  const v = document.getElementById("setpin-input").value.trim();
+  if(v && !/^\d{4}$/.test(v)){ toast("PIN must be exactly 4 digits", "error"); return; }
+  settings.pin = v || null;
+  saveSettings();
+  closeModal("modal-setpin");
+  toast(v ? "Lock PIN set" : "Lock PIN removed", "success");
+});
+
+function lockNow(){
+  ui.pendingPin = "";
+  updateLockDots();
+  document.getElementById("lock-screen").classList.add("open");
+}
+function updateLockDots(){
+  const dots = document.querySelectorAll("#lock-dots .d");
+  dots.forEach((d,i)=> d.classList.toggle("filled", i < ui.pendingPin.length));
+}
+document.getElementById("pin-pad").addEventListener("click", (e)=>{
+  const btn = e.target.closest("button"); if(!btn) return;
+  const k = btn.dataset.k;
+  if(k === "clear"){ ui.pendingPin = ""; }
+  else if(k === "back"){ ui.pendingPin = ui.pendingPin.slice(0,-1); }
+  else if(ui.pendingPin.length < 4){ ui.pendingPin += k; }
+  updateLockDots();
+  if(ui.pendingPin.length === 4){
+    if(ui.pendingPin === settings.pin){
+      document.getElementById("lock-screen").classList.remove("open");
+      resetIdleTimer();
+    } else {
+      setTimeout(()=>{ ui.pendingPin=""; updateLockDots(); }, 300);
+      toast("Incorrect PIN", "error");
+    }
+  }
+});
+
+function resetIdleTimer(){
+  if(!settings.pin) return;
+  clearTimeout(ui.idleTimer);
+  ui.idleTimer = setTimeout(lockNow, 5*60*1000);
+}
+["mousemove","keydown","click","scroll"].forEach(evt=> document.addEventListener(evt, resetIdleTimer, {passive:true}));
+
+/* ==================================================================
+   INIT
+   ================================================================== */
+function init(){
+  loadSettings();
+  loadState();
+  render();
+  resetIdleTimer();
+}
+init();
+
+})();
+</script>
+</body>
+</html>
