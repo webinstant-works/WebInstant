@@ -13,11 +13,11 @@
     <!-- Open Graph -->
     <meta property="og:title" content="Our Web Design Portfolio | WebInstant">
     <meta property="og:description" content="See our collection of stunning, mobile-first websites built for creators, businesses, and brands.">
-    <meta property="og:image" content="https://webinstant.online/WebInstant-Logo-02.png">
+    <meta property="og:image" content="https://webinstant.online/logo.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/png">
-    <meta name="twitter:image" content="https://webinstant.online/WebInstant-Logo-02.png">
+    <meta name="twitter:image" content="https://webinstant.online/logo.png">
     <meta property="og:url" content="https://webinstant.online/projects.html">
     <meta property="og:site_name" content="WebInstant">
     <meta property="og:type" content="website">
@@ -27,7 +27,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Our Web Design Portfolio | WebInstant">
     <meta name="twitter:description" content="See our collection of stunning, mobile-first websites built for creators, businesses, and brands.">
-    <link rel="icon" href="WebInstant-Logo-Icon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="canonical" href="https://webinstant.online/projects.html">
 
     <!-- Fonts -->
@@ -37,6 +37,10 @@
 
     <!-- Font Awesome Icons (for better icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
@@ -58,7 +62,7 @@
     <header class="site-header">
         <div class="container header-inner">
             <a class="brand" href="index.html">
-                <img src="WebInstant-Logo-02.png" alt="WebInstant Logo" class="logo" />
+                <img src="logo.png" alt="WebInstant Logo" class="logo" />
             </a>
             <div class="hamburger" id="hamburger">☰</div>
             <nav class="main-nav" id="mainNav">
@@ -89,7 +93,7 @@
         <article class="project-card">
             <div class="project-media">
                 <div class="image-wrapper">
-                    <img src="Aayush-Portfolio.png" alt="Think Visual Portfolio - Video Editor Aayush Sharma Website Showcase" width="600" height="400" loading="lazy">
+                    <img src="think-visual-website.png" alt="Think Visual Portfolio - Video Editor Aayush Sharma Website Showcase" width="600" height="400" loading="lazy">
                     <div class="project-overlay">
                         <a href="https://thinkvisual.in/" target="_blank" class="project-link">
                             <i class="fas fa-external-link-alt"></i> Live Demo
@@ -177,9 +181,9 @@
         <article class="project-card">
             <div class="project-media">
                 <div class="image-wrapper">
-                    <img src="kanha-portfolio-website.png" alt="Kanha Sharma Developer Portfolio Website" width="600" height="400" loading="lazy">
+                    <img src="singhal-dental-clinic-website.png" alt="Singhal Dental Clinic Website" width="600" height="400" loading="lazy">
                     <div class="project-overlay">
-                        <a href="https://kanhaprogrammer.github.io/Kanha-Portfolio/" target="_blank"
+                        <a href="https://webinstant-works.github.io/Singhal-Dental-Clinic/" target="_blank"
                             class="project-link">
                             <i class="fas fa-external-link-alt"></i> Live Demo
                         </a>
@@ -187,12 +191,11 @@
                 </div>
             </div>
             <div class="project-details">
-                <h4>Kanha Sharma — Personal Portfolio</h4>
-                <p>Bold & minimalist developer portfolio highlighting skills, services, and projects with immersive
-                    animations and clean layouts.</p>
+                <h4>Singhal Dental Clinic Website</h4>
+                <p>A complete professional website for a Clinic called Singhal Dental Clinic. Created specifically for appointments.</p>
                 <div class="project-meta">
                     <span><i class="fas fa-code"></i> HTML5/CSS3</span>
-                    <span><i class="fas fa-chart-line"></i> SEO Optimized</span>
+                    <span><i class="fas fa-mobile-alt"></i> Fully Mobile Friendly</span>
                 </div>
             </div>
         </article>
@@ -226,28 +229,62 @@
 
 
     <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-section">
-                <img src="WebInstant-Logo-02.png" alt="WebInstant Logo" class="footer-logo">
-            </div>
-            <div class="footer-section">
-                <h5>Contact</h5>
-                <p>Email: <a href="mailto:businesswebinstant@gmail.com">businesswebinstant@gmail.com</a></p>
-                <p>Phone: <a href="tel:+919871072210">+91 98710 72210</a></p>
-            </div>
-            <div class="footer-section">
-                <h5>Legal</h5>
-                <ul class="footer-links">
-                    <li><a href="t&c.html">Terms &amp; Conditions</a></li>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="refund.html">Refund Policy</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <small>© <span id="year"></span> WebInstant • All rights reserved.</small>
-        </div>
-    </footer>
+  <div class="footer-container">
+    <!-- Brand -->
+    <div class="footer-section">
+      <img
+        src="logo.png"
+        alt="WebInstant Logo"
+        class="footer-logo"
+      />
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-section">
+      <h5>Contact</h5>
+      <p>
+        Email:
+        <a href="mailto:businesswebinstant@gmail.com"
+          >businesswebinstant@gmail.com</a
+        >
+      </p>
+      <p>Phone: <a href="tel:+919871072210">+91 98710 72210</a></p>
+    </div>
+
+    <!-- Social Links -->
+    <div class="footer-section">
+      <h5>Follow Us</h5>
+      <div style="display: flex; gap: 10px; margin-top: 8px;">
+        <a href="https://www.linkedin.com/company/web-instant-agency/posts/?feedView=all" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.6); font-size: 1.1rem; transition: all 0.3s ease; display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.06); text-decoration: none;" onmouseover="this.style.color='#fff'; this.style.background='rgba(255,255,255,0.15)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.color='rgba(255,255,255,0.6)'; this.style.background='rgba(255,255,255,0.06)'; this.style.transform='translateY(0)'">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61578298170309" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.6); font-size: 1.1rem; transition: all 0.3s ease; display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.06); text-decoration: none;" onmouseover="this.style.color='#fff'; this.style.background='rgba(255,255,255,0.15)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.color='rgba(255,255,255,0.6)'; this.style.background='rgba(255,255,255,0.06)'; this.style.transform='translateY(0)'">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/thewebinstant/" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.6); font-size: 1.1rem; transition: all 0.3s ease; display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.06); text-decoration: none;" onmouseover="this.style.color='#fff'; this.style.background='rgba(255,255,255,0.15)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.color='rgba(255,255,255,0.6)'; this.style.background='rgba(255,255,255,0.06)'; this.style.transform='translateY(0)'">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://x.com/TheWebInstant" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.6); font-size: 1.1rem; transition: all 0.3s ease; display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.06); text-decoration: none;" onmouseover="this.style.color='#fff'; this.style.background='rgba(255,255,255,0.15)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.color='rgba(255,255,255,0.6)'; this.style.background='rgba(255,255,255,0.06)'; this.style.transform='translateY(0)'">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Legal -->
+    <div class="footer-section">
+      <h5>Legal</h5>
+      <ul class="footer-links">
+        <li><a href="t&c.html">Terms &amp; Conditions</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="refund.html">Refund Policy</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <small>© <span id="year"></span> WebInstant • All rights reserved.</small>
+  </div>
+</footer>
 
     <script src="script.js"></script>
     <script>
