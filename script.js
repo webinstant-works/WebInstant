@@ -226,8 +226,8 @@ function showNotification(message, type = "info") {
         type === "success"
           ? "check-circle"
           : type === "error"
-          ? "exclamation-circle"
-          : "info-circle"
+            ? "exclamation-circle"
+            : "info-circle"
       }"></i>
       <span>${message}</span>
     </div>
