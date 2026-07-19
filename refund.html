@@ -19,17 +19,11 @@
       property="og:description"
       content="Our refund policy ensures fairness for both clients and our development team."
     />
-    <meta
-      property="og:image"
-      content="https://webinstant.online/logo.png"
-    />
+    <meta property="og:image" content="https://webinstant.online/logo.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:type" content="image/png" />
-    <meta
-      name="twitter:image"
-      content="https://webinstant.online/logo.png"
-    />
+    <meta name="twitter:image" content="https://webinstant.online/logo.png" />
     <meta property="og:url" content="https://webinstant.online/refund.html" />
     <meta property="og:site_name" content="WebInstant" />
     <meta property="og:type" content="website" />
@@ -42,14 +36,37 @@
     />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="canonical" href="https://webinstant.online/refund.html" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      media="print"
+      onload="
+        this.media = 'all';
+        this.onload = null;
+      "
     />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    /></noscript>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      media="print"
+      onload="
+        this.media = 'all';
+        this.onload = null;
+      "
     />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    /></noscript>
     <link rel="stylesheet" href="style.css" />
 
     <script type="application/ld+json">
@@ -74,20 +91,16 @@
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="index.html">
-          <img
-            src="logo.png"
-            alt="WebInstant Logo"
-            class="logo"
-          />
+          <img src="logo.png" alt="WebInstant Logo" class="logo" />
         </a>
         <div class="hamburger" id="hamburger">☰</div>
         <nav class="main-nav" id="mainNav">
-          <a href="index.html" class="nav-link">Home</a>
-          <a href="about.html" class="nav-link">About</a>
-          <a href="services.html" class="nav-link">Services</a>
-          <a href="plans.html" class="nav-link">Plans</a>
-          <a href="projects.html" class="nav-link">Projects</a>
-          <a href="contact.html" class="nav-link cta">Contact Us</a>
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="plans.html" class="nav-link">Plans</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="contact.html" class="nav-link">Contact Us</a>
         </nav>
       </div>
     </header>
@@ -108,7 +121,7 @@
       <div class="refund-container">
         <!-- Table of Contents -->
         <div class="toc-card">
-          <h3><i class="fas fa-list"></i> Quick Navigation</h3>
+          <h2><i class="fas fa-list"></i> Quick Navigation</h2>
           <ul class="toc-list">
             <li>
               <a href="#eligibility"
@@ -123,7 +136,7 @@
             </li>
             <li>
               <a href="#custom-projects"
-                ><i class="fas fa-chevron-right"></i> Custom &amp; Business
+                ><i class="fas fa-chevron-right"></i> Custom & Business
                 Projects</a
               >
             </li>
@@ -165,9 +178,9 @@
           <h2><i class="fas fa-check-circle"></i> 1. Eligibility for Refund</h2>
 
           <div class="eligibility-box refundable">
-            <h4>
+            <h3>
               <i class="fas fa-calendar-check"></i> A. Before Project Starts
-            </h4>
+            </h3>
             <p>
               If you cancel before work begins, you are eligible for a
               <strong>100% refund</strong> — no questions asked.
@@ -210,9 +223,9 @@
           </p>
 
           <div class="eligibility-box non-refundable">
-            <h4>
+            <h3>
               <i class="fas fa-project-diagram"></i> Project Progress Completed
-            </h4>
+            </h3>
             <ul>
               <li>Design is approved and development has started</li>
               <li>Website is partially or fully delivered</li>
@@ -245,7 +258,7 @@
           </h2>
           <p>For complex projects (business, e-commerce, custom websites):</p>
           <div class="eligibility-box non-refundable">
-            <h4><i class="fas fa-code"></i> Special Conditions</h4>
+            <h3><i class="fas fa-code"></i> Special Conditions</h3>
             <ul>
               <li><strong>No refunds once development has started</strong></li>
               <li>Partial refund only possible before first draft delivery</li>
@@ -257,9 +270,9 @@
         <section class="refund-section" id="processing-time">
           <h2><i class="fas fa-clock"></i> 4. Refund Processing Time</h2>
           <div class="timeline-box">
-            <h4>
+            <h3>
               <i class="fas fa-rupee-sign"></i> India — UPI / Bank Transfer
-            </h4>
+            </h3>
             <div class="timeline-item">
               <i class="fas fa-hourglass-half"></i>
               <span><strong>3–7 business days</strong> after approval</span>
@@ -321,7 +334,7 @@
           <div class="process-steps">
             <div class="process-step">
               <div class="step-number">1</div>
-              <h4>Service Misuse</h4>
+              <h3>Service Misuse</h3>
               <p>Misuse or abuse of our services</p>
             </div>
             <div class="process-step">
@@ -368,12 +381,20 @@
       <div class="footer-container">
         <!-- Brand -->
         <div class="footer-section">
-          <img src="logo.png" alt="WebInstant Logo" class="footer-logo" />
+          <img
+            src="logo.png"
+            alt="WebInstant Logo"
+            class="footer-logo"
+            width="150"
+            height="45"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
 
         <!-- Contact -->
         <div class="footer-section">
-          <h5>Contact</h5>
+          <h3>Contact</h3>
           <p>
             Email:
             <a href="mailto:businesswebinstant@gmail.com"
@@ -385,134 +406,46 @@
 
         <!-- Social Links -->
         <div class="footer-section">
-          <h5>Follow Us</h5>
+          <h3>Follow Us</h3>
           <div style="display: flex; gap: 10px; margin-top: 8px">
             <a
               href="https://www.linkedin.com/company/web-instant-agency/posts/?feedView=all"
               target="_blank"
               rel="noopener"
-              style="
-                color: rgba(255, 255, 255, 0.6);
-                font-size: 1.1rem;
-                transition: all 0.3s ease;
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 34px;
-                height: 34px;
-                border-radius: 50%;
-                background: rgba(255, 255, 255, 0.06);
-                text-decoration: none;
-              "
-              onmouseover="
-                this.style.color = '#fff';
-                this.style.background = 'rgba(255,255,255,0.15)';
-                this.style.transform = 'translateY(-2px)';
-              "
-              onmouseout="
-                this.style.color = 'rgba(255,255,255,0.6)';
-                this.style.background = 'rgba(255,255,255,0.06)';
-                this.style.transform = 'translateY(0)';
-              "
-            >
-              <i class="fab fa-linkedin-in"></i>
-            </a>
+              class="social-icon-link"
+              aria-label="LinkedIn"
+              ><i class="fab fa-linkedin-in" aria-hidden="true"></i
+            ></a>
             <a
               href="https://www.facebook.com/profile.php?id=61578298170309"
               target="_blank"
               rel="noopener"
-              style="
-                color: rgba(255, 255, 255, 0.6);
-                font-size: 1.1rem;
-                transition: all 0.3s ease;
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 34px;
-                height: 34px;
-                border-radius: 50%;
-                background: rgba(255, 255, 255, 0.06);
-                text-decoration: none;
-              "
-              onmouseover="
-                this.style.color = '#fff';
-                this.style.background = 'rgba(255,255,255,0.15)';
-                this.style.transform = 'translateY(-2px)';
-              "
-              onmouseout="
-                this.style.color = 'rgba(255,255,255,0.6)';
-                this.style.background = 'rgba(255,255,255,0.06)';
-                this.style.transform = 'translateY(0)';
-              "
-            >
-              <i class="fab fa-facebook-f"></i>
-            </a>
+              class="social-icon-link"
+              aria-label="Facebook"
+              ><i class="fab fa-facebook-f" aria-hidden="true"></i
+            ></a>
             <a
               href="https://www.instagram.com/thewebinstant/"
               target="_blank"
               rel="noopener"
-              style="
-                color: rgba(255, 255, 255, 0.6);
-                font-size: 1.1rem;
-                transition: all 0.3s ease;
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 34px;
-                height: 34px;
-                border-radius: 50%;
-                background: rgba(255, 255, 255, 0.06);
-                text-decoration: none;
-              "
-              onmouseover="
-                this.style.color = '#fff';
-                this.style.background = 'rgba(255,255,255,0.15)';
-                this.style.transform = 'translateY(-2px)';
-              "
-              onmouseout="
-                this.style.color = 'rgba(255,255,255,0.6)';
-                this.style.background = 'rgba(255,255,255,0.06)';
-                this.style.transform = 'translateY(0)';
-              "
-            >
-              <i class="fab fa-instagram"></i>
-            </a>
+              class="social-icon-link"
+              aria-label="Instagram"
+              ><i class="fab fa-instagram" aria-hidden="true"></i
+            ></a>
             <a
               href="https://x.com/TheWebInstant"
               target="_blank"
               rel="noopener"
-              style="
-                color: rgba(255, 255, 255, 0.6);
-                font-size: 1.1rem;
-                transition: all 0.3s ease;
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 34px;
-                height: 34px;
-                border-radius: 50%;
-                background: rgba(255, 255, 255, 0.06);
-                text-decoration: none;
-              "
-              onmouseover="
-                this.style.color = '#fff';
-                this.style.background = 'rgba(255,255,255,0.15)';
-                this.style.transform = 'translateY(-2px)';
-              "
-              onmouseout="
-                this.style.color = 'rgba(255,255,255,0.6)';
-                this.style.background = 'rgba(255,255,255,0.06)';
-                this.style.transform = 'translateY(0)';
-              "
-            >
-              <i class="fab fa-x-twitter"></i>
-            </a>
+              class="social-icon-link"
+              aria-label="X (Twitter)"
+              ><i class="fab fa-x-twitter" aria-hidden="true"></i
+            ></a>
           </div>
         </div>
 
         <!-- Legal -->
         <div class="footer-section">
-          <h5>Legal</h5>
+          <h3>Legal</h3>
           <ul class="footer-links">
             <li><a href="t_c.html">Terms &amp; Conditions</a></li>
             <li><a href="privacy.html">Privacy Policy</a></li>
