@@ -1,0 +1,1773 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>The Kransh Journal Website Proposal | WebInstant</title>
+    <meta
+      name="description"
+      content="Website development proposal prepared by WebInstant for The Kransh Journal."
+    />
+    <!--
+      This is a private, client-facing proposal page shared via a direct
+      URL. It is intentionally excluded from search indexing below.
+      Recommendation: also add "Disallow: /proposal-kransh-journal.html"
+      to robots.txt if this page will live long-term on the domain.
+    -->
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="author" content="WebInstant" />
+    <meta
+      property="og:title"
+      content="The Kransh Journal Website Proposal | WebInstant"
+    />
+    <meta
+      property="og:description"
+      content="Website development proposal prepared by WebInstant for The Kransh Journal."
+    />
+    <meta property="og:image" content="https://webinstant.online/logo.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta name="twitter:image" content="https://webinstant.online/logo.png" />
+    <meta
+      property="og:url"
+      content="https://webinstant.online/kranshjournal.html"
+    />
+    <meta property="og:site_name" content="WebInstant" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="The Kransh Journal Website Proposal | WebInstant"
+    />
+    <meta
+      name="twitter:description"
+      content="Website development proposal prepared by WebInstant for The Kransh Journal."
+    />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      media="print"
+      onload="
+        this.media = 'all';
+        this.onload = null;
+      "
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    /></noscript>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      media="print"
+      onload="
+        this.media = 'all';
+        this.onload = null;
+      "
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    /></noscript>
+    <!-- Main WebInstant design system (variables, base styles) -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Page-specific styles for this proposal only -->
+    <style>
+      /* ==========================================================================
+   proposal-kransh-journal.css
+   Scoped styles for the Kransh Journal client proposal document.
+   Reuses WebInstant design tokens from style.css (--primary, --accent,
+   --text, --bg, --muted, --hover, --radius, --max-width, --header-h).
+   Everything here is namespaced under .proposal-doc so it cannot leak
+   into or be affected by the main site's stylesheet.
+   ========================================================================== */
+
+      /* ---------- Mobile-first global safety net ---------- */
+      html {
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+        scroll-behavior: smooth;
+      }
+
+      html,
+      body {
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      .proposal-doc {
+        --pd-ink: #14181f;
+        --pd-ink-soft: #4b5563;
+        --pd-border: rgba(20, 24, 31, 0.08);
+        --pd-card-shadow: 0 6px 20px rgba(20, 24, 31, 0.06);
+        --pd-card-shadow-hover: 0 14px 34px rgba(20, 24, 31, 0.1);
+        --pd-radius-lg: 18px;
+        --pd-gutter: clamp(1rem, 4vw, 1.5rem);
+        background: var(--bg, #fff);
+        color: var(--pd-ink);
+        font-family: "Poppins", sans-serif;
+        font-size: clamp(15px, 0.9vw + 13px, 16px);
+        -webkit-font-smoothing: antialiased;
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+        -webkit-tap-highlight-color: transparent;
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+      }
+
+      .proposal-doc * {
+        box-sizing: border-box;
+        min-width: 0;
+      }
+
+      .proposal-doc img,
+      .proposal-doc svg {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .proposal-doc a {
+        color: inherit;
+      }
+
+      .proposal-doc p,
+      .proposal-doc h1,
+      .proposal-doc h2,
+      .proposal-doc h3,
+      .proposal-doc h4,
+      .proposal-doc span,
+      .proposal-doc strong,
+      .proposal-doc li {
+        overflow-wrap: anywhere;
+        word-break: break-word;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .proposal-doc *,
+        .proposal-doc *::before,
+        .proposal-doc *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+
+      /* ---------- Reading progress ---------- */
+      .proposal-doc #reading-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 3px;
+        width: 0%;
+        background: linear-gradient(90deg, var(--primary), var(--accent));
+        z-index: 2000;
+        transition: width 0.1s ease-out;
+      }
+
+      /* ---------- Top bar (minimal, document-style header) ---------- */
+      .proposal-topbar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--pd-border);
+      }
+
+      .proposal-topbar-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: clamp(0.6rem, 2vw, 0.9rem) var(--pd-gutter);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: clamp(0.5rem, 2vw, 1rem);
+        flex-wrap: wrap;
+      }
+
+      .proposal-brand {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        flex-shrink: 0;
+      }
+
+      .proposal-brand img {
+        height: clamp(28px, 6vw, 38px);
+        width: auto;
+      }
+
+      .proposal-topbar-right {
+        display: flex;
+        align-items: center;
+        gap: clamp(0.5rem, 2vw, 0.9rem);
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .proposal-tagline {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--pd-ink-soft);
+        display: none;
+      }
+
+      .proposal-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: clamp(0.68rem, 2.2vw, 0.78rem);
+        font-weight: 600;
+        padding: 0.4rem 0.7rem;
+        border-radius: 999px;
+        background: var(--muted, #f5f7fa);
+        color: var(--primary);
+        border: 1px solid rgba(46, 134, 222, 0.18);
+        white-space: nowrap;
+        min-height: 32px;
+      }
+
+      @media (min-width: 640px) {
+        .proposal-tagline {
+          display: inline-block;
+        }
+      }
+
+      /* ---------- Title block ---------- */
+      .proposal-title {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: clamp(1.8rem, 6vw, 3.2rem) var(--pd-gutter) 1.6rem;
+        text-align: center;
+      }
+
+      .proposal-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: clamp(0.68rem, 2.2vw, 0.78rem);
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--primary);
+        background: var(--muted, #f5f7fa);
+        padding: 0.45rem 1rem;
+        border-radius: 999px;
+        margin-bottom: 1.1rem;
+        text-align: center;
+      }
+
+      .proposal-title h1 {
+        font-size: clamp(1.7rem, 8vw, 3.2rem);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin-bottom: 0.7rem;
+        color: var(--pd-ink);
+        line-height: 1.1;
+      }
+
+      .proposal-sub {
+        font-size: clamp(0.92rem, 2.6vw, 1.05rem);
+        color: var(--pd-ink-soft);
+        line-height: 1.6;
+        max-width: 640px;
+        margin: 0 auto;
+      }
+
+      /* ---------- Meta / proposal-information card ---------- */
+      .proposal-meta {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 var(--pd-gutter) 2.4rem;
+      }
+
+      .meta-card {
+        background: var(--muted, #f5f7fa);
+        border: 1px solid var(--pd-border);
+        border-radius: var(--pd-radius-lg);
+        padding: clamp(1.1rem, 4vw, 1.6rem);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: clamp(1rem, 3vw, 1.3rem);
+      }
+
+      .meta-value {
+        overflow-wrap: anywhere;
+      }
+
+      .meta-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+
+      .meta-label {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--pd-ink-soft);
+      }
+
+      .meta-value {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--pd-ink);
+      }
+
+      /* ---------- Body layout: content ---------- */
+      .proposal-body {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 var(--pd-gutter) 2rem;
+      }
+
+      .proposal-content {
+        min-width: 0;
+      }
+
+      /* ---------- Sections ---------- */
+      .proposal-section {
+        padding: clamp(1.4rem, 4vw, 2rem) 0;
+        border-bottom: 1px solid var(--pd-border);
+        scroll-margin-top: calc(var(--header-h, 76px) + 16px);
+      }
+
+      .proposal-section:last-of-type {
+        border-bottom: none;
+      }
+
+      .proposal-section h2 {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-size: clamp(1.15rem, 4vw, 1.4rem);
+        font-weight: 700;
+        color: var(--pd-ink);
+        margin-bottom: 1rem;
+      }
+
+      .proposal-section h2 .num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: clamp(28px, 8vw, 34px);
+        height: clamp(28px, 8vw, 34px);
+        flex-shrink: 0;
+        border-radius: 9px;
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        color: #fff;
+        font-size: clamp(0.72rem, 3vw, 0.85rem);
+        font-weight: 800;
+      }
+
+      .proposal-section p {
+        color: var(--pd-ink-soft);
+        line-height: 1.75;
+        margin-bottom: 0.9rem;
+        font-size: clamp(0.9rem, 2.6vw, 0.98rem);
+      }
+
+      .proposal-section p:last-child {
+        margin-bottom: 0;
+      }
+
+      .proposal-section p.lead {
+        font-size: clamp(0.94rem, 2.8vw, 1.02rem);
+        color: var(--pd-ink);
+      }
+
+      /* ---------- Generic feature/info card ---------- */
+      .pd-card {
+        background: #fff;
+        border: 1px solid var(--pd-border);
+        border-radius: var(--radius, 12px);
+        padding: clamp(1rem, 4vw, 1.3rem);
+        box-shadow: var(--pd-card-shadow);
+        transition:
+          box-shadow 0.25s ease,
+          transform 0.25s ease;
+      }
+
+      .pd-card:hover {
+        box-shadow: var(--pd-card-shadow-hover);
+        transform: translateY(-3px);
+      }
+
+      .pd-grid {
+        display: grid;
+        gap: clamp(0.8rem, 3vw, 1rem);
+        margin-top: 0.6rem;
+      }
+
+      .pd-grid.cols-2 {
+        grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr));
+      }
+
+      .pd-grid.cols-3 {
+        grid-template-columns: repeat(auto-fit, minmax(min(190px, 100%), 1fr));
+      }
+
+      .pd-icon {
+        width: clamp(34px, 9vw, 40px);
+        height: clamp(34px, 9vw, 40px);
+        border-radius: 10px;
+        background: var(--muted, #f5f7fa);
+        color: var(--primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        margin-bottom: 0.7rem;
+      }
+
+      .pd-card h3 {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--pd-ink);
+        margin-bottom: 0.35rem;
+      }
+
+      .pd-card p {
+        font-size: 0.9rem;
+        color: var(--pd-ink-soft);
+        line-height: 1.6;
+        margin-bottom: 0;
+      }
+
+      /* ---------- Checklist ---------- */
+      .pd-checklist {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr));
+        gap: 0.6rem clamp(0.8rem, 3vw, 1.2rem);
+        margin-top: 0.6rem;
+      }
+
+      .pd-checklist li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.6rem;
+        font-size: clamp(0.86rem, 2.6vw, 0.92rem);
+        color: var(--pd-ink-soft);
+        line-height: 1.5;
+      }
+
+      .pd-checklist li i {
+        color: var(--accent);
+        margin-top: 0.2rem;
+        flex-shrink: 0;
+      }
+
+      /* ---------- Included / Not included ---------- */
+      .pd-included-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+        gap: clamp(0.8rem, 3vw, 1rem);
+        margin-top: 0.8rem;
+      }
+
+      .pd-included-box {
+        border-radius: var(--radius, 12px);
+        padding: clamp(1rem, 4vw, 1.2rem);
+        border: 1px solid var(--pd-border);
+      }
+
+      .pd-included-box.yes {
+        background: rgba(0, 201, 167, 0.06);
+        border-color: rgba(0, 201, 167, 0.25);
+      }
+
+      .pd-included-box.no {
+        background: rgba(220, 38, 38, 0.05);
+        border-color: rgba(220, 38, 38, 0.18);
+      }
+
+      .pd-included-box h4 {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.92rem;
+        font-weight: 700;
+        margin-bottom: 0.7rem;
+      }
+
+      .pd-included-box.yes h4 {
+        color: #0a9b7c;
+      }
+
+      .pd-included-box.no h4 {
+        color: #c0392b;
+      }
+
+      .pd-included-box ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.45rem;
+      }
+
+      .pd-included-box li {
+        font-size: 0.88rem;
+        color: var(--pd-ink-soft);
+        display: flex;
+        gap: 0.5rem;
+        align-items: flex-start;
+        line-height: 1.5;
+      }
+
+      .pd-included-box.yes li i {
+        color: #0a9b7c;
+        margin-top: 0.2rem;
+      }
+
+      .pd-included-box.no li i {
+        color: #c0392b;
+        margin-top: 0.2rem;
+      }
+
+      /* ---------- Stat highlight (timeline / revisions / support days) ---------- */
+      .pd-stat-box {
+        display: flex;
+        align-items: center;
+        gap: clamp(0.8rem, 4vw, 1.3rem);
+        background: linear-gradient(
+          135deg,
+          rgba(46, 134, 222, 0.06),
+          rgba(0, 201, 167, 0.06)
+        );
+        border: 1px solid rgba(46, 134, 222, 0.16);
+        border-radius: var(--pd-radius-lg);
+        padding: clamp(1rem, 4vw, 1.4rem) clamp(1rem, 4vw, 1.6rem);
+        margin-bottom: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .pd-stat-number {
+        font-size: clamp(1.9rem, 8vw, 2.6rem);
+        font-weight: 800;
+        line-height: 1;
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        white-space: nowrap;
+      }
+
+      .pd-stat-copy strong {
+        display: block;
+        font-size: 1rem;
+        color: var(--pd-ink);
+        margin-bottom: 0.2rem;
+      }
+
+      .pd-stat-copy span {
+        font-size: 0.88rem;
+        color: var(--pd-ink-soft);
+      }
+
+      .pd-note {
+        font-size: 0.86rem;
+        color: var(--pd-ink-soft);
+        background: var(--muted, #f5f7fa);
+        border-left: 3px solid var(--primary);
+        padding: 0.8rem 1rem;
+        border-radius: 8px;
+        margin-top: 0.8rem;
+      }
+
+      /* ---------- Future-ready: start -> grow -> expand ---------- */
+      .pd-growth-path {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin: 1.2rem 0 1.4rem;
+        text-align: center;
+      }
+
+      .pd-growth-path .step {
+        background: #fff;
+        border: 1px solid var(--pd-border);
+        border-radius: 999px;
+        padding: 0.55rem 1.1rem;
+        font-weight: 700;
+        font-size: clamp(0.8rem, 2.6vw, 0.88rem);
+        color: var(--primary);
+        box-shadow: var(--pd-card-shadow);
+      }
+
+      .pd-growth-path .arrow {
+        color: var(--pd-ink-soft);
+        font-size: 0.95rem;
+      }
+
+      .pd-future-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+        margin-top: 0.7rem;
+      }
+
+      .pd-future-chips span {
+        font-size: 0.83rem;
+        font-weight: 600;
+        color: var(--pd-ink-soft);
+        background: var(--muted, #f5f7fa);
+        border: 1px dashed var(--pd-border);
+        padding: 0.4rem 0.85rem;
+        border-radius: 999px;
+      }
+
+      /* ---------- Pricing / investment ---------- */
+      .pd-price-card {
+        background: linear-gradient(160deg, #14181f, #1f2733);
+        color: #fff;
+        border-radius: clamp(14px, 4vw, 22px);
+        padding: clamp(1.4rem, 6vw, 2.2rem);
+        text-align: center;
+        box-shadow: 0 20px 45px rgba(20, 24, 31, 0.25);
+      }
+
+      .pd-price-card .label {
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.65);
+        margin-bottom: 0.6rem;
+      }
+
+      .pd-price-card .amount {
+        font-size: clamp(2.6rem, 7vw, 3.6rem);
+        font-weight: 800;
+        background: linear-gradient(135deg, #ffffff, var(--accent));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        line-height: 1.1;
+      }
+
+      .pd-price-card .subline {
+        font-size: 0.92rem;
+        color: rgba(255, 255, 255, 0.75);
+        margin-top: 0.3rem;
+      }
+
+      .pd-price-split {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+        gap: clamp(0.8rem, 3vw, 1rem);
+        max-width: 1000px;
+        margin: 1.4rem auto 0;
+      }
+
+      .pd-split-item {
+        background: #fff;
+        border: 1px solid var(--pd-border);
+        border-radius: var(--radius, 12px);
+        padding: clamp(1rem, 4vw, 1.2rem);
+        text-align: center;
+        box-shadow: var(--pd-card-shadow);
+      }
+
+      .pd-split-item .tag {
+        font-size: 0.74rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--primary);
+        margin-bottom: 0.4rem;
+      }
+
+      .pd-split-item .value {
+        font-size: 1.6rem;
+        font-weight: 800;
+        color: var(--pd-ink);
+      }
+
+      .pd-split-item .desc {
+        font-size: 0.84rem;
+        color: var(--pd-ink-soft);
+        margin-top: 0.3rem;
+      }
+
+      .pd-separate-costs {
+        margin-top: 1.6rem;
+      }
+
+      .pd-separate-costs h4 {
+        font-size: 0.92rem;
+        font-weight: 700;
+        color: var(--pd-ink);
+        margin-bottom: 0.6rem;
+      }
+
+      /* ---------- Approach timeline ---------- */
+      .pd-timeline {
+        position: relative;
+        margin-top: 1.2rem;
+        padding-left: clamp(1.5rem, 6vw, 2.2rem);
+      }
+
+      .pd-timeline::before {
+        content: "";
+        position: absolute;
+        left: clamp(0.55rem, 2.2vw, 0.85rem);
+        top: 0.3rem;
+        bottom: 0.3rem;
+        width: 2px;
+        background: linear-gradient(180deg, var(--primary), var(--accent));
+      }
+
+      .pd-timeline-item {
+        position: relative;
+        padding-bottom: 1.5rem;
+      }
+
+      .pd-timeline-item:last-child {
+        padding-bottom: 0;
+      }
+
+      .pd-timeline-item::before {
+        content: "";
+        position: absolute;
+        left: clamp(-1.5rem, -6vw, -2.2rem);
+        top: 0.2rem;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #fff;
+        border: 3px solid var(--primary);
+      }
+
+      .pd-timeline-item .step-num {
+        font-size: 0.76rem;
+        font-weight: 700;
+        color: var(--primary);
+        letter-spacing: 0.06em;
+      }
+
+      .pd-timeline-item h3 {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--pd-ink);
+        margin: 0.15rem 0 0.25rem;
+      }
+
+      .pd-timeline-item p {
+        font-size: 0.9rem;
+        color: var(--pd-ink-soft);
+        margin: 0;
+      }
+
+      /* ---------- Closing / final section ---------- */
+      .proposal-closing {
+        text-align: center;
+        max-width: 720px;
+        margin: 1rem auto 0;
+        padding: clamp(2rem, 6vw, 3rem) var(--pd-gutter) 2rem;
+      }
+
+      .proposal-closing h2 {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        font-weight: 800;
+        color: var(--pd-ink);
+        margin-bottom: 0.6rem;
+      }
+
+      .proposal-closing p.tagline {
+        color: var(--pd-ink-soft);
+        margin-bottom: 1rem;
+      }
+
+      .proposal-closing .path {
+        font-weight: 700;
+        color: var(--primary);
+        font-size: 0.95rem;
+        margin-bottom: 1.8rem;
+      }
+
+      .proposal-closing-actions {
+        display: flex;
+        justify-content: center;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+      }
+
+      .pd-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        font-weight: 700;
+        font-size: 0.92rem;
+        padding: 0.75rem 1.4rem;
+        min-height: 48px;
+        border-radius: 10px;
+        text-decoration: none;
+        border: 1px solid transparent;
+        cursor: pointer;
+        font-family: "Poppins", sans-serif;
+        transition: all 0.25s ease;
+      }
+
+      .pd-btn-primary {
+        background: var(--primary);
+        color: #fff;
+        box-shadow: 0 8px 20px rgba(46, 134, 222, 0.28);
+      }
+
+      .pd-btn-primary:hover {
+        background: var(--hover);
+        transform: translateY(-2px);
+      }
+
+      .pd-btn-outline {
+        background: #fff;
+        color: var(--pd-ink);
+        border-color: var(--pd-border);
+      }
+
+      .pd-btn-outline:hover {
+        border-color: var(--primary);
+        color: var(--primary);
+        transform: translateY(-2px);
+      }
+
+      /* ---------- Document footer ---------- */
+      .proposal-footer {
+        border-top: 1px solid var(--pd-border);
+        padding: clamp(1.1rem, 4vw, 1.4rem) var(--pd-gutter);
+        padding-bottom: calc(
+          clamp(1.1rem, 4vw, 1.4rem) + env(safe-area-inset-bottom)
+        );
+        text-align: center;
+      }
+
+      .proposal-footer p {
+        font-size: 0.82rem;
+        color: var(--pd-ink-soft);
+        margin: 0.15rem 0;
+      }
+
+      .proposal-footer strong {
+        color: var(--pd-ink);
+      }
+
+      /* ---------- Scroll reveal (reuses main site's .reveal pattern) ---------- */
+      .proposal-doc .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.5s ease,
+          transform 0.5s ease;
+      }
+
+      .proposal-doc .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ---------- Print ---------- */
+      @media print {
+        .proposal-topbar,
+        .proposal-closing-actions,
+        #reading-progress {
+          display: none !important;
+        }
+      }
+
+      /* ==========================================================================
+   Responsive — layered, mobile-first breakpoint system.
+   Most sizing above already uses clamp()/fluid units, so these breakpoints
+   handle STRUCTURAL changes (layout, stacking, ordering) rather than
+   fine-tuning type, which scales continuously on its own.
+   ========================================================================== */
+
+      /* ---------- ≤768px: large phones / small tablets ---------- */
+      @media (max-width: 768px) {
+        .pd-grid.cols-3 {
+          grid-template-columns: repeat(
+            auto-fit,
+            minmax(min(220px, 100%), 1fr)
+          );
+        }
+
+        .pd-stat-box {
+          text-align: center;
+          justify-content: center;
+        }
+
+        .pd-price-split {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ---------- ≤640px: phones — this is the primary target,
+           stack everything into a single comfortable column ---------- */
+      @media (max-width: 640px) {
+        .proposal-topbar-inner {
+          justify-content: space-between;
+        }
+
+        .proposal-badge-text {
+          display: none;
+        }
+
+        .proposal-badge {
+          padding: 0.55rem;
+          min-width: 32px;
+          justify-content: center;
+        }
+
+        .meta-card {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .pd-grid.cols-2,
+        .pd-grid.cols-3,
+        .pd-checklist,
+        .pd-included-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .pd-stat-box {
+          flex-direction: column;
+          text-align: center;
+          gap: 0.5rem;
+        }
+
+        .pd-price-card {
+          border-radius: 16px;
+        }
+
+        .proposal-closing-actions {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .pd-btn {
+          justify-content: center;
+          width: 100%;
+        }
+
+        .proposal-closing h2 {
+          word-spacing: normal;
+        }
+      }
+
+      /* ---------- ≤480px: standard small phones ---------- */
+      @media (max-width: 480px) {
+        .meta-card {
+          grid-template-columns: 1fr;
+        }
+
+        .proposal-eyebrow {
+          font-size: 0.66rem;
+          padding: 0.4rem 0.8rem;
+        }
+
+        .pd-future-chips {
+          gap: 0.4rem;
+        }
+
+        .pd-future-chips span {
+          font-size: 0.76rem;
+          padding: 0.35rem 0.7rem;
+        }
+
+        .pd-growth-path {
+          gap: 0.4rem;
+        }
+      }
+
+      /* ---------- ≤360px: very small / older phones (e.g. iPhone SE) ---------- */
+      @media (max-width: 360px) {
+        .proposal-doc {
+          font-size: 14.5px;
+        }
+
+        .proposal-topbar-inner {
+          padding: 0.6rem 0.9rem;
+        }
+
+        .pd-stat-number {
+          font-size: 1.7rem;
+        }
+
+        .pd-timeline {
+          padding-left: 1.3rem;
+        }
+
+        .pd-timeline-item::before {
+          left: -1.3rem;
+          width: 11px;
+          height: 11px;
+        }
+      }
+
+      /* ---------- Short / landscape phones: reclaim vertical space ---------- */
+      @media (max-height: 480px) and (orientation: landscape) {
+        .proposal-title {
+          padding-top: 1.4rem;
+          padding-bottom: 1rem;
+        }
+
+        .proposal-section {
+          padding: 1rem 0;
+        }
+      }
+
+      /* ---------- Fine pointers (mouse/trackpad) only: keep hover lift,
+           avoid sticky-hover artifacts on touch devices ---------- */
+      @media (hover: none) {
+        .pd-card:hover,
+        .pd-btn-primary:hover,
+        .pd-btn-outline:hover {
+          transform: none;
+        }
+      }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "The Kransh Journal Website Proposal",
+        "url": "https://webinstant.online/kranshjournal.html",
+        "publisher": {
+          "@type": "Organization",
+          "name": "WebInstant",
+          "url": "https://webinstant.online"
+        }
+      }
+    </script>
+  </head>
+
+  <body class="proposal-doc">
+    <div id="reading-progress"></div>
+
+    <!-- ── Minimal document header ── -->
+    <header class="proposal-topbar">
+      <div class="proposal-topbar-inner">
+        <a
+          class="proposal-brand"
+          href="index.html"
+          aria-label="WebInstant Home"
+        >
+          <img src="logo.png" alt="WebInstant Logo" class="proposal-logo" />
+        </a>
+        <div class="proposal-topbar-right">
+          <span class="proposal-tagline">Launch Fast. Look Great.</span>
+          <span class="proposal-badge"
+            ><i class="fas fa-lock" aria-hidden="true"></i
+            ><span class="proposal-badge-text">Private Proposal</span></span
+          >
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- ── Title block ── -->
+      <section class="proposal-title reveal">
+        <p class="proposal-eyebrow">Website Development Proposal</p>
+        <h1>The Kransh Journal</h1>
+        <p class="proposal-sub">
+          A professional foundation for a growing health education brand.
+        </p>
+      </section>
+
+      <!-- ── Proposal information / metadata card ── -->
+      <section class="proposal-meta reveal" aria-label="Proposal information">
+        <div class="meta-card">
+          <div class="meta-item">
+            <span class="meta-label">Prepared For</span>
+            <span class="meta-value">Dr. Archana Garg</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Prepared By</span>
+            <span class="meta-value">WebInstant</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Project</span>
+            <span class="meta-value">The Kransh Journal Website</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Proposal Date</span>
+            <span class="meta-value">11 August 2026</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Content ── -->
+      <div class="proposal-body">
+        <div class="proposal-content">
+          <!-- 1. Project Objective -->
+          <section class="proposal-section reveal" id="objective">
+            <h2><span class="num">01</span> Project Objective</h2>
+            <p class="lead">
+              The goal is to create a professional digital home for
+              <strong>The Kransh Journal</strong> where visitors can understand
+              the brand, explore health education content, connect with the
+              newsletter, and learn more about Dr. Archana and her work.
+            </p>
+            <p>
+              Since The Kransh Journal is currently in its early stage, the
+              website will focus on creating a strong and professional
+              foundation without adding unnecessary complexity or cost.
+            </p>
+            <p>
+              The website will also be structured with future growth in mind,
+              allowing additional features to be added as the brand develops.
+            </p>
+          </section>
+
+          <!-- 2. Website Features -->
+          <section class="proposal-section reveal" id="features">
+            <h2><span class="num">02</span> Website Features</h2>
+            <p>The core pages that will make up the website:</p>
+            <div class="pd-grid cols-3">
+              <div class="pd-card">
+                <div class="pd-icon">
+                  <i class="fas fa-house" aria-hidden="true"></i>
+                </div>
+                <h3>Home</h3>
+                <p>
+                  Introduction to The Kransh Journal, its purpose, and the value
+                  it provides to its audience.
+                </p>
+              </div>
+              <div class="pd-card">
+                <div class="pd-icon">
+                  <i class="fas fa-user-doctor" aria-hidden="true"></i>
+                </div>
+                <h3>About</h3>
+                <p>
+                  Information about Dr. Archana, her background, the vision
+                  behind the journal, and the purpose of the brand.
+                </p>
+              </div>
+              <div class="pd-card">
+                <div class="pd-icon">
+                  <i class="fas fa-book-open" aria-hidden="true"></i>
+                </div>
+                <h3>The Journal</h3>
+                <p>
+                  A dedicated section for presenting health education articles
+                  and directing visitors toward published content.
+                </p>
+              </div>
+              <div class="pd-card">
+                <div class="pd-icon">
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                </div>
+                <h3>Featured Content</h3>
+                <p>
+                  A section to highlight selected, important, or recent articles
+                  and resources.
+                </p>
+              </div>
+              <div class="pd-card">
+                <div class="pd-icon">
+                  <i class="fas fa-envelope-open-text" aria-hidden="true"></i>
+                </div>
+                <h3>Newsletter</h3>
+                <p>
+                  Integration with the existing Substack newsletter so visitors
+                  can discover and subscribe to The Kransh Journal.
+                </p>
+              </div>
+              <div class="pd-card">
+                <div class="pd-icon">
+                  <i class="fas fa-video" aria-hidden="true"></i>
+                </div>
+                <h3>Videos</h3>
+                <p>
+                  A dedicated section prepared for future short-form and
+                  long-form video content, including YouTube integration when
+                  the channel is launched.
+                </p>
+              </div>
+              <div class="pd-card">
+                <div class="pd-icon">
+                  <i class="fas fa-address-card" aria-hidden="true"></i>
+                </div>
+                <h3>Contact</h3>
+                <p>
+                  Relevant contact information and social/contact links for
+                  visitors who wish to connect.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 3. Additional Website Setup -->
+          <section class="proposal-section reveal" id="setup">
+            <h2><span class="num">03</span> Additional Website Setup</h2>
+            <p>Beyond the core pages, the following is included:</p>
+            <ul class="pd-checklist">
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Responsive
+                design for mobile, tablet and desktop
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Modern and
+                professional user interface
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Basic SEO setup
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> SEO-friendly
+                page structure
+              </li>
+              <li><i class="fas fa-check" aria-hidden="true"></i> Favicon</li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Social media
+                integration
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Social sharing
+                metadata
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Privacy Policy
+                page
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Terms &amp;
+                Conditions page
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Health/medical
+                disclaimer
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Website
+                deployment
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Basic
+                performance optimization
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Cross-device
+                testing
+              </li>
+            </ul>
+          </section>
+
+          <!-- 4. Future-Ready Structure -->
+          <section class="proposal-section reveal" id="future">
+            <h2><span class="num">04</span> Future-Ready Structure</h2>
+            <p>
+              The first version will focus on establishing the brand and
+              creating a professional online presence.
+            </p>
+            <div class="pd-growth-path" aria-hidden="true">
+              <span class="step">Start Simple</span>
+              <span class="arrow"><i class="fas fa-arrow-right"></i></span>
+              <span class="step">Grow</span>
+              <span class="arrow"><i class="fas fa-arrow-right"></i></span>
+              <span class="step">Expand</span>
+            </div>
+            <p>
+              As The Kransh Journal grows, the website can later be expanded
+              with:
+            </p>
+            <div class="pd-future-chips">
+              <span>Health guides &amp; digital products</span>
+              <span>Online payment functionality</span>
+              <span>Premium health magazine</span>
+              <span>Content Management System (CMS)</span>
+              <span>Admin dashboard for publishing</span>
+              <span>Membership / subscription features</span>
+              <span>Advanced analytics</span>
+              <span>Additional video features</span>
+              <span>Other digital products &amp; resources</span>
+            </div>
+            <div class="pd-note">
+              These features are <strong>not included</strong> in the initial
+              website development and can be developed separately when they
+              become necessary — allowing the brand to grow gradually instead of
+              investing in complex systems before they are actually needed.
+            </div>
+          </section>
+
+          <!-- 5. Client Requirements -->
+          <section class="proposal-section reveal" id="requirements">
+            <h2><span class="num">05</span> Client Requirements</h2>
+            <p>
+              To develop the website, the following will be provided by Dr.
+              Archana:
+            </p>
+            <ul class="pd-checklist">
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Final logo and
+                brand assets
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Professional
+                photographs
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> About / bio
+                information
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Existing
+                articles or links to published content
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Substack
+                newsletter link
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Instagram link
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> LinkedIn link
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Contact
+                information
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Preferred
+                colors, if already decided
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Design
+                references or example websites, if available
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> Any other
+                content required for the agreed sections
+              </li>
+            </ul>
+            <div class="pd-note">
+              The client will retain ownership of their brand assets, domain,
+              social media accounts, Substack account, and other third-party
+              accounts.
+            </div>
+          </section>
+
+          <!-- 6. Domain & Hosting -->
+          <section class="proposal-section reveal" id="hosting">
+            <h2><span class="num">06</span> Domain &amp; Hosting</h2>
+            <div class="pd-grid cols-2">
+              <div class="pd-card">
+                <div class="pd-icon">
+                  <i class="fas fa-globe" aria-hidden="true"></i>
+                </div>
+                <h3>Domain</h3>
+                <p>
+                  A custom domain such as
+                  <strong>thekranshjournal.com</strong> or
+                  <strong>thekranshjournal.in</strong> can be purchased
+                  separately by the client. For long-term ownership and easier
+                  management, the domain should ideally be registered under the
+                  client's own account. The cost of the domain and its future
+                  renewal is separate from the website development fee.
+                </p>
+              </div>
+              <div class="pd-card">
+                <div class="pd-icon">
+                  <i class="fas fa-server" aria-hidden="true"></i>
+                </div>
+                <h3>Hosting</h3>
+                <p>
+                  For the initial static website, <strong>GitHub Pages</strong>
+                  can be used as the hosting platform at no additional hosting
+                  cost. If the website later requires a backend, CMS, database,
+                  payment system, membership system, or other server-side
+                  functionality, the hosting infrastructure can be upgraded
+                  accordingly. Any future hosting or third-party service costs
+                  will be discussed separately before implementation.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 7. Development & Delivery -->
+          <section class="proposal-section reveal" id="delivery">
+            <h2><span class="num">07</span> Development &amp; Delivery</h2>
+            <div class="pd-stat-box">
+              <div class="pd-stat-number">5–7</div>
+              <div class="pd-stat-copy">
+                <strong>Working Days</strong>
+                <span>Estimated development timeline</span>
+              </div>
+            </div>
+            <p>The timeline begins after:</p>
+            <ul class="pd-checklist">
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> The advance
+                payment has been received
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> The required
+                content and assets have been provided
+              </li>
+              <li>
+                <i class="fas fa-check" aria-hidden="true"></i> The final
+                website scope has been confirmed
+              </li>
+            </ul>
+            <div class="pd-note">
+              Delays in receiving required content, images, information, or
+              feedback may affect the delivery timeline.
+            </div>
+          </section>
+
+          <!-- 8. Revisions -->
+          <section class="proposal-section reveal" id="revisions">
+            <h2><span class="num">08</span> Revisions</h2>
+            <div class="pd-stat-box">
+              <div class="pd-stat-number">3</div>
+              <div class="pd-stat-copy">
+                <strong>Rounds of Revisions</strong>
+                <span>Included in this project</span>
+              </div>
+            </div>
+            <p>
+              These revisions are intended for adjustments to the agreed website
+              design and content.
+            </p>
+            <div class="pd-note">
+              Major changes to the approved structure, additional pages, new
+              features, backend development, or completely new design directions
+              are not considered revisions and may require additional charges.
+            </div>
+          </section>
+
+          <!-- 9. Post-Launch Support -->
+          <section class="proposal-section reveal" id="support">
+            <h2><span class="num">09</span> Post-Launch Support</h2>
+            <div class="pd-stat-box">
+              <div class="pd-stat-number">15</div>
+              <div class="pd-stat-copy">
+                <strong>Days Free Support</strong>
+                <span>Complimentary technical support after launch</span>
+              </div>
+            </div>
+            <div class="pd-included-grid">
+              <div class="pd-included-box yes">
+                <h4>
+                  <i class="fas fa-check-circle" aria-hidden="true"></i>
+                  Included
+                </h4>
+                <ul>
+                  <li>
+                    <i class="fas fa-check" aria-hidden="true"></i> Bug fixes
+                  </li>
+                  <li>
+                    <i class="fas fa-check" aria-hidden="true"></i> Broken-link
+                    fixes
+                  </li>
+                  <li>
+                    <i class="fas fa-check" aria-hidden="true"></i> Minor
+                    technical corrections
+                  </li>
+                  <li>
+                    <i class="fas fa-check" aria-hidden="true"></i> Small
+                    adjustments related to the delivered website
+                  </li>
+                  <li>
+                    <i class="fas fa-check" aria-hidden="true"></i> Assistance
+                    with basic website-related issues
+                  </li>
+                </ul>
+              </div>
+              <div class="pd-included-box no">
+                <h4>
+                  <i class="fas fa-times-circle" aria-hidden="true"></i> Not
+                  Included
+                </h4>
+                <ul>
+                  <li>
+                    <i class="fas fa-xmark" aria-hidden="true"></i> New pages
+                  </li>
+                  <li>
+                    <i class="fas fa-xmark" aria-hidden="true"></i> Major design
+                    changes
+                  </li>
+                  <li>
+                    <i class="fas fa-xmark" aria-hidden="true"></i> New features
+                  </li>
+                  <li>
+                    <i class="fas fa-xmark" aria-hidden="true"></i> Backend /
+                    CMS development
+                  </li>
+                  <li>
+                    <i class="fas fa-xmark" aria-hidden="true"></i> Regular
+                    article or video uploading
+                  </li>
+                  <li>
+                    <i class="fas fa-xmark" aria-hidden="true"></i> Major
+                    content restructuring
+                  </li>
+                  <li>
+                    <i class="fas fa-xmark" aria-hidden="true"></i> Third-party
+                    service development
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="pd-note">
+              Any additional development or ongoing content management can be
+              discussed separately as the brand grows.
+            </div>
+          </section>
+
+          <!-- 10. Project Investment -->
+          <section class="proposal-section reveal" id="investment">
+            <h2><span class="num">10</span> Project Investment</h2>
+            <div class="pd-price-card">
+              <p class="label">Total Website Development Fee</p>
+              <p class="amount">₹5,000</p>
+              <p class="subline">One-Time Development Fee</p>
+            </div>
+            <div class="pd-price-split">
+              <div class="pd-split-item">
+                <p class="tag">50% Advance</p>
+                <p class="value">₹2,500</p>
+                <p class="desc">Required before development begins</p>
+              </div>
+              <div class="pd-split-item">
+                <p class="tag">50% Final Payment</p>
+                <p class="value">₹2,500</p>
+                <p class="desc">
+                  Payable after completion and approval, before final handover
+                </p>
+              </div>
+            </div>
+            <div class="pd-separate-costs">
+              <h4>Not included in the ₹5,000 development fee:</h4>
+              <ul class="pd-checklist">
+                <li>
+                  <i class="fas fa-check" aria-hidden="true"></i> Domain
+                  purchase and renewal
+                </li>
+                <li>
+                  <i class="fas fa-check" aria-hidden="true"></i> Paid hosting,
+                  if required in the future
+                </li>
+                <li>
+                  <i class="fas fa-check" aria-hidden="true"></i> Paid
+                  third-party services
+                </li>
+                <li>
+                  <i class="fas fa-check" aria-hidden="true"></i> Premium
+                  plugins / tools, if required
+                </li>
+                <li>
+                  <i class="fas fa-check" aria-hidden="true"></i> Payment
+                  gateway charges
+                </li>
+                <li>
+                  <i class="fas fa-check" aria-hidden="true"></i> Future CMS /
+                  backend development
+                </li>
+                <li>
+                  <i class="fas fa-check" aria-hidden="true"></i> Additional
+                  features outside the agreed scope
+                </li>
+              </ul>
+              <div class="pd-note">
+                Any such additional costs will be discussed and approved
+                beforehand.
+              </div>
+            </div>
+          </section>
+
+          <!-- 11. Project Approach -->
+          <section class="proposal-section reveal" id="approach">
+            <h2><span class="num">11</span> Project Approach</h2>
+            <div class="pd-timeline">
+              <div class="pd-timeline-item">
+                <p class="step-num">01</p>
+                <h3>Build the Foundation</h3>
+                <p>Create the professional online presence.</p>
+              </div>
+              <div class="pd-timeline-item">
+                <p class="step-num">02</p>
+                <h3>Publish &amp; Grow</h3>
+                <p>Publish health education content and newsletters.</p>
+              </div>
+              <div class="pd-timeline-item">
+                <p class="step-num">03</p>
+                <h3>Build the Audience</h3>
+                <p>
+                  Grow awareness across Instagram, LinkedIn, YouTube and other
+                  channels.
+                </p>
+              </div>
+              <div class="pd-timeline-item">
+                <p class="step-num">04</p>
+                <h3>Understand the Audience</h3>
+                <p>
+                  Learn what content, resources and products the audience
+                  actually needs.
+                </p>
+              </div>
+              <div class="pd-timeline-item">
+                <p class="step-num">05</p>
+                <h3>Add Features When Necessary</h3>
+                <p>
+                  Introduce guides, payments, CMS, memberships and other
+                  functionality when justified.
+                </p>
+              </div>
+              <div class="pd-timeline-item">
+                <p class="step-num">06</p>
+                <h3>Expand</h3>
+                <p>
+                  Move toward digital products, premium content and a larger
+                  health education platform.
+                </p>
+              </div>
+            </div>
+            <p class="lead" style="margin-top: 1rem">
+              The goal is to build what The Kransh Journal needs today while
+              keeping the foundation ready for where the brand wants to go
+              tomorrow.
+            </p>
+          </section>
+
+          <!-- 12. Scope Confirmation -->
+          <section class="proposal-section reveal" id="scope">
+            <h2><span class="num">12</span> Scope Confirmation</h2>
+            <p>
+              Development will begin once the final requirements are confirmed,
+              the project scope is agreed upon, and the
+              <strong>50% advance payment of ₹2,500</strong> is received.
+            </p>
+            <p>
+              Any feature or requirement outside this agreed scope will be
+              discussed and quoted separately before development.
+            </p>
+          </section>
+        </div>
+      </div>
+
+      <!-- ── Closing ── -->
+      <section class="proposal-closing reveal">
+        <h2>THE KRANSH JOURNAL</h2>
+        <p class="tagline">
+          A professional foundation for a growing health education brand.
+        </p>
+        <p class="path">Build the foundation → Publish → Grow → Expand</p>
+        <div class="proposal-closing-actions">
+          <a
+            class="pd-btn pd-btn-primary"
+            href="https://wa.me/919871072210?text=Hi%20WebInstant%2C%20I'd%20like%20to%20discuss%20The%20Kransh%20Journal%20website%20proposal."
+            target="_blank"
+            rel="noopener"
+            ><i class="fab fa-whatsapp" aria-hidden="true"></i> Discuss on
+            WhatsApp</a
+          >
+          <a
+            class="pd-btn pd-btn-outline"
+            href="mailto:businesswebinstant@gmail.com"
+            ><i class="fas fa-envelope" aria-hidden="true"></i> Email Us</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <!-- ── Small document footer ── -->
+    <footer class="proposal-footer">
+      <p><strong>Prepared by WebInstant</strong></p>
+      <p>Launch Fast. Look Great.</p>
+      <p>© <span id="year"></span> WebInstant • All rights reserved.</p>
+    </footer>
+    <script>
+      // ============================================================
+      // proposal-kransh-journal.js
+      // Lightweight, self-contained behaviour for the Kransh Journal
+      // proposal page. No dependency on the main site's script.js so
+      // this page stays independent from the rest of WebInstant.
+      // ============================================================
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // ---------- Footer year ----------
+        var yearEl = document.getElementById("year");
+        if (yearEl) {
+          yearEl.textContent = new Date().getFullYear();
+        }
+
+        // ---------- Reading progress bar ----------
+        var progressBar = document.getElementById("reading-progress");
+        function updateProgress() {
+          if (!progressBar) return;
+          var scrollHeight =
+            document.documentElement.scrollHeight - window.innerHeight;
+          var progress =
+            scrollHeight > 0 ? (window.scrollY / scrollHeight) * 100 : 0;
+          progressBar.style.width = progress + "%";
+        }
+        window.addEventListener("scroll", updateProgress, { passive: true });
+        updateProgress();
+
+        // ---------- Smooth scroll for in-page anchors ----------
+        document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+          anchor.addEventListener("click", function (e) {
+            var targetId = this.getAttribute("href");
+            if (!targetId || targetId === "#") return;
+            var targetEl = document.querySelector(targetId);
+            if (!targetEl) return;
+            e.preventDefault();
+            var headerOffset = 90;
+            var top =
+              targetEl.getBoundingClientRect().top +
+              window.pageYOffset -
+              headerOffset;
+            window.scrollTo({ top: top, behavior: "smooth" });
+            history.pushState(null, "", targetId);
+          });
+        });
+
+        // ---------- Scroll reveal ----------
+        var revealTargets = document.querySelectorAll(".reveal");
+        if ("IntersectionObserver" in window && revealTargets.length) {
+          var revealObserver = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry, i) {
+                if (entry.isIntersecting) {
+                  entry.target.style.transitionDelay = i * 0.04 + "s";
+                  entry.target.classList.add("visible");
+                  revealObserver.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.1 },
+          );
+          revealTargets.forEach(function (el) {
+            revealObserver.observe(el);
+          });
+        } else {
+          revealTargets.forEach(function (el) {
+            el.classList.add("visible");
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
