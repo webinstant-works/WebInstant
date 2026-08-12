@@ -55,7 +55,18 @@
   "publisher": {"@type": "Organization", "name": "WebInstant", "url": "https://webinstant.online"}
 }
     </script>
-</head>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://webinstant.online/"},
+        {"@type": "ListItem", "position": 2, "name": "Projects", "item": "https://webinstant.online/projects.html"}
+      ]
+    }
+    </script>
+  </head>
 
 <body>
     <header class="site-header">
@@ -70,7 +81,7 @@
                 <a href="services.html" class="nav-link">Services</a>
                 <a href="plans.html" class="nav-link">Plans</a>
                 <a href="projects.html" class="nav-link active">Projects</a>
-                <a href="contact.html" class="nav-link">Contact Us</a>
+                <a href="contact.html" class="nav-link cta">Contact Us</a>
             </nav>
         </div>
     </header>
@@ -159,7 +170,7 @@
                 <div class="image-wrapper">
                     <img src="kamleshwar-portfolio.png" alt="Kamleshwar Sharma Portfolio - Graphic Designer with 12 Years Experience" width="600" height="400" loading="lazy">
                     <div class="project-overlay">
-                        <a href="https://www.webinstant.online/kamleshwar" target="_blank" rel="noopener noreferrer"
+                        <a href="https://kamleshwar83.github.io/kamleshwar-portfolio/" target="_blank" rel="noopener noreferrer"
                             class="project-link">
                             <i class="fas fa-external-link-alt"></i> Live Demo
                         </a>
@@ -284,8 +295,8 @@
       <h3>Contact</h3>
       <p>
         Email:
-        <a href="mailto:businesswebinstant@gmail.com"
-          >businesswebinstant@gmail.com</a
+        <a href="mailto:thewebinstant@gmail.com"
+          >thewebinstant@gmail.com</a
         >
       </p>
       <p>Phone: <a href="tel:+919871072210">+91 98710 72210</a></p>
