@@ -68,6 +68,7 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     /></noscript>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="legal.css" />
 
     <script type="application/ld+json">
       {
@@ -94,112 +95,88 @@
         </a>
         <div class="hamburger" id="hamburger">☰</div>
         <nav class="main-nav" id="mainNav">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="about.html" class="nav-link">About</a>
-                <a href="services.html" class="nav-link">Services</a>
-                <a href="plans.html" class="nav-link">Plans</a>
-                <a href="projects.html" class="nav-link">Projects</a>
-                <a href="contact.html" class="nav-link">Contact Us</a>
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="plans.html" class="nav-link">Plans</a>
+          <a href="projects.html" class="nav-link">Projects</a>
+          <a href="contact.html" class="nav-link cta">Contact Us</a>
         </nav>
       </div>
     </header>
 
-    <!-- Hero Banner -->
-    <div class="legal-hero">
-      <h1>Privacy Policy</h1>
-      <p class="hero-subtitle">
-        WebInstant is committed to protecting your privacy. Here's a clear,
-        honest account of how we collect, use, and safeguard your information.
-      </p>
-      <span class="hero-badge"
-        ><i class="fas fa-calendar-alt"></i> Last Updated: 1 July 2025</span
-      >
-    </div>
+    <div class="legal-doc">
+      <!-- Hero Banner -->
+      <div class="legal-doc-hero">
+        <span class="legal-doc-eyebrow"
+          ><i class="fas fa-shield-alt"></i> Legal &amp; Policies</span
+        >
+        <h1>Privacy Policy</h1>
+        <p class="legal-doc-sub">
+          WebInstant is committed to protecting your privacy. Here's a clear,
+          honest account of how we collect, use, and safeguard your information.
+        </p>
+        <span class="legal-doc-badge"
+          ><i class="fas fa-calendar-alt"></i> Last Updated: 1 July 2025</span
+        >
+      </div>
 
-    <main class="container section privacy-page">
-      <div class="privacy-container">
-        <!-- Notice -->
-        <div class="notice-box" style="margin-top: 36px">
-          <p>
-            <i class="fas fa-exclamation-circle"></i>
-            <strong>Important:</strong> By using WebInstant services, you agree
-            to this Privacy Policy.
-          </p>
-        </div>
+      <main class="legal-main">
+        <div class="legal-shell">
+          <!-- Notice -->
+          <div class="legal-notice">
+            <i class="fas fa-info-circle"></i>
+            <p>
+              <strong>Important:</strong> By using WebInstant services, you
+              agree to this Privacy Policy.
+            </p>
+          </div>
 
-        <!-- Table of Contents -->
-        <div class="toc-card">
-          <h2><i class="fas fa-list"></i> Quick Navigation</h2>
-          <ul class="toc-list">
-            <li>
+          <!-- Table of Contents -->
+          <details class="legal-toc" open>
+            <summary class="legal-toc-summary">
+              <span><i class="fas fa-list-ul"></i> Quick Navigation</span>
+              <i class="fas fa-chevron-down legal-toc-caret"></i>
+            </summary>
+            <div class="legal-toc-grid">
               <a href="#data-collect"
-                ><i class="fas fa-chevron-right"></i> Information We Collect</a
+                ><i class="fas fa-circle"></i> Information We Collect</a
               >
-            </li>
-            <li>
               <a href="#data-use"
-                ><i class="fas fa-chevron-right"></i> How We Use It</a
+                ><i class="fas fa-circle"></i> How We Use It</a
               >
-            </li>
-            <li>
               <a href="#data-share"
-                ><i class="fas fa-chevron-right"></i> Information Sharing</a
+                ><i class="fas fa-circle"></i> Information Sharing</a
               >
-            </li>
-            <li>
               <a href="#cookies"
-                ><i class="fas fa-chevron-right"></i> Cookies Policy</a
+                ><i class="fas fa-circle"></i> Cookies Policy</a
               >
-            </li>
-            <li>
               <a href="#security"
-                ><i class="fas fa-chevron-right"></i> Data Security</a
+                ><i class="fas fa-circle"></i> Data Security</a
               >
-            </li>
-            <li>
-              <a href="#rights"
-                ><i class="fas fa-chevron-right"></i> Your Rights</a
-              >
-            </li>
-            <li>
+              <a href="#rights"><i class="fas fa-circle"></i> Your Rights</a>
               <a href="#retention"
-                ><i class="fas fa-chevron-right"></i> Data Retention</a
+                ><i class="fas fa-circle"></i> Data Retention</a
               >
-            </li>
-            <li>
               <a href="#third-party"
-                ><i class="fas fa-chevron-right"></i> Third-Party Links</a
+                ><i class="fas fa-circle"></i> Third-Party Links</a
               >
-            </li>
-            <li>
               <a href="#children"
-                ><i class="fas fa-chevron-right"></i> Children's Privacy</a
+                ><i class="fas fa-circle"></i> Children's Privacy</a
               >
-            </li>
-            <li>
               <a href="#updates"
-                ><i class="fas fa-chevron-right"></i> Policy Updates</a
+                ><i class="fas fa-circle"></i> Policy Updates</a
               >
-            </li>
-            <li>
-              <a href="#contact-us"
-                ><i class="fas fa-chevron-right"></i> Contact Us</a
-              >
-            </li>
-          </ul>
-        </div>
+              <a href="#contact-us"><i class="fas fa-circle"></i> Contact Us</a>
+            </div>
+          </details>
 
-        <!-- Section 1 -->
-        <section class="privacy-section" id="data-collect">
-          <h2>1. Information We Collect</h2>
+          <!-- Section 1 -->
+          <section class="legal-section" id="data-collect">
+            <h2><span class="legal-num">1</span> Information We Collect</h2>
 
-          <h3>
-            <i class="fas fa-user-circle"></i> A. Personal Information (Provided
-            by You)
-          </h3>
-          <p>When you contact or purchase our services, we may collect:</p>
-          <div class="info-box personal">
-            <h4><i class="fas fa-id-card"></i> Personal Details</h4>
+            <h3>A. Personal Information (Provided by You)</h3>
+            <p>When you contact or purchase our services, we may collect:</p>
             <ul>
               <li>Full Name</li>
               <li>Email Address</li>
@@ -207,12 +184,9 @@
               <li>Business / Project Details</li>
               <li>Billing Information</li>
             </ul>
-          </div>
 
-          <h3><i class="fas fa-robot"></i> B. Automatically Collected Data</h3>
-          <p>When you visit our website, we may automatically collect:</p>
-          <div class="info-box automated">
-            <h4><i class="fas fa-desktop"></i> Technical & Usage Data</h4>
+            <h3>B. Automatically Collected Data</h3>
+            <p>When you visit our website, we may automatically collect:</p>
             <ul>
               <li>IP Address</li>
               <li>Browser Type &amp; Device Information</li>
@@ -221,289 +195,245 @@
               <li>Referral Links</li>
               <li>Cookies &amp; Usage Data</li>
             </ul>
-          </div>
 
-          <h3><i class="fas fa-credit-card"></i> C. Payment Information</h3>
-          <p>
-            Payments are processed via secure third-party gateways (Razorpay,
-            PayPal, Stripe, etc.)
-          </p>
-          <div class="info-box payment">
-            <h4><i class="fas fa-shield-alt"></i> Payment Security</h4>
+            <h3>C. Payment Information</h3>
             <p>
-              <strong>We do NOT store your full payment details.</strong> All
-              transactions are securely handled by PCI-compliant providers.
+              Payments are processed via secure third-party gateways (Razorpay,
+              PayPal, Stripe, etc.)
             </p>
-          </div>
-        </section>
-
-        <!-- Section 2 -->
-        <section class="privacy-section" id="data-use">
-          <h2>2. How We Use Your Information</h2>
-          <p>We use your data only to run and improve our services:</p>
-          <div class="usage-cards">
-            <div class="usage-card">
-              <i class="fas fa-laptop-code"></i>
-              <h3>Service Delivery</h3>
-              <p>Provide and manage your project</p>
-            </div>
-            <div class="usage-card">
-              <i class="fas fa-comments"></i>
-              <h4>Communication</h4>
-              <p>Communicate about projects</p>
-            </div>
-            <div class="usage-card">
-              <i class="fas fa-credit-card"></i>
-              <h4>Payments</h4>
-              <p>Process payments securely</p>
-            </div>
-            <div class="usage-card">
-              <i class="fas fa-chart-line"></i>
-              <h4>Improvement</h4>
-              <p>Improve website experience</p>
-            </div>
-          </div>
-          <div class="notice-box">
-            <p>
-              <i class="fas fa-lock"></i>
-              <strong
-                >We NEVER sell, rent, or misuse your personal data.</strong
-              >
-            </p>
-          </div>
-        </section>
-
-        <!-- Section 3 -->
-        <section class="privacy-section" id="data-share">
-          <h2>3. Information Sharing</h2>
-          <p>
-            We only share data with trusted parties when absolutely necessary:
-          </p>
-
-          <h3><i class="fas fa-handshake"></i> Trusted Service Providers</h3>
-          <ul>
-            <li>Payment processors (Razorpay, Stripe, PayPal)</li>
-            <li>Hosting providers</li>
-            <li>Email/communication services</li>
-            <li>Analytics tools (Google Analytics)</li>
-          </ul>
-
-          <h3><i class="fas fa-balance-scale"></i> Legal Requirements</h3>
-          <p>
-            We may disclose data if required by law, court order, or to protect
-            the rights and safety of users.
-          </p>
-        </section>
-
-        <!-- Section 4 -->
-        <section class="privacy-section" id="cookies">
-          <h2>4. Cookies Policy</h2>
-          <p>We use cookies to improve your experience on our website:</p>
-
-          <div class="cookie-types">
-            <div class="cookie-type">
-              <h3>Essential Cookies</h3>
+            <div class="legal-callout good">
+              <i class="fas fa-shield-alt"></i>
               <p>
-                Required for the website to function properly. Cannot be
-                disabled.
+                <strong>We do NOT store your full payment details.</strong>
+                All transactions are securely handled by PCI-compliant
+                providers.
               </p>
             </div>
-            <div class="cookie-type">
-              <h4>Analytics Cookies</h4>
-              <p>Help us understand how visitors interact with our website.</p>
-            </div>
-            <div class="cookie-type">
-              <h4>Preference Cookies</h4>
-              <p>Remember your settings and preferences for future visits.</p>
-            </div>
-          </div>
+          </section>
 
-          <div class="highlight-box">
+          <!-- Section 2 -->
+          <section class="legal-section" id="data-use">
+            <h2>
+              <span class="legal-num">2</span> How We Use Your Information
+            </h2>
+            <p>We use your data only to run and improve our services:</p>
+            <ul>
+              <li>
+                <strong>Service Delivery</strong> — provide and manage your
+                project
+              </li>
+              <li>
+                <strong>Communication</strong> — communicate about projects
+              </li>
+              <li><strong>Payments</strong> — process payments securely</li>
+              <li><strong>Improvement</strong> — improve website experience</li>
+            </ul>
+            <div class="legal-callout info">
+              <i class="fas fa-lock"></i>
+              <p>
+                <strong
+                  >We NEVER sell, rent, or misuse your personal data.</strong
+                >
+              </p>
+            </div>
+          </section>
+
+          <!-- Section 3 -->
+          <section class="legal-section" id="data-share">
+            <h2><span class="legal-num">3</span> Information Sharing</h2>
             <p>
-              💡 You can disable cookies at any time through your browser
-              settings, though some features may not work correctly.
+              We only share data with trusted parties when absolutely necessary:
             </p>
-          </div>
-        </section>
 
-        <!-- Section 5 -->
-        <section class="privacy-section" id="security">
-          <h2>5. Data Security</h2>
-          <p>We employ strong security measures to protect your data:</p>
+            <h3>Trusted Service Providers</h3>
+            <ul>
+              <li>Payment processors (Razorpay, Stripe, PayPal)</li>
+              <li>Hosting providers</li>
+              <li>Email/communication services</li>
+              <li>Analytics tools (Google Analytics)</li>
+            </ul>
 
-          <div class="security-badges">
-            <div class="security-badge">
-              <i class="fas fa-server"></i>
-              <span>Secure Servers</span>
-            </div>
-            <div class="security-badge">
-              <i class="fas fa-user-lock"></i>
-              <span>Controlled Access</span>
-            </div>
-            <div class="security-badge">
-              <i class="fas fa-eye"></i>
-              <span>Regular Monitoring</span>
-            </div>
-          </div>
+            <h3>Legal Requirements</h3>
+            <p>
+              We may disclose data if required by law, court order, or to
+              protect the rights and safety of users.
+            </p>
+          </section>
 
-          <div
-            class="notice-box"
-            style="
-              background: linear-gradient(135deg, #fff7ed, #fef3c7);
-              border-color: rgba(251, 191, 36, 0.2);
-              border-left-color: #f59e0b;
-            "
-          >
-            <p style="color: #78350f">
+          <!-- Section 4 -->
+          <section class="legal-section" id="cookies">
+            <h2><span class="legal-num">4</span> Cookies Policy</h2>
+            <p>We use cookies to improve your experience on our website:</p>
+            <ul>
+              <li>
+                <strong>Essential Cookies</strong> — required for the website to
+                function properly. Cannot be disabled.
+              </li>
+              <li>
+                <strong>Analytics Cookies</strong> — help us understand how
+                visitors interact with our website.
+              </li>
+              <li>
+                <strong>Preference Cookies</strong> — remember your settings and
+                preferences for future visits.
+              </li>
+            </ul>
+            <div class="legal-callout info">
+              <i class="fas fa-lightbulb"></i>
+              <p>
+                You can disable cookies at any time through your browser
+                settings, though some features may not work correctly.
+              </p>
+            </div>
+          </section>
+
+          <!-- Section 5 -->
+          <section class="legal-section" id="security">
+            <h2><span class="legal-num">5</span> Data Security</h2>
+            <p>We employ strong security measures to protect your data:</p>
+            <ul>
+              <li>Secure servers</li>
+              <li>Controlled access</li>
+              <li>Regular monitoring</li>
+            </ul>
+            <div class="legal-callout warn">
               <i class="fas fa-exclamation-triangle"></i>
-              <strong>Disclaimer:</strong> No system is 100% secure. While we do
-              everything possible to protect your data, we cannot guarantee
-              absolute security.
-            </p>
-          </div>
-        </section>
-
-        <!-- Section 6 -->
-        <section class="privacy-section" id="rights">
-          <h2>6. Your Rights</h2>
-          <p>You have the following rights regarding your personal data:</p>
-
-          <div class="rights-grid">
-            <div class="right-item">
-              <i class="fas fa-search"></i>
-              <div>
-                <h3>Access Your Data</h3>
-                <p>Request a copy of the data we hold</p>
-              </div>
+              <p>
+                <strong>Disclaimer:</strong> No system is 100% secure. While we
+                do everything possible to protect your data, we cannot guarantee
+                absolute security.
+              </p>
             </div>
-            <div class="right-item">
-              <i class="fas fa-edit"></i>
-              <div>
-                <h4>Update Information</h4>
-                <p>Correct inaccurate or outdated data</p>
-              </div>
-            </div>
-            <div class="right-item">
-              <i class="fas fa-trash-alt"></i>
-              <div>
-                <h4>Request Deletion</h4>
-                <p>Ask us to delete your personal data</p>
-              </div>
-            </div>
-            <div class="right-item">
-              <i class="fas fa-ban"></i>
-              <div>
-                <h4>Opt-Out</h4>
-                <p>Unsubscribe from marketing emails</p>
-              </div>
-            </div>
-            <div class="right-item">
-              <i class="fas fa-copy"></i>
-              <div>
-                <h4>Data Portability</h4>
-                <p>Request a portable copy of your data</p>
-              </div>
-            </div>
-          </div>
+          </section>
 
-          <div class="highlight-box">
-            <p>
-              <i class="fas fa-envelope"></i> To exercise any of these rights,
-              email us at
-              <a href="mailto:businesswebinstant@gmail.com"
-                >businesswebinstant@gmail.com</a
-              >
-            </p>
-          </div>
-        </section>
-
-        <!-- Section 7 -->
-        <section class="privacy-section" id="retention">
-          <h2>7. Data Retention</h2>
-          <p>We retain your data:</p>
-          <ul>
-            <li>For as long as needed to deliver and support our services</li>
-            <li>As required by applicable law or regulation</li>
-            <li>For reasonable dispute resolution periods</li>
-          </ul>
-          <p>Once no longer needed, data is securely deleted or anonymized.</p>
-        </section>
-
-        <!-- Section 8 -->
-        <section class="privacy-section" id="third-party">
-          <h2>8. Third-Party Links</h2>
-          <p>
-            Our website may contain links to external websites or services.
-            These are provided for your convenience.
-          </p>
-          <div class="notice-box">
-            <p>
-              <i class="fas fa-external-link-square-alt"></i> We are not
-              responsible for the privacy practices of third-party websites. We
-              encourage you to review their policies independently.
-            </p>
-          </div>
-        </section>
-
-        <!-- Section 9 -->
-        <section class="privacy-section" id="children">
-          <h2>9. Children's Privacy</h2>
-          <p>
-            Our services are not intended for children under the age of 13. We
-            do not knowingly collect personal data from children.
-          </p>
-          <div class="notice-box">
-            <p>
-              <i class="fas fa-shield-alt"></i> If we discover that data from a
-              child under 13 has been collected, it will be deleted immediately
-              upon request.
-            </p>
-          </div>
-        </section>
-
-        <!-- Section 10 -->
-        <section class="privacy-section" id="updates">
-          <h2>10. Updates to This Policy</h2>
-          <p>
-            We may update this Privacy Policy from time to time to reflect
-            changes in our services or legal requirements. All changes will be
-            posted on this page with an updated "Last Updated" date.
-          </p>
-          <p>
-            We encourage you to review this page periodically to stay informed.
-          </p>
-        </section>
-
-        <!-- Section 11 -->
-        <section class="privacy-section" id="contact-us">
-          <h2>11. Contact Us</h2>
-          <p>
-            If you have questions, concerns, or requests related to this Privacy
-            Policy, please reach out:
-          </p>
-
-          <div class="contact-privacy">
-            <h3><i class="fas fa-comments"></i> Get in Touch</h3>
-            <div class="contact-info-items">
-              <div class="contact-item">
-                <i class="fas fa-envelope"></i>
+          <!-- Section 6 -->
+          <section class="legal-section" id="rights">
+            <h2><span class="legal-num">6</span> Your Rights</h2>
+            <p>You have the following rights regarding your personal data:</p>
+            <ul>
+              <li>
+                <strong>Access Your Data</strong> — request a copy of the data
+                we hold
+              </li>
+              <li>
+                <strong>Update Information</strong> — correct inaccurate or
+                outdated data
+              </li>
+              <li>
+                <strong>Request Deletion</strong> — ask us to delete your
+                personal data
+              </li>
+              <li>
+                <strong>Opt-Out</strong> — unsubscribe from marketing emails
+              </li>
+              <li>
+                <strong>Data Portability</strong> — request a portable copy of
+                your data
+              </li>
+            </ul>
+            <div class="legal-callout info">
+              <i class="fas fa-envelope"></i>
+              <p>
+                To exercise any of these rights, email us at
                 <a href="mailto:businesswebinstant@gmail.com"
                   >businesswebinstant@gmail.com</a
                 >
-              </div>
-              <div class="contact-item">
-                <i class="fas fa-phone"></i>
-                <a href="tel:+919871072210">+91 98710 72210</a>
-              </div>
+              </p>
+            </div>
+          </section>
+
+          <!-- Section 7 -->
+          <section class="legal-section" id="retention">
+            <h2><span class="legal-num">7</span> Data Retention</h2>
+            <p>We retain your data:</p>
+            <ul>
+              <li>For as long as needed to deliver and support our services</li>
+              <li>As required by applicable law or regulation</li>
+              <li>For reasonable dispute resolution periods</li>
+            </ul>
+            <p>
+              Once no longer needed, data is securely deleted or anonymized.
+            </p>
+          </section>
+
+          <!-- Section 8 -->
+          <section class="legal-section" id="third-party">
+            <h2><span class="legal-num">8</span> Third-Party Links</h2>
+            <p>
+              Our website may contain links to external websites or services.
+              These are provided for your convenience.
+            </p>
+            <div class="legal-callout info">
+              <i class="fas fa-external-link-square-alt"></i>
+              <p>
+                We are not responsible for the privacy practices of third-party
+                websites. We encourage you to review their policies
+                independently.
+              </p>
+            </div>
+          </section>
+
+          <!-- Section 9 -->
+          <section class="legal-section" id="children">
+            <h2><span class="legal-num">9</span> Children's Privacy</h2>
+            <p>
+              Our services are not intended for children under the age of 13. We
+              do not knowingly collect personal data from children.
+            </p>
+            <div class="legal-callout info">
+              <i class="fas fa-shield-alt"></i>
+              <p>
+                If we discover that data from a child under 13 has been
+                collected, it will be deleted immediately upon request.
+              </p>
+            </div>
+          </section>
+
+          <!-- Section 10 -->
+          <section class="legal-section" id="updates">
+            <h2><span class="legal-num">10</span> Updates to This Policy</h2>
+            <p>
+              We may update this Privacy Policy from time to time to reflect
+              changes in our services or legal requirements. All changes will be
+              posted on this page with an updated "Last Updated" date.
+            </p>
+            <p>
+              We encourage you to review this page periodically to stay
+              informed.
+            </p>
+          </section>
+
+          <!-- Section 11 -->
+          <section class="legal-section" id="contact-us">
+            <h2><span class="legal-num">11</span> Contact Us</h2>
+            <p>
+              If you have questions, concerns, or requests related to this
+              Privacy Policy, please reach out:
+            </p>
+          </section>
+
+          <div class="legal-contact">
+            <h3><i class="fas fa-comments"></i> Get in Touch</h3>
+            <p>
+              We're happy to answer any questions about how your data is
+              handled.
+            </p>
+            <div class="legal-contact-links">
+              <a href="mailto:thewebinstant@gmail.com"
+                ><i class="fas fa-envelope"></i> thewebinstant@gmail.com</a
+              >
+              <a href="tel:+919871072210"
+                ><i class="fas fa-phone"></i> +91 98710 72210</a
+              >
             </div>
           </div>
-        </section>
 
-        <div class="last-updated">
-          <p><i class="fas fa-calendar-alt"></i> Last Updated: 1 July 2025</p>
+          <div class="legal-updated">
+            <p><i class="fas fa-calendar-alt"></i> Last Updated: 1 July 2025</p>
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </div>
 
     <footer class="site-footer">
       <div class="footer-container">
@@ -525,8 +455,8 @@
           <h3>Contact</h3>
           <p>
             Email:
-            <a href="mailto:businesswebinstant@gmail.com"
-              >businesswebinstant@gmail.com</a
+            <a href="mailto:thewebinstant@gmail.com"
+              >thewebinstant@gmail.com</a
             >
           </p>
           <p>Phone: <a href="tel:+919871072210">+91 98710 72210</a></p>
@@ -591,56 +521,48 @@
 
     <script src="script.js"></script>
     <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-
-      document
-        .getElementById("hamburger")
-        .addEventListener("click", function () {
-          document.getElementById("mainNav").classList.toggle("show");
-        });
-
       // Reading progress bar
       const progressBar = document.getElementById("reading-progress");
       window.addEventListener("scroll", () => {
         const scrollTop = window.scrollY;
         const docHeight =
           document.documentElement.scrollHeight - window.innerHeight;
-        progressBar.style.width = (scrollTop / docHeight) * 100 + "%";
+        progressBar.style.width =
+          (docHeight > 0 ? scrollTop / docHeight : 0) * 100 + "%";
       });
 
       // Fade-in sections
-      const observer = new IntersectionObserver(
+      const legalObserver = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               entry.target.classList.add("visible");
-              observer.unobserve(entry.target);
+              legalObserver.unobserve(entry.target);
             }
           });
         },
         { threshold: 0.08 },
       );
 
-      document
-        .querySelectorAll(".privacy-section")
-        .forEach((sec) => observer.observe(sec));
+      document.querySelectorAll(".legal-section").forEach((sec) => {
+        sec.classList.add("reveal");
+        legalObserver.observe(sec);
+      });
 
       // TOC smooth scroll
-      document.querySelectorAll('.toc-list a[href^="#"]').forEach((link) => {
-        link.addEventListener("click", (e) => {
-          e.preventDefault();
-          const target = document.querySelector(link.getAttribute("href"));
-          if (target)
-            window.scrollTo({ top: target.offsetTop - 90, behavior: "smooth" });
+      document
+        .querySelectorAll('.legal-toc-grid a[href^="#"]')
+        .forEach((link) => {
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const target = document.querySelector(link.getAttribute("href"));
+            if (target)
+              window.scrollTo({
+                top: target.offsetTop - 90,
+                behavior: "smooth",
+              });
+          });
         });
-      });
-
-      // Active nav
-      const currentPage = window.location.pathname.split("/").pop();
-      document.querySelectorAll(".nav-link").forEach((link) => {
-        if (link.getAttribute("href") === currentPage)
-          link.classList.add("active");
-      });
     </script>
   </body>
 </html>
