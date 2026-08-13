@@ -110,7 +110,8 @@
     <!-- Hero Banner -->
     <div class="plans-hero">
       <div class="plans-hero-content">
-        <h1>Our Development Plans</h1>
+        <div class="eyebrow-pill"><i class="fas fa-tags"></i> Pricing</div>
+        <h1>Our Development <span>Plans</span></h1>
         <p class="hero-subtitle">
           Choose the perfect package for your online presence. All plans include
           responsive design, fast delivery, and direct WhatsApp support.
@@ -737,17 +738,8 @@
 
     <script src="script.js"></script>
     <script>
-      // Footer year
+      // Footer year (mobile nav toggle is handled globally in script.js)
       document.getElementById("year").textContent = new Date().getFullYear();
-
-      // Mobile hamburger
-      const hamburgerBtn = document.getElementById("hamburger");
-      const navMenu = document.getElementById("mainNav");
-      if (hamburgerBtn && navMenu) {
-        hamburgerBtn.addEventListener("click", () =>
-          navMenu.classList.toggle("show"),
-        );
-      }
 
       // Reading progress bar
       const progressBar = document.getElementById("reading-progress");
