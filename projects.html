@@ -89,7 +89,8 @@
     <!-- ── Hero Banner ── -->
     <div class="plans-hero">
         <div class="plans-hero-content">
-            <h1>Our Portfolio</h1>
+            <div class="eyebrow-pill"><i class="fas fa-briefcase"></i> Our Work</div>
+            <h1>Our <span>Portfolio</span></h1>
             <p class="hero-subtitle">A showcase of digital craftsmanship — each project built with purpose, speed, and
                 modern aesthetics that actually convert.</p>
         </div>
@@ -97,6 +98,7 @@
     <div>
 
     </div>
+    <br>
     <br>
     <div class="projects-grid">
 
@@ -331,15 +333,8 @@
 
     <script src="script.js"></script>
     <script>
-        // ── Footer year ──
+        // ── Footer year (mobile nav toggle is handled globally in script.js) ──
         document.getElementById('year').textContent = new Date().getFullYear();
-
-        // ── Mobile nav ──
-        const hamburger = document.getElementById('hamburger');
-        const nav = document.getElementById('mainNav');
-        if (hamburger && nav) {
-            hamburger.addEventListener('click', () => nav.classList.toggle('show'));
-        }
 
         // ── Reading progress ──
         const progressBar = document.getElementById('reading-progress');
