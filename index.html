@@ -141,10 +141,10 @@
                         <div class="slide active">
                             <img src="think-visual-website.png" alt="Think Visual video editor portfolio website designed by WebInstant" width="600" height="400" fetchpriority="high">
                         </div>
-                        <div class="slide active">
+                        <div class="slide">
                             <img src="pro-methods-gym.png" alt="Pro Methods Gym fitness business website designed by WebInstant" width="600" height="400" loading="lazy">
                         </div>
-                        <div class="slide active">
+                        <div class="slide">
                             <img src="nestfinder-website.png" alt="NestFinder real estate listings website designed by WebInstant" width="600" height="400" loading="lazy">
                         </div>
                         <div class="slide">
@@ -741,16 +741,9 @@
             });
         });
 
-        // Footer year
+        // Footer year (mobile nav toggle is handled globally in script.js)
         if (document.getElementById('year')) {
             document.getElementById('year').innerText = new Date().getFullYear();
-        }
-
-        // Mobile nav
-        const hamburgerBtn = document.getElementById('hamburger');
-        const navMenu = document.getElementById('mainNav');
-        if (hamburgerBtn && navMenu) {  
-            hamburgerBtn.addEventListener('click', () => navMenu.classList.toggle('show'));
         }
     </script>
         <script type="application/ld+json">
