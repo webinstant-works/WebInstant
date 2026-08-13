@@ -68,7 +68,6 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     /></noscript>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="legal.css" />
 
     <script type="application/ld+json">
       {
@@ -83,6 +82,16 @@
         }
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://webinstant.online/" },
+          { "@type": "ListItem", "position": 2, "name": "Refund Policy", "item": "https://webinstant.online/refund.html" }
+        ]
+      }
+    </script>
   </head>
 
   <body>
@@ -92,7 +101,7 @@
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="index.html">
-          <img src="logo.png" alt="WebInstant Logo" class="logo" />
+          <img src="logo.png" alt="WebInstant Logo" class="logo" width="160" height="45" />
         </a>
         <div class="hamburger" id="hamburger">☰</div>
         <nav class="main-nav" id="mainNav">
