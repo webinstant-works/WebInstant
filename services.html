@@ -141,7 +141,7 @@
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="index.html">
-          <img src="logo.png" alt="WebInstant Logo" class="logo" />
+          <img src="logo.png" alt="WebInstant Logo" class="logo" width="160" height="45" />
         </a>
         <div class="hamburger" id="hamburger">☰</div>
         <nav class="main-nav" id="mainNav">
@@ -158,6 +158,7 @@
     <!-- ── Hero ── -->
     <div class="services-hero">
       <div class="services-hero-content">
+        <div class="eyebrow-pill"><i class="fas fa-layer-group"></i> What We Offer</div>
         <h1>Our <span>Services</span></h1>
         <p class="hero-sub">
           We provide full-cycle web services — from planning and design to
@@ -245,13 +246,36 @@
         </div>
       </div>
       <!-- /.services-grid -->
+
+      <!-- ── CTA ── -->
+      <div class="about-cta reveal">
+        <div class="about-cta-inner">
+          <h2>Not sure which service you need?</h2>
+          <p>
+            Tell us about your business and goals — we'll recommend the right
+            mix of services and a plan that fits your budget.
+          </p>
+          <div class="about-cta-btns">
+            <a href="plans.html" class="cta-btn-white"
+              ><i class="fas fa-tags"></i> View Plans</a
+            >
+            <a
+              href="https://wa.me/919871072210?text=Hi, I want to know more about WebInstant's services!"
+              target="_blank"
+              rel="noopener"
+              class="cta-btn-ghost"
+              ><i class="fab fa-whatsapp"></i> WhatsApp Us</a
+            >
+          </div>
+        </div>
+      </div>
     </main>
 
     <footer class="site-footer">
       <div class="footer-container">
         <!-- Brand -->
         <div class="footer-section">
-          <img src="logo.png" alt="WebInstant Logo" class="footer-logo" />
+          <img src="logo.png" alt="WebInstant Logo" class="footer-logo" width="150" height="45" loading="lazy" decoding="async" />
         </div>
 
         <!-- Contact -->
@@ -325,12 +349,8 @@
 
     <script src="script.js"></script>
     <script>
+      // Footer year (mobile nav toggle is handled globally in script.js)
       document.getElementById("year").textContent = new Date().getFullYear();
-      document
-        .getElementById("hamburger")
-        .addEventListener("click", () =>
-          document.getElementById("mainNav").classList.toggle("show"),
-        );
 
       // Reading progress
       const bar = document.getElementById("reading-progress");
@@ -401,76 +421,3 @@
     </script>
   </body>
 </html>
-<!-- <div class="services-grid">
-            <div class="service-card">
-                <div class="icon">💼</div>
-                <h3>Portfolio Websites</h3>
-                <p>Beautiful, responsive portfolios for creators and freelancers.</p>
-                <ul>
-                    <li>📂 CMS Integration</li>
-                    <li>🔍 Filterable Projects</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <div class="icon">🏢</div>
-                <h3>Business Websites</h3>
-                <p>Professional, SEO-ready websites for agencies and local businesses.</p>
-                <ul>
-                    <li>📈 SEO-Aware Structure</li>
-                    <li>📝 Lead Capture Forms</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <div class="icon">🌐</div>
-                <h3>Hosting & Domains</h3>
-                <p>Fast, secure hosting and domain setup assistance.</p>
-                <ul>
-                    <li>⚙️ Complete Setup & Configuration</li>
-                    <li>⚙️ Find a Perfect domain name</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <div class="icon">🔧</div>
-                <h3>Maintenance & Support</h3>
-                <p>Ongoing updates, backups, and technical assistance.</p>
-                <ul>
-                    <li>🛠️ Edit & Manage Your Website Anytime</li>
-                    <li>🛠️ Solve Bugs and Errors</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <div class="icon">🎨</div>
-                <h3>Custom Web Design</h3>
-                <p>Unique designs tailored to your brand’s personality and goals.</p>
-                <ul>
-                    <li>🖌️ Brand-Matching Layouts</li>
-                    <li>🖼️ Creative Visual Elements</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <div class="icon">⚡</div>
-                <h3>Website Speed Optimization</h3>
-                <p>Boost loading times and improve Google PageSpeed scores.</p>
-                <ul>
-                    <li>🚀 Faster User Experience</li>
-                    <li>📊 Better SEO Rankings</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <div class="icon">🛒</div>
-                <h3>E-Commerce Websites</h3>
-                <p>Sell your products online with a custom, secure store.</p>
-                <ul>
-                    <li>🛍️ Product & Cart Setup</li>
-                    <li>💳 Payment Gateway Integration</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <div class="icon">🔐</div>
-                <h3>Website Security</h3>
-                <p>Protect your site from hacks, malware, and vulnerabilities.</p>
-                <ul>
-                    <li>🛡️ SSL & Firewall Setup</li>
-                    <li>🔍 Security Audits</li>
-                </ul>
-            </div> -->
