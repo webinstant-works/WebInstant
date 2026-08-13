@@ -108,7 +108,7 @@
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="index.html">
-          <img src="logo.png" alt="WebInstant Logo" class="logo" />
+          <img src="logo.png" alt="WebInstant Logo" class="logo" width="160" height="45" />
         </a>
         <div class="hamburger" id="hamburger">☰</div>
         <nav class="main-nav" id="mainNav">
@@ -125,6 +125,7 @@
     <!-- ── Hero ── -->
     <div class="contact-hero">
       <div class="contact-hero-content">
+        <div class="eyebrow-pill"><i class="fas fa-comment-dots"></i> Get In Touch</div>
         <h1>Let's Build <span>Together</span></h1>
         <p class="hero-sub">
           Ready to launch? Tell us about your project and we'll get back to you
@@ -405,7 +406,7 @@
       <div class="footer-container">
         <!-- Brand -->
         <div class="footer-section">
-          <img src="logo.png" alt="WebInstant Logo" class="footer-logo" />
+          <img src="logo.png" alt="WebInstant Logo" class="footer-logo" width="150" height="45" loading="lazy" decoding="async" />
         </div>
 
         <!-- Contact -->
@@ -479,13 +480,8 @@
 
     <script src="script.js"></script>
     <script>
-      // ── Footer year & nav ──
+      // ── Footer year (mobile nav toggle is handled globally in script.js) ──
       document.getElementById("year").textContent = new Date().getFullYear();
-      document
-        .getElementById("hamburger")
-        .addEventListener("click", () =>
-          document.getElementById("mainNav").classList.toggle("show"),
-        );
 
       // ── Reading progress ──
       const bar = document.getElementById("reading-progress");
