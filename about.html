@@ -125,7 +125,7 @@
     <!-- ── Hero ── -->
     <div class="about-hero">
       <div class="about-hero-content">
-        <!-- <div class="about-hero-eyebrow"><i class="fas fa-info-circle"></i> About Us</div> -->
+        <div class="about-hero-eyebrow"><i class="fas fa-info-circle"></i> About Us</div>
         <h1>We Are <span>WebInstant</span></h1>
         <p class="hero-sub">
           A modern web design and development agency built to help creators,
@@ -329,13 +329,8 @@
 
     <script src="script.js"></script>
     <script>
-      // Footer year & nav
+      // Footer year (mobile nav toggle is handled globally in script.js)
       document.getElementById("year").textContent = new Date().getFullYear();
-      document
-        .getElementById("hamburger")
-        .addEventListener("click", () =>
-          document.getElementById("mainNav").classList.toggle("show"),
-        );
 
       // Reading progress
       const bar = document.getElementById("reading-progress");
