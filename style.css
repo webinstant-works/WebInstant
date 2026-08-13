@@ -8,6 +8,42 @@
   --radius: 12px;
   --max-width: 1100px;
   --header-h: 76px;
+
+  /* ---- Brand gradient (unified with the blue/purple accents already used site-wide) ---- */
+  --brand-1: #1a60fe;
+  --brand-2: #812cea;
+  --brand-3: #c139ff;
+  --gradient-brand: linear-gradient(
+    135deg,
+    var(--brand-1) 0%,
+    var(--brand-2) 55%,
+    var(--brand-3) 100%
+  );
+  --gradient-brand-soft: linear-gradient(
+    135deg,
+    #eef2ff 0%,
+    #e3e9ff 45%,
+    #f3e8ff 100%
+  );
+  --gradient-text: linear-gradient(45deg, var(--brand-1), var(--brand-3));
+
+  /* ---- Refined ink scale (replaces scattered #555 / #222 / #000 greys) ---- */
+  --ink: #14151f;
+  --ink-soft: #4a4e5e;
+  --ink-faint: #7a7e8c;
+  --border-soft: rgba(20, 21, 31, 0.08);
+
+  /* ---- Elevation scale ---- */
+  --shadow-xs: 0 1px 3px rgba(20, 21, 31, 0.06);
+  --shadow-sm: 0 4px 12px rgba(20, 21, 31, 0.07);
+  --shadow-md: 0 10px 28px rgba(26, 96, 254, 0.1);
+  --shadow-lg: 0 20px 48px rgba(26, 96, 254, 0.16);
+  --shadow-brand: 0 14px 34px rgba(129, 44, 234, 0.22);
+
+  /* ---- Motion ---- */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --radius-sm: 10px;
+  --radius-lg: 20px;
 }
 * {
   box-sizing: border-box;
@@ -190,6 +226,8 @@ nav {
 }
 .section-title .highlight {
   background: linear-gradient(45deg, #1a60fe, #c139ff);
+  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .project-info {
@@ -285,6 +323,8 @@ nav {
   font-size: 2.5rem;
   font-weight: 800;
   background: linear-gradient(45deg, #1a60fe, #c139ff);
+  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 1rem;
 }
@@ -344,6 +384,8 @@ nav {
   margin-top: 1rem;
   margin-bottom: 1.5rem;
   background: linear-gradient(45deg, #1a60fe, #c139ff);
+  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .contact-info img {
@@ -1124,7 +1166,7 @@ ul {
 }
 .service-card p {
   font-size: 0.95rem;
-  color: #000 !important;
+  color: var(--ink-soft);
   line-height: 1.6;
   text-align: center;
   font-family: "Inter", sans-serif;
@@ -1822,6 +1864,7 @@ h1 {
   background: linear-gradient(95deg, #1a60fe, #4b7df5);
   box-shadow: 0 2px 6px rgba(26, 96, 254, 0.3);
 }
+.project-card:hover .project-details h3,
 .project-card:hover .project-details h4 {
   background: linear-gradient(135deg, #1a60fe, #c139ff);
   -webkit-background-clip: text;
@@ -1853,6 +1896,7 @@ h1 {
   .project-details {
     padding: 1.2rem;
   }
+  .project-details h3,
   .project-details h4 {
     font-size: 1.2rem;
   }
@@ -2395,32 +2439,33 @@ h1 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(46, 134, 222, 0.25);
   border-radius: 50px;
   padding: 6px 18px;
-  color: rgba(255, 255, 255);
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+  color: #2e86de;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   margin-bottom: 20px;
 }
 .about-hero h1 {
   font-family: "Poppins", sans-serif;
   font-size: 3rem;
   font-weight: 800;
-  color: #fff;
+  color: #14181f;
   margin: 0 0 16px;
   line-height: 1.2;
 }
 .about-hero h1 span {
-  background: linear-gradient(90deg, #ffffff, #ffffff);
+  background: linear-gradient(135deg, #1a60fe, #c139ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 .about-hero .hero-sub {
-  color: rgba(255, 255, 255, 0.82);
+  color: #4b5563;
   font-size: 1.1rem;
   max-width: 600px;
   margin: 0 auto 40px;
@@ -2817,30 +2862,32 @@ h1 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(46, 134, 222, 0.25);
   border-radius: 50px;
   padding: 6px 18px;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 0.85rem;
-  font-weight: 600;
+  color: #2e86de;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   margin-bottom: 20px;
 }
 .contact-hero h1 {
   font-family: "Poppins", sans-serif;
   font-size: 3rem;
   font-weight: 800;
-  color: #fff;
+  color: #14181f;
   margin: 0 0 14px;
 }
 .contact-hero h1 span {
-  background: linear-gradient(90deg, #ffffff, #ffffff);
+  background: linear-gradient(135deg, #1a60fe, #c139ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 .contact-hero .hero-sub {
-  color: rgba(255, 255, 255, 0.82);
+  color: #4b5563;
   font-size: 1.1rem;
   max-width: 540px;
   margin: 0 auto 36px;
@@ -2856,11 +2903,11 @@ h1 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.13);
+  background: rgba(128, 27, 27, 0.13);
   border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 50px;
   padding: 8px 20px;
-  color: #fff;
+  color: #0a0000;
   font-size: 0.9rem;
   font-weight: 600;
   text-decoration: none;
@@ -3309,11 +3356,17 @@ h1 {
   font-family: "Poppins", sans-serif;
   font-size: 3rem;
   font-weight: 800;
-  color: #fff;
+  color: #14181f;
   margin: 0 0 14px;
 }
+.plans-hero h1 span {
+  background: linear-gradient(135deg, #1a60fe, #c139ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 .plans-hero .hero-subtitle {
-  color: rgba(255, 255, 255, 0.85);
+  color: #4b5563;
   font-size: 1.15rem;
   max-width: 580px;
   margin: 0 auto 28px;
@@ -3403,9 +3456,25 @@ h1 {
   border: 2px solid #1a60fe;
   transform: scale(1.02);
   box-shadow: 0 12px 40px rgba(26, 96, 254, 0.15);
+  background: linear-gradient(180deg, #fff 0%, #fbfaff 100%);
+}
+.plan-card.featured::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 22px;
+  padding: 2px;
+  background: var(--gradient-brand, linear-gradient(45deg, #1a60fe, #c139ff));
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.5;
+  pointer-events: none;
 }
 .plan-card.featured:hover {
-  transform: translateY(-6px);
+  transform: translateY(-6px) scale(1.02);
   border-color: #1a60fe;
   box-shadow: 0 22px 50px rgba(26, 96, 254, 0.22);
 }
@@ -3548,7 +3617,6 @@ h1 {
   box-shadow: 0 8px 22px rgba(26, 96, 254, 0.35);
 }
 .reminder-note {
-  background-color: red;
   color: #075e54;
   padding: 6px 12px;
   border-radius: 8px;
@@ -4073,31 +4141,32 @@ h1 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(46, 134, 222, 0.25);
   border-radius: 50px;
   padding: 6px 18px;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.4px;
+  color: #2e86de;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   margin-bottom: 20px;
 }
 .services-hero h1 {
   font-family: "Poppins", sans-serif;
   font-size: 3rem;
   font-weight: 800;
-  color: #fff;
+  color: #14181f;
   margin: 0 0 16px;
 }
 .services-hero h1 span {
-  background: linear-gradient(90deg, #ffffff, #ffffff);
+  background: linear-gradient(135deg, #1a60fe, #c139ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 .services-hero .hero-sub {
-  color: rgb(255, 255, 255);
+  color: #4b5563;
   font-size: 1.1rem;
   max-width: 580px;
   margin: 0 auto 40px;
@@ -4193,11 +4262,12 @@ h1 {
   color: #0369a1;
 }
 .services-hero {
-  background: linear-gradient(135deg, #1a60fe 0%, #812cea 60%, #c139ff 100%);
+  background: linear-gradient(135deg, #eef2ff 0%, #dbeafe 45%, #e6f7f2 100%);
   padding: 50px 20px 40px;
   text-align: center;
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid rgba(20, 24, 31, 0.08);
 }
 .privacy-container,
 .refund-container,
@@ -4917,6 +4987,7 @@ body {
 .project-details {
   padding: 1.25rem !important;
 }
+.project-details h3,
 .project-details h4 {
   font-family: "Poppins", sans-serif;
   font-size: 1.2rem !important;
@@ -5022,16 +5093,53 @@ body {
   justify-content: center;
   gap: 10px;
 }
+.filter-section {
+  margin: 20px 16px 36px;
+}
 .filter-btn {
-  padding: 8px 18px;
+  padding: 9px 20px;
   font-size: 0.85rem;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
   border-radius: 30px;
+  background: #fff;
+  color: var(--ink-soft, #4a4e5e);
+  border: 1.5px solid #e6e9f5;
+  cursor: pointer;
+  transition:
+    transform 0.25s var(--ease, ease),
+    box-shadow 0.25s var(--ease, ease),
+    border-color 0.25s var(--ease, ease),
+    background 0.25s var(--ease, ease),
+    color 0.25s var(--ease, ease);
+}
+.filter-btn:hover {
+  border-color: rgba(26, 96, 254, 0.35);
+  color: #1a60fe;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(26, 96, 254, 0.12);
+}
+.filter-btn.active {
+  background: var(--gradient-brand, linear-gradient(45deg, #1a60fe, #c139ff));
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 8px 20px rgba(26, 96, 254, 0.3);
 }
 #emptyState {
+  grid-column: 1 / -1;
   text-align: center;
-  padding: 40px 20px;
-  font-size: 0.95rem;
+  padding: 60px 20px;
+  font-size: 1rem;
   color: #666;
+}
+#emptyState i {
+  display: block;
+  font-size: 2.4rem;
+  margin-bottom: 14px;
+  background: var(--gradient-text, linear-gradient(45deg, #1a60fe, #c139ff));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .project-card {
   background: #ffffff;
@@ -5157,12 +5265,6 @@ body {
     overflow: visible;
   }
 }
-.hero {
-  position: relative;
-  padding: 40px 0;
-  background: linear-gradient(to right, #f7f8fc, #ffffff);
-  overflow: hidden;
-}
 .hero-grid {
   position: relative;
   z-index: 2;
@@ -5258,25 +5360,43 @@ body {
   }
 }
 .plans-hero {
-  background: linear-gradient(90deg, #1a60fe, #c139ff);
+  background: linear-gradient(135deg, #eef2ff 0%, #dbeafe 45%, #e6f7f2 100%);
   padding: 50px 20px 40px;
   text-align: center;
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid rgba(20, 24, 31, 0.08);
+}
+.plans-hero .eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(46, 134, 222, 0.25);
+  border-radius: 50px;
+  padding: 6px 18px;
+  color: #2e86de;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
 }
 .about-hero {
-  background: linear-gradient(135deg, #1a60fe 0%, #812cea 60%, #c139ff 100%);
+  background: linear-gradient(135deg, #eef2ff 0%, #dbeafe 45%, #e6f7f2 100%);
   padding: 50px 20px 40px;
   text-align: center;
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid rgba(20, 24, 31, 0.08);
 }
 .contact-hero {
-  background: linear-gradient(135deg, #1a60fe 0%, #812cea 60%, #c139ff 100%);
+  background: linear-gradient(135deg, #eef2ff 0%, #dbeafe 45%, #e6f7f2 100%);
   padding: 50px 20px 40px;
   text-align: center;
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid rgba(20, 24, 31, 0.08);
 }
 .contact-grid {
   display: grid;
@@ -6213,6 +6333,7 @@ embed {
 .terms-container p,
 .contact-item a,
 .email-template,
+.project-details h3,
 .project-details h4,
 .project-details p,
 .project-meta span {
@@ -7287,6 +7408,7 @@ embed {
   position: relative;
   padding: 80px 0 100px;
   overflow: hidden;
+  background: linear-gradient(135deg, #eef2ff 0%, #dbeafe 45%, #e6f7f2 100%);
 }
 .hero-content {
   display: flex;
@@ -7294,20 +7416,19 @@ embed {
   gap: 20px;
 }
 .hero-badge {
-  display: inline-block;
-  background: linear-gradient(
-    135deg,
-    rgba(26, 96, 254, 0.1),
-    rgba(193, 57, 255, 0.1)
-  );
-  color: #1a60fe;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.7);
+  color: #2e86de;
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   padding: 8px 16px;
   border-radius: 50px;
   width: fit-content;
-  letter-spacing: 0.5px;
-  border: 1px solid rgba(26, 96, 254, 0.1);
+  border: 1px solid rgba(46, 134, 222, 0.25);
 }
 .hero h1 {
   font-family: "Poppins", sans-serif;
@@ -7986,4 +8107,530 @@ embed {
   .legal-shell {
     max-width: 800px;
   }
+}
+
+/* ==========================================================================
+   REFINEMENT LAYER — sitewide polish pass
+   Unifies the brand gradient, elevates shadows/typography/motion, and adds
+   finishing details (scrollbar, selection, focus states, glow accents).
+   Appended intentionally so it wins the cascade over earlier same-weight
+   rules without needing to touch every scattered declaration above.
+   ========================================================================== */
+
+/* ---------- Base feel ---------- */
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: var(--brand-2);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+::-webkit-scrollbar-track {
+  background: #f3f4fa;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--brand-1), var(--brand-3));
+  border-radius: 10px;
+  border: 2px solid #f3f4fa;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--brand-1), var(--brand-2));
+}
+html {
+  scrollbar-color: var(--brand-1) #f3f4fa;
+  scrollbar-width: thin;
+}
+
+a,
+button,
+.btn,
+.nav-link,
+.service-card,
+.team-card,
+.card {
+  outline-offset: 2px;
+}
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.nav-link:focus-visible {
+  outline: 2px solid var(--brand-1);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+body {
+  color: var(--ink);
+  letter-spacing: -0.001em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  letter-spacing: -0.015em;
+}
+
+/* ---------- Header: crisper glass + gradient underline on active link ---------- */
+.site-header {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  border-bottom: 1px solid var(--border-soft);
+  box-shadow: 0 1px 0 rgba(20, 21, 31, 0.02);
+  transition: box-shadow 0.3s var(--ease);
+}
+
+.nav-link {
+  position: relative;
+  font-weight: 600;
+  color: var(--ink-soft);
+  transition: color 0.25s var(--ease);
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--gradient-brand);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s var(--ease);
+}
+.nav-link:hover,
+.nav-link.active {
+  color: var(--brand-1);
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+.nav-link.cta {
+  background: var(--gradient-brand);
+  color: #fff !important;
+  padding: 10px 22px;
+  border-radius: 50px;
+  box-shadow: var(--shadow-md);
+  transition:
+    transform 0.25s var(--ease),
+    box-shadow 0.25s var(--ease);
+}
+.nav-link.cta::after {
+  display: none;
+}
+.nav-link.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-brand);
+  color: #fff !important;
+}
+
+/* ---------- Buttons: smoother easing + gentle sheen ---------- */
+.btn,
+.cta-btn-white,
+.cta-btn-ghost,
+.btn.large {
+  transition:
+    transform 0.28s var(--ease),
+    box-shadow 0.28s var(--ease),
+    background 0.28s var(--ease);
+}
+.btn:active,
+.cta-btn-white:active,
+.cta-btn-ghost:active {
+  transform: translateY(0) scale(0.98);
+}
+.hero-cta .btn.primary {
+  background: var(--gradient-brand);
+  box-shadow: var(--shadow-md);
+  border: none;
+}
+.hero-cta .btn.primary:hover {
+  box-shadow: var(--shadow-brand);
+  transform: translateY(-3px);
+}
+
+/* ---------- Cards: consistent elevation + lift ---------- */
+.card,
+.service-card,
+.team-card,
+.large-card,
+.testimonial {
+  transition:
+    transform 0.35s var(--ease),
+    box-shadow 0.35s var(--ease),
+    border-color 0.35s var(--ease);
+}
+.card:hover,
+.testimonial:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+.service-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+.team-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Rounder, brand-tinted icon/avatar rings */
+.service-card .icon {
+  box-shadow: inset 0 0 0 1px rgba(26, 96, 254, 0.08);
+}
+.avatar {
+  box-shadow:
+    0 0 0 4px #fff,
+    0 0 0 6px rgba(129, 44, 234, 0.15),
+    var(--shadow-md);
+}
+
+/* ---------- Hero sections: shared soft glow accents ---------- */
+.hero,
+.about-hero,
+.services-hero,
+.contact-hero,
+.legal-doc-hero {
+  background: var(--gradient-brand-soft);
+}
+.hero::after,
+.about-hero::after,
+.services-hero::after,
+.contact-hero::after {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(129, 44, 234, 0.16),
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+.eyebrow-pill,
+.about-hero-eyebrow,
+.legal-doc-eyebrow {
+  backdrop-filter: blur(6px);
+  box-shadow: var(--shadow-xs);
+}
+
+/* ---------- Footer: deeper, richer gradient ---------- */
+.site-footer {
+  background: linear-gradient(160deg, #0b0f2a 0%, #14163a 55%, #1c1440 100%);
+  position: relative;
+}
+.site-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 0%, rgba(26, 96, 254, 0.22), transparent 55%),
+    radial-gradient(
+      circle at 85% 100%,
+      rgba(193, 57, 255, 0.18),
+      transparent 55%
+    );
+  pointer-events: none;
+}
+.site-footer .footer-container,
+.site-footer .footer-bottom {
+  position: relative;
+  z-index: 1;
+}
+.footer-section h3 {
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.site-footer a {
+  transition: color 0.2s var(--ease);
+}
+.social-icon-link {
+  transition:
+    transform 0.25s var(--ease),
+    box-shadow 0.25s var(--ease),
+    background 0.25s var(--ease);
+}
+.social-icon-link:hover,
+.social-icon-link:focus-visible {
+  transform: translateY(-3px);
+  background: var(--gradient-brand);
+  box-shadow: var(--shadow-brand);
+}
+
+/* ---------- CTA banner: subtle animated glow ---------- */
+.about-cta {
+  background: var(--gradient-brand);
+  box-shadow: var(--shadow-lg);
+}
+.about-cta::before {
+  background: radial-gradient(
+    circle at 20% 20%,
+    rgba(255, 255, 255, 0.16),
+    transparent 55%
+  );
+}
+
+/* ---------- Motion & accessibility ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------- Fine typography pass for softer greys used site-wide ---------- */
+.service-card p,
+.team-card p,
+.project-info p,
+.footer-tagline,
+.contact-info p {
+  color: var(--ink-soft);
+}
+
+/* ==========================================================================
+   REFINEMENT LAYER 2 — extra personality pass
+   Bigger, more visible flourishes on top of the first polish layer:
+   animated glow orbs, shine-sweep buttons, glowing card edges, gradient
+   stat numbers, and a nicer mobile menu button.
+   ========================================================================== */
+
+/* ---------- Page load feel ---------- */
+body {
+  animation: pageFadeIn 0.5s var(--ease);
+}
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- Animated glow orbs in hero sections ---------- */
+.hero,
+.about-hero,
+.services-hero,
+.contact-hero,
+.legal-doc-hero {
+  isolation: isolate;
+}
+.hero::before,
+.about-hero::before,
+.services-hero::before,
+.contact-hero::before {
+  content: "";
+  position: absolute;
+  left: -140px;
+  bottom: -160px;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(26, 96, 254, 0.14), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  animation: floatOrb 9s ease-in-out infinite;
+}
+.hero::after,
+.about-hero::after,
+.services-hero::after,
+.contact-hero::after {
+  animation: floatOrb 11s ease-in-out infinite reverse;
+}
+@keyframes floatOrb {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(24px, -18px) scale(1.08);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero::before,
+  .about-hero::before,
+  .services-hero::before,
+  .contact-hero::before,
+  .hero::after,
+  .about-hero::after,
+  .services-hero::after,
+  .contact-hero::after {
+    animation: none;
+  }
+}
+
+/* ---------- Buttons: shine sweep on hover ---------- */
+.btn,
+.cta-btn-white,
+.cta-btn-ghost,
+.nav-link.cta,
+.hero-cta .btn.primary {
+  position: relative;
+  overflow: hidden;
+}
+.btn::before,
+.cta-btn-white::before,
+.cta-btn-ghost::before,
+.nav-link.cta::before,
+.hero-cta .btn.primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: left 0.6s var(--ease);
+  pointer-events: none;
+}
+.btn:hover::before,
+.cta-btn-white:hover::before,
+.cta-btn-ghost:hover::before,
+.nav-link.cta:hover::before,
+.hero-cta .btn.primary:hover::before {
+  left: 130%;
+}
+
+/* WhatsApp / contact CTA gentle attention pulse */
+a[href*="wa.me"].cta-btn-ghost,
+a[href*="wa.me"].cta-btn-white {
+  animation: ctaPulse 2.8s ease-in-out infinite;
+}
+@keyframes ctaPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  a[href*="wa.me"].cta-btn-ghost,
+  a[href*="wa.me"].cta-btn-white {
+    animation: none;
+  }
+}
+
+/* ---------- Cards: glowing gradient edge on hover ---------- */
+.service-card,
+.team-card,
+.card {
+  position: relative;
+}
+.service-card::after,
+.team-card::before {
+  border-radius: inherit;
+}
+.card {
+  border: 1px solid transparent;
+}
+.card:hover {
+  border-color: rgba(129, 44, 234, 0.18);
+}
+
+/* ---------- Stat numbers: bold gradient treatment ---------- */
+.stat-item .stat-number,
+.stat-number[data-target] {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+.stat-item {
+  transition:
+    transform 0.3s var(--ease),
+    box-shadow 0.3s var(--ease),
+    border-color 0.3s var(--ease);
+}
+.stat-item:hover {
+  border-color: rgba(129, 44, 234, 0.25);
+  box-shadow: var(--shadow-md);
+}
+
+/* ---------- Quote icon glow on testimonial hover ---------- */
+.testimonial-card:hover .quote-icon i {
+  filter: drop-shadow(0 4px 10px rgba(26, 96, 254, 0.25));
+}
+
+/* ---------- Nicer hamburger ---------- */
+.hamburger {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--muted);
+  transition:
+    background 0.25s var(--ease),
+    transform 0.25s var(--ease);
+}
+.hamburger:hover {
+  background: var(--gradient-brand-soft);
+  transform: rotate(90deg);
+}
+
+/* ---------- Section rhythm: soft gradient divider under key headings ---------- */
+.section-title,
+.page-title {
+  position: relative;
+  display: inline-block;
+}
+
+/* ---------- Icon badges: subtle glow ring ---------- */
+.why-list i {
+  box-shadow: 0 6px 16px rgba(26, 96, 254, 0.25);
+  transition:
+    transform 0.3s var(--ease),
+    box-shadow 0.3s var(--ease);
+}
+.why-list i:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 22px rgba(129, 44, 234, 0.32);
+}
+
+/* ---------- Links inside long-form legal content: smoother underline ---------- */
+.legal-section a,
+.contact-info a {
+  text-underline-offset: 3px;
+  transition:
+    color 0.2s var(--ease),
+    text-decoration-color 0.2s var(--ease);
+}
+
+/* ---------- Team card avatar: slow gradient spin ring on hover ---------- */
+.team-card:hover .avatar {
+  transform: scale(1.06);
+  transition: transform 0.35s var(--ease);
 }
