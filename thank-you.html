@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You | WebInstant</title>
+    <meta
+      name="description"
+      content="Thanks for reaching out to WebInstant. We've received your enquiry and will respond within 12 business hours."
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="author" content="WebInstant" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://webinstant.online/thank-you.html" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      media="print"
+      onload="this.media='all'; this.onload=null;"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    /></noscript>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      media="print"
+      onload="this.media='all'; this.onload=null;"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    /></noscript>
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      /* ── Page-specific styles for Thank You page (reuses global tokens) ── */
+      .ty-hero {
+        position: relative;
+        overflow: hidden;
+        padding: calc(var(--header-h, 76px) + 60px) 20px 70px;
+        background: var(--gradient-brand, linear-gradient(135deg, #1a60fe, #812cea, #c139ff));
+        text-align: center;
+        color: #fff;
+      }
+      .ty-hero::before,
+      .ty-hero::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.08);
+      }
+      .ty-hero::before { width: 320px; height: 320px; top: -130px; right: -90px; }
+      .ty-hero::after { width: 240px; height: 240px; bottom: -110px; left: -70px; }
+      .ty-inner {
+        position: relative;
+        z-index: 1;
+        max-width: 560px;
+        margin: 0 auto;
+      }
+
+      /* Animated checkmark */
+      .ty-check-wrap {
+        width: 96px;
+        height: 96px;
+        margin: 0 auto 28px;
+      }
+      .ty-check-circle {
+        stroke: #fff;
+        stroke-width: 3;
+        fill: none;
+        stroke-dasharray: 260;
+        stroke-dashoffset: 260;
+        animation: ty-draw-circle 0.7s ease forwards;
+      }
+      .ty-check-mark {
+        stroke: #fff;
+        stroke-width: 4;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 48;
+        stroke-dashoffset: 48;
+        animation: ty-draw-check 0.4s ease forwards 0.65s;
+      }
+      @keyframes ty-draw-circle {
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes ty-draw-check {
+        to { stroke-dashoffset: 0; }
+      }
+
+      .ty-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50px;
+        padding: 5px 14px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        backdrop-filter: blur(4px);
+        margin-bottom: 20px;
+      }
+      .ty-hero h1 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 800;
+        font-size: clamp(24px, 4.5vw, 34px);
+        margin: 0 0 14px;
+        line-height: 1.25;
+      }
+      .ty-hero p.ty-sub {
+        font-size: 0.98rem;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.92);
+        margin: 0 auto 26px;
+        max-width: 460px;
+      }
+
+      .ty-meta {
+        display: inline-flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 16px;
+        padding: 14px 20px;
+        margin: 0 auto 32px;
+        font-size: 0.85rem;
+      }
+      .ty-meta span { display: flex; align-items: center; gap: 6px; }
+      .ty-meta i { opacity: 0.9; }
+      .ty-meta .ty-divider {
+        width: 1px;
+        background: rgba(255, 255, 255, 0.3);
+        margin: 0 4px;
+      }
+
+      .ty-btns {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+      .ty-btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #fff;
+        color: var(--brand-2, #812cea);
+        font-weight: 700;
+        font-size: 0.9rem;
+        padding: 13px 26px;
+        border-radius: 50px;
+        text-decoration: none;
+        box-shadow: var(--shadow-md, 0 10px 28px rgba(0,0,0,0.12));
+        transition: transform 0.2s var(--ease, ease);
+      }
+      .ty-btn-primary:hover { transform: translateY(-3px); }
+      .ty-btn-ghost {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        color: #fff;
+        font-weight: 600;
+        font-size: 0.9rem;
+        padding: 13px 26px;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: background 0.2s var(--ease, ease);
+      }
+      .ty-btn-ghost:hover { background: rgba(255, 255, 255, 0.22); }
+
+      .ty-next-section {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 56px 20px 70px;
+        text-align: center;
+      }
+      .ty-next-section h2 {
+        font-family: "Poppins", sans-serif;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--ink, #14151f);
+        margin-bottom: 20px;
+      }
+      .ty-steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 16px;
+        text-align: left;
+      }
+      .ty-step-card {
+        background: var(--muted, #f5f7fa);
+        border: 1px solid var(--border-soft, rgba(0,0,0,0.06));
+        border-radius: var(--radius-lg, 20px);
+        padding: 20px;
+      }
+      .ty-step-card .ty-step-num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: var(--gradient-brand, linear-gradient(135deg,#1a60fe,#c139ff));
+        color: #fff;
+        font-weight: 700;
+        font-size: 0.8rem;
+        margin-bottom: 12px;
+      }
+      .ty-step-card h3 {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: var(--ink, #14151f);
+        margin-bottom: 6px;
+      }
+      .ty-step-card p {
+        font-size: 0.83rem;
+        color: var(--ink-soft, #4a4e5e);
+        line-height: 1.5;
+      }
+    </style>
+      <!-- Google tag (gtag.js) — replace G-XXXXXXX with your GA4 Measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXX');
+    </script>
+      <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://webinstant.online/"},
+        {"@type": "ListItem", "position": 2, "name": "Thank You", "item": "https://webinstant.online/thank-you.html"}
+      ]
+    }
+    </script>
+  </head>
+
+  <body>
+    <div id="reading-progress"></div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <img src="logo.png" alt="WebInstant Logo" class="logo" width="160" height="45" />
+        </a>
+        <div class="hamburger" id="hamburger">☰</div>
+        <nav class="main-nav" id="mainNav">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="plans.html" class="nav-link">Plans</a>
+          <a href="projects.html" class="nav-link">Projects</a>
+          <a href="contact.html" class="nav-link cta">Contact Us</a>
+        </nav>
+      </div>
+    </header>
+
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <div class="container">
+        <ol class="breadcrumb-list">
+          <li><a href="index.html">Home</a></li>
+          <li aria-current="page">Thank You</li>
+        </ol>
+      </div>
+    </nav>
+
+
+    <main>
+      <!-- ── Thank You Hero ── -->
+      <section class="ty-hero">
+        <div class="ty-inner">
+          <div class="ty-eyebrow"><i class="fas fa-paper-plane"></i> Message Sent</div>
+
+          <div class="ty-check-wrap">
+            <svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Success checkmark">
+              <circle class="ty-check-circle" cx="45" cy="45" r="41" />
+              <path class="ty-check-mark" d="M28 46 L40 58 L63 32" />
+            </svg>
+          </div>
+
+          <h1>Thank You! We'll Get Back to You Within 12 Hours</h1>
+          <p class="ty-sub">
+            We've received your enquiry and will respond within 12 business
+            hours — usually much faster. Keep an eye on your inbox and phone.
+          </p>
+
+          <div class="ty-meta">
+            <span><i class="fas fa-clock"></i> Sent: <strong id="tySentTime">--</strong></span>
+            <span class="ty-divider"></span>
+            <span><i class="fas fa-hourglass-half"></i> Expected reply by: <strong id="tyReplyTime">--</strong></span>
+          </div>
+
+          <div class="ty-btns">
+            <a href="index.html" class="ty-btn-primary">
+              <i class="fas fa-house"></i> Back to Home
+            </a>
+            <a href="projects.html" class="ty-btn-ghost">
+              <i class="fas fa-briefcase"></i> View Our Portfolio
+            </a>
+            <a
+              href="https://wa.me/919871072210?text=Hi, I just submitted an enquiry on webinstant.online!"
+              target="_blank"
+              rel="noopener"
+              class="ty-btn-ghost"
+            >
+              <i class="fab fa-whatsapp"></i> WhatsApp Us
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── What happens next ── -->
+      <section class="ty-next-section">
+        <h2>What Happens Next?</h2>
+        <div class="ty-steps">
+          <div class="ty-step-card">
+            <div class="ty-step-num">1</div>
+            <h3>We Review Your Enquiry</h3>
+            <p>Our team looks over your project details and requirements.</p>
+          </div>
+          <div class="ty-step-card">
+            <div class="ty-step-num">2</div>
+            <h3>We Reach Out</h3>
+            <p>You'll hear back from us via WhatsApp or email within 12 hours.</p>
+          </div>
+          <div class="ty-step-card">
+            <div class="ty-step-num">3</div>
+            <h3>We Get Started</h3>
+            <p>Once details are confirmed, we kick off your project right away.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <img src="logo.png" alt="WebInstant Logo" class="footer-logo" width="150" height="45" loading="lazy" decoding="async" />
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>Email: <a href="mailto:thewebinstant@gmail.com">thewebinstant@gmail.com</a></p>
+          <p>Phone: <a href="tel:+919871072210">+91 98710 72210</a></p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div style="display: flex; gap: 10px; margin-top: 8px">
+            <a href="https://www.linkedin.com/company/web-instant-agency/posts/?feedView=all" target="_blank" rel="noopener" class="social-icon-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61578298170309" target="_blank" rel="noopener" class="social-icon-link" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/thewebinstant/" target="_blank" rel="noopener" class="social-icon-link" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://x.com/TheWebInstant" target="_blank" rel="noopener" class="social-icon-link" aria-label="X (Twitter)"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>Legal</h3>
+          <ul class="footer-links">
+            <li><a href="t_c.html">Terms &amp; Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="refund.html">Refund Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <small>© <span id="year"></span> WebInstant • All rights reserved.</small>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Reading progress
+      const bar = document.getElementById("reading-progress");
+      window.addEventListener("scroll", () => {
+        const h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + "%";
+      });
+
+      // ── Current time + expected response window ──
+      // If arriving right after a form submit, we use the time the form was
+      // submitted (stored in sessionStorage by contact.html); otherwise "now".
+      (function () {
+        const fmt = (d) =>
+          d.toLocaleString("en-IN", {
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: true,
+            day: "2-digit",
+            month: "short",
+            timeZone: "Asia/Kolkata",
+          }) + " IST";
+
+        let sentAt = new Date();
+        try {
+          const stored = sessionStorage.getItem("wi_enquiry_sent_at");
+          if (stored) sentAt = new Date(stored);
+        } catch (e) {
+          /* sessionStorage unavailable — fall back to "now" */
+        }
+
+        const replyBy = new Date(sentAt.getTime() + 12 * 60 * 60 * 1000);
+
+        document.getElementById("tySentTime").textContent = fmt(sentAt);
+        document.getElementById("tyReplyTime").textContent = fmt(replyBy);
+      })();
+    </script>
+  </body>
+</html>

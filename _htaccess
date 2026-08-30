@@ -1,0 +1,116 @@
+# =====================================================================
+# WebInstant — server-level fixes for PageSpeed Insights
+# Upload this file to the SAME folder as your index.html (site root).
+# Only works if your host runs Apache with mod_expires / mod_headers
+# enabled (true for almost all shared hosting — cPanel, Hostinger,
+# GoDaddy, etc). If your host uses Nginx instead, see the notes at
+# the bottom of this file.
+# =====================================================================
+
+# ---------------------------------------------------------------
+# 0) CANONICAL HOST + HTTPS ENFORCEMENT
+# Fixes: duplicate-content risk from http/https and www/non-www
+# versions of the site being indexed separately. This site's
+# canonical tags, sitemap.xml and robots.txt all use the
+# non-www, https version (https://webinstant.online/...), so every
+# other variant 301-redirects to match it.
+# ---------------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Force HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,QSA]
+
+  # Force non-www
+  RewriteCond %{HTTP_HOST} ^www\.webinstant\.online$ [NC]
+  RewriteRule ^(.*)$ https://webinstant.online/$1 [L,R=301,QSA]
+</IfModule>
+
+# Friendly 404 fallback (points to homepage until a dedicated
+# 404.html is added — replace with your own 404 page for a better
+# lost-visitor experience)
+ErrorDocument 404 /index.html
+
+# ---------------------------------------------------------------
+# 1) EFFICIENT CACHE LIFETIMES
+# Fixes: "Use efficient cache lifetimes" in PageSpeed Insights
+# ---------------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  ExpiresByType image/png            "access plus 1 year"
+  ExpiresByType image/jpg             "access plus 1 year"
+  ExpiresByType image/jpeg            "access plus 1 year"
+  ExpiresByType image/webp            "access plus 1 year"
+  ExpiresByType image/svg+xml         "access plus 1 year"
+  ExpiresByType image/x-icon          "access plus 1 year"
+
+  ExpiresByType text/css              "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType text/javascript        "access plus 1 month"
+
+  ExpiresByType text/html             "access plus 0 seconds"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(png|jpe?g|webp|svg|ico)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
+
+# ---------------------------------------------------------------
+# 2) COMPRESSION (helps "enormous network payloads" / transfer size)
+# ---------------------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+
+# ---------------------------------------------------------------
+# 3) SECURITY HEADERS
+# Fixes: HSTS, COOP, clickjacking (XFO/CSP), CSP-vs-XSS in
+# "Best Practices > Trust and Safety"
+# ---------------------------------------------------------------
+<IfModule mod_headers.c>
+  # Force HTTPS for a year, including subdomains
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+  # Isolate this origin from cross-origin windows opening it
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+
+  # Prevent this site being framed by other origins (clickjacking)
+  Header always set X-Frame-Options "SAMEORIGIN"
+
+  # Stop MIME-sniffing
+  Header always set X-Content-Type-Options "nosniff"
+
+  # Control what info is sent to other sites via the Referer header
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Content-Security-Policy — allow only the domains this site actually uses.
+  # NOTE: 'unsafe-inline' is required right now because the pages contain
+  # inline <script> and onmouseover/onclick-style handlers. For a stricter
+  # policy, move remaining inline scripts into script.js and drop
+  # 'unsafe-inline' from script-src.
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; object-src 'none'"
+</IfModule>
+
+# =====================================================================
+# NGINX EQUIVALENT (if your host uses Nginx instead of Apache, put this
+# in your server{} block instead of using this .htaccess file):
+#
+# location ~* \.(png|jpe?g|webp|svg|ico)$ { expires 1y; add_header Cache-Control "public, immutable"; }
+# location ~* \.(css|js)$ { expires 30d; add_header Cache-Control "public"; }
+# add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
+# add_header Cross-Origin-Opener-Policy "same-origin" always;
+# add_header X-Frame-Options "SAMEORIGIN" always;
+# add_header X-Content-Type-Options "nosniff" always;
+# add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+# add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; object-src 'none'" always;
+# =====================================================================

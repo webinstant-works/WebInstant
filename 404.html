@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Page Not Found | WebInstant</title>
+    <meta
+      name="description"
+      content="The page you're looking for doesn't exist or has moved. Head back to WebInstant's homepage or explore our services, plans, and projects."
+    />
+    <!-- This is a static file, so the real HTTP 404 status must be set by your
+         hosting/server config (e.g. Netlify _redirects, Apache ErrorDocument,
+         Nginx error_page). This meta tag tells crawlers not to index the page. -->
+    <meta name="robots" content="noindex, follow" />
+    <meta http-equiv="status" content="404" />
+    <meta name="author" content="WebInstant" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://webinstant.online/404.html" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      media="print"
+      onload="this.media='all'; this.onload=null;"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    /></noscript>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      media="print"
+      onload="this.media='all'; this.onload=null;"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    /></noscript>
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      /* ── Page-specific styles for 404 (reuses global tokens from style.css) ── */
+      .err-hero {
+        position: relative;
+        overflow: hidden;
+        padding: calc(var(--header-h, 76px) + 56px) 20px 70px;
+        background: var(--gradient-brand, linear-gradient(135deg, #1a60fe, #812cea, #c139ff));
+        text-align: center;
+        color: #fff;
+      }
+      .err-hero::before,
+      .err-hero::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.08);
+      }
+      .err-hero::before {
+        width: 340px;
+        height: 340px;
+        top: -140px;
+        left: -100px;
+      }
+      .err-hero::after {
+        width: 260px;
+        height: 260px;
+        bottom: -120px;
+        right: -80px;
+      }
+      .err-inner {
+        position: relative;
+        z-index: 1;
+        max-width: 640px;
+        margin: 0 auto;
+      }
+      .err-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50px;
+        padding: 5px 14px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        backdrop-filter: blur(4px);
+        margin-bottom: 22px;
+      }
+      .err-astro {
+        width: 150px;
+        height: auto;
+        margin: 0 auto 8px;
+        animation: err-float 3.2s ease-in-out infinite;
+      }
+      @keyframes err-float {
+        0%, 100% { transform: translateY(0) rotate(-2deg); }
+        50% { transform: translateY(-14px) rotate(2deg); }
+      }
+      .err-code {
+        font-family: "Poppins", sans-serif;
+        font-weight: 800;
+        font-size: clamp(64px, 14vw, 118px);
+        line-height: 1;
+        margin: 4px 0 6px;
+        letter-spacing: -2px;
+      }
+      .err-hero h1 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-size: clamp(22px, 4vw, 30px);
+        margin: 0 0 12px;
+      }
+      .err-hero p.err-sub {
+        font-size: 0.98rem;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.9);
+        margin: 0 auto 30px;
+        max-width: 480px;
+      }
+
+      /* Search bar */
+      .err-search {
+        position: relative;
+        max-width: 420px;
+        margin: 0 auto 8px;
+      }
+      .err-search-wrap {
+        display: flex;
+        align-items: center;
+        background: #fff;
+        border-radius: 50px;
+        box-shadow: var(--shadow-lg, 0 20px 48px rgba(0,0,0,0.16));
+        padding: 6px 6px 6px 20px;
+        gap: 8px;
+      }
+      .err-search-wrap i {
+        color: var(--ink-faint, #7a7e8c);
+      }
+      .err-search-wrap input {
+        flex: 1;
+        border: none;
+        outline: none;
+        font-family: "Poppins", sans-serif;
+        font-size: 0.9rem;
+        padding: 10px 0;
+        color: var(--ink, #14151f);
+        background: transparent;
+      }
+      .err-search-wrap button {
+        border: none;
+        cursor: pointer;
+        background: var(--gradient-brand, linear-gradient(135deg,#1a60fe,#c139ff));
+        color: #fff;
+        font-weight: 600;
+        font-size: 0.85rem;
+        padding: 10px 20px;
+        border-radius: 50px;
+        white-space: nowrap;
+      }
+      .err-search-results {
+        margin-top: 10px;
+        background: #fff;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: var(--shadow-md, 0 10px 28px rgba(0,0,0,0.1));
+        text-align: left;
+        display: none;
+      }
+      .err-search-results.show { display: block; }
+      .err-search-results a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 18px;
+        color: var(--ink, #14151f);
+        text-decoration: none;
+        font-size: 0.88rem;
+        border-bottom: 1px solid var(--border-soft, rgba(0,0,0,0.06));
+      }
+      .err-search-results a:last-child { border-bottom: none; }
+      .err-search-results a:hover { background: var(--muted, #f5f7fa); }
+      .err-search-results a i { color: var(--primary, #2e86de); width: 16px; }
+      .err-search-empty {
+        padding: 12px 18px;
+        font-size: 0.85rem;
+        color: var(--ink-faint, #7a7e8c);
+      }
+
+      /* Buttons + quick links */
+      .err-btns {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin: 30px 0 0;
+      }
+      .err-btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #fff;
+        color: var(--brand-2, #812cea);
+        font-weight: 700;
+        font-size: 0.9rem;
+        padding: 13px 26px;
+        border-radius: 50px;
+        text-decoration: none;
+        box-shadow: var(--shadow-md, 0 10px 28px rgba(0,0,0,0.12));
+        transition: transform 0.2s var(--ease, ease);
+      }
+      .err-btn-primary:hover { transform: translateY(-3px); }
+      .err-btn-ghost {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        color: #fff;
+        font-weight: 600;
+        font-size: 0.9rem;
+        padding: 13px 26px;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: background 0.2s var(--ease, ease);
+      }
+      .err-btn-ghost:hover { background: rgba(255, 255, 255, 0.22); }
+
+      .err-links-section {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 56px 20px 70px;
+        text-align: center;
+      }
+      .err-links-section h2 {
+        font-family: "Poppins", sans-serif;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--ink, #14151f);
+        margin-bottom: 26px;
+      }
+      .err-links-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 16px;
+      }
+      .err-link-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 24px 14px;
+        background: var(--muted, #f5f7fa);
+        border-radius: var(--radius-lg, 20px);
+        text-decoration: none;
+        color: var(--ink, #14151f);
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: transform 0.2s var(--ease, ease), box-shadow 0.2s var(--ease, ease);
+        border: 1px solid var(--border-soft, rgba(0,0,0,0.06));
+      }
+      .err-link-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-md, 0 10px 28px rgba(26,96,254,0.1));
+      }
+      .err-link-card i {
+        font-size: 1.4rem;
+        background: var(--gradient-brand, linear-gradient(135deg,#1a60fe,#c139ff));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+    </style>
+      <!-- Google tag (gtag.js) — replace G-XXXXXXX with your GA4 Measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXX');
+    </script>
+  </head>
+
+  <body>
+    <div id="reading-progress"></div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <img src="logo.png" alt="WebInstant Logo" class="logo" width="160" height="45" />
+        </a>
+        <div class="hamburger" id="hamburger">☰</div>
+        <nav class="main-nav" id="mainNav">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="plans.html" class="nav-link">Plans</a>
+          <a href="projects.html" class="nav-link">Projects</a>
+          <a href="contact.html" class="nav-link cta">Contact Us</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- ── 404 Hero ── -->
+      <section class="err-hero">
+        <div class="err-inner">
+          <div class="err-eyebrow"><i class="fas fa-satellite"></i> Lost in Space</div>
+
+          <!-- Lost astronaut illustration -->
+          <svg class="err-astro" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a lost astronaut floating among stars">
+            <circle cx="34" cy="30" r="1.6" fill="#fff" opacity="0.8"/>
+            <circle cx="168" cy="52" r="2" fill="#fff" opacity="0.7"/>
+            <circle cx="150" cy="150" r="1.6" fill="#fff" opacity="0.7"/>
+            <circle cx="26" cy="150" r="1.8" fill="#fff" opacity="0.8"/>
+            <circle cx="100" cy="14" r="1.4" fill="#fff" opacity="0.6"/>
+            <!-- backpack -->
+            <rect x="82" y="90" width="36" height="46" rx="10" fill="#d9e2ff"/>
+            <!-- body -->
+            <ellipse cx="100" cy="110" rx="34" ry="40" fill="#f4f6fb"/>
+            <!-- helmet -->
+            <circle cx="100" cy="72" r="34" fill="#f4f6fb" stroke="#c9d3f5" stroke-width="2"/>
+            <circle cx="100" cy="72" r="24" fill="#8fc7ff" opacity="0.55"/>
+            <path d="M88 66 q12 14 26 2" stroke="#2e4a8f" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.5"/>
+            <!-- arms -->
+            <path d="M68 100 q-20 6 -22 26" stroke="#f4f6fb" stroke-width="14" fill="none" stroke-linecap="round"/>
+            <path d="M132 100 q20 -4 26 14" stroke="#f4f6fb" stroke-width="14" fill="none" stroke-linecap="round"/>
+            <!-- legs -->
+            <path d="M86 146 q-4 20 -14 28" stroke="#f4f6fb" stroke-width="14" fill="none" stroke-linecap="round"/>
+            <path d="M114 146 q4 20 16 24" stroke="#f4f6fb" stroke-width="14" fill="none" stroke-linecap="round"/>
+            <!-- cut tether -->
+            <path d="M46 128 q-10 -8 -18 -4" stroke="#ffd166" stroke-width="2.5" fill="none" stroke-dasharray="4 4" stroke-linecap="round"/>
+          </svg>
+
+          <div class="err-code">404</div>
+          <h1>Houston, We Have a Problem.</h1>
+          <p class="err-sub">
+            The page you're looking for has drifted off into space — it may
+            have been moved, renamed, or never existed. Let's get you back on
+            course.
+          </p>
+
+          <!-- Site search -->
+          <div class="err-search">
+            <div class="err-search-wrap">
+              <i class="fas fa-search"></i>
+              <input
+                type="text"
+                id="err404Search"
+                placeholder="Search for a page… (e.g. plans, contact)"
+                autocomplete="off"
+              />
+              <button type="button" id="err404SearchBtn">Search</button>
+            </div>
+            <div class="err-search-results" id="err404Results"></div>
+          </div>
+
+          <div class="err-btns">
+            <a href="index.html" class="err-btn-primary">
+              <i class="fas fa-house"></i> Go Back Home
+            </a>
+            <a
+              href="https://wa.me/919871072210?text=Hi, I landed on a broken link on webinstant.online and need some help."
+              target="_blank"
+              rel="noopener"
+              class="err-btn-ghost"
+            >
+              <i class="fab fa-whatsapp"></i> Chat With Us
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Quick links ── -->
+      <section class="err-links-section">
+        <h2>Or Jump Straight To…</h2>
+        <div class="err-links-grid">
+          <a href="index.html" class="err-link-card"><i class="fas fa-house"></i> Home</a>
+          <a href="about.html" class="err-link-card"><i class="fas fa-users"></i> About</a>
+          <a href="services.html" class="err-link-card"><i class="fas fa-layer-group"></i> Services</a>
+          <a href="plans.html" class="err-link-card"><i class="fas fa-tags"></i> Plans</a>
+          <a href="projects.html" class="err-link-card"><i class="fas fa-briefcase"></i> Projects</a>
+          <a href="contact.html" class="err-link-card"><i class="fas fa-envelope"></i> Contact</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <img src="logo.png" alt="WebInstant Logo" class="footer-logo" width="150" height="45" loading="lazy" decoding="async" />
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>Email: <a href="mailto:thewebinstant@gmail.com">thewebinstant@gmail.com</a></p>
+          <p>Phone: <a href="tel:+919871072210">+91 98710 72210</a></p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div style="display: flex; gap: 10px; margin-top: 8px">
+            <a href="https://www.linkedin.com/company/web-instant-agency/posts/?feedView=all" target="_blank" rel="noopener" class="social-icon-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61578298170309" target="_blank" rel="noopener" class="social-icon-link" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/thewebinstant/" target="_blank" rel="noopener" class="social-icon-link" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://x.com/TheWebInstant" target="_blank" rel="noopener" class="social-icon-link" aria-label="X (Twitter)"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>Legal</h3>
+          <ul class="footer-links">
+            <li><a href="t_c.html">Terms &amp; Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="refund.html">Refund Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <small>© <span id="year"></span> WebInstant • All rights reserved.</small>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Reading progress
+      const bar = document.getElementById("reading-progress");
+      window.addEventListener("scroll", () => {
+        const h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + "%";
+      });
+
+      // ── Simple client-side site search (no backend required) ──
+      const SITE_PAGES = [
+        { title: "Home", url: "index.html", icon: "fa-house", keywords: "home main landing launch fast look great" },
+        { title: "About Us", url: "about.html", icon: "fa-users", keywords: "about team company mission who we are" },
+        { title: "Services", url: "services.html", icon: "fa-layer-group", keywords: "services web design development seo hosting maintenance ecommerce" },
+        { title: "Plans & Pricing", url: "plans.html", icon: "fa-tags", keywords: "plans pricing cost price packages portfolio business ecommerce" },
+        { title: "Projects / Portfolio", url: "projects.html", icon: "fa-briefcase", keywords: "projects portfolio work case studies examples" },
+        { title: "Contact Us", url: "contact.html", icon: "fa-envelope", keywords: "contact quote whatsapp email phone enquiry get in touch" },
+        { title: "Terms & Conditions", url: "t_c.html", icon: "fa-file-contract", keywords: "terms conditions legal agreement" },
+        { title: "Privacy Policy", url: "privacy.html", icon: "fa-user-shield", keywords: "privacy policy data cookies" },
+        { title: "Refund Policy", url: "refund.html", icon: "fa-rotate-left", keywords: "refund policy money back cancellation" },
+      ];
+
+      const searchInput = document.getElementById("err404Search");
+      const searchBtn = document.getElementById("err404SearchBtn");
+      const resultsBox = document.getElementById("err404Results");
+
+      function runSearch() {
+        const q = searchInput.value.trim().toLowerCase();
+        if (!q) {
+          resultsBox.classList.remove("show");
+          resultsBox.innerHTML = "";
+          return;
+        }
+        const matches = SITE_PAGES.filter(
+          (p) =>
+            p.title.toLowerCase().includes(q) || p.keywords.includes(q)
+        );
+        if (matches.length === 0) {
+          resultsBox.innerHTML = `<div class="err-search-empty">No matching pages found — try "services" or "contact".</div>`;
+        } else {
+          resultsBox.innerHTML = matches
+            .map(
+              (p) =>
+                `<a href="${p.url}"><i class="fas ${p.icon}"></i> ${p.title}</a>`
+            )
+            .join("");
+        }
+        resultsBox.classList.add("show");
+      }
+
+      searchInput.addEventListener("input", runSearch);
+      searchInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          const first = resultsBox.querySelector("a");
+          if (first) window.location.href = first.getAttribute("href");
+        }
+      });
+      searchBtn.addEventListener("click", runSearch);
+    </script>
+  </body>
+</html>

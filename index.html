@@ -95,7 +95,15 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="style.css">
-    </head>
+        <!-- Google tag (gtag.js) — replace G-XXXXXXX with your GA4 Measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXX');
+    </script>
+  </head>
 
     <body>
     <header class="site-header">
@@ -130,9 +138,10 @@
             </p>
             
             <div class="hero-cta">
-                <a href="https://wa.me/919871072210?text=Hi!%20I%27d%20like%20to%20get%20a%20free%20quote%20for%20my%20website." target="_blank" rel="noopener noreferrer" class="btn primary">Get a Free Quote</a>
-                <a href="services.html" class="btn outline">Explore Services</a>
+                <a href="https://wa.me/919871072210?text=Hi!%20I%27d%20like%20to%20get%20a%20free%20quote%20for%20my%20website." target="_blank" rel="noopener noreferrer" class="btn primary">Get a Free Quote in 12 Hours</a>
+                <a href="plans.html" class="btn outline">See Our Plans</a>
             </div>
+            <p class="hero-response-promise"><i class="fas fa-bolt"></i> We reply to every enquiry within <strong>12 business hours</strong> — usually much faster.</p>
         </div>
 
         <!-- Right Slider (Styled like a modern UI card) -->

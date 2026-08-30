@@ -100,6 +100,14 @@
       ]
     }
     </script>
+      <!-- Google tag (gtag.js) — replace G-XXXXXXX with your GA4 Measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXX');
+    </script>
   </head>
 
   <body>
@@ -122,6 +130,16 @@
       </div>
     </header>
 
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <div class="container">
+        <ol class="breadcrumb-list">
+          <li><a href="index.html">Home</a></li>
+          <li aria-current="page">Contact</li>
+        </ol>
+      </div>
+    </nav>
+
+
     <!-- ── Hero ── -->
     <div class="contact-hero">
       <div class="contact-hero-content">
@@ -129,7 +147,7 @@
         <h1>Let's Build <span>Together</span></h1>
         <p class="hero-sub">
           Ready to launch? Tell us about your project and we'll get back to you
-          within 48 hours — usually much faster.
+          within 12 business hours — usually much faster.
         </p>
         <div class="hero-contact-chips">
           <a href="mailto:thewebinstant@gmail.com" class="hero-chip">
@@ -298,7 +316,7 @@
               <i class="fas fa-clock"></i>
               <div>
                 <span class="rb-title">Response Time</span>
-                <span class="rb-sub">Usually within 12–18 business hours</span>
+                <span class="rb-sub">Guaranteed within 12 business hours</span>
               </div>
             </div>
 
@@ -565,8 +583,19 @@
             });
             if (res.ok) {
               status.innerHTML =
-                '<div class="status-success"><i class="fas fa-check-circle"></i> Message sent successfully! We\'ll be in touch soon.</div>';
+                '<div class="status-success"><i class="fas fa-check-circle"></i> Message sent successfully! Redirecting…</div>';
               form.reset();
+              try {
+                sessionStorage.setItem(
+                  "wi_enquiry_sent_at",
+                  new Date().toISOString(),
+                );
+              } catch (e) {
+                /* sessionStorage unavailable — thank-you page falls back to "now" */
+              }
+              setTimeout(() => {
+                window.location.href = "thank-you.html";
+              }, 900);
             } else {
               const json = await res.json().catch(() => null);
               status.innerHTML = `<div class="status-error"><i class="fas fa-exclamation-circle"></i> ${json?.error || "Something went wrong. Please try again."}</div>`;

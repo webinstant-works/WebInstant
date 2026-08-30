@@ -8634,3 +8634,158 @@ a[href*="wa.me"].cta-btn-white {
   transform: scale(1.06);
   transition: transform 0.35s var(--ease);
 }
+
+/* ── Breadcrumb Navigation ── */
+.breadcrumb-nav {
+  background: var(--muted, #f5f7fa);
+  border-bottom: 1px solid var(--border-soft, rgba(20,21,31,0.08));
+  padding: 12px 0;
+}
+.breadcrumb-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.85rem;
+  color: var(--ink-soft, #4a4e5e);
+}
+.breadcrumb-list li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.breadcrumb-list li:not(:last-child)::after {
+  content: "\f105";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 0.7rem;
+  color: var(--ink-faint, #7a7e8c);
+  margin-left: 6px;
+}
+.breadcrumb-list a {
+  color: var(--brand-1, #1a60fe);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s var(--ease, ease);
+}
+.breadcrumb-list a:hover {
+  color: var(--brand-2, #812cea);
+  text-decoration: underline;
+}
+.breadcrumb-list li[aria-current="page"] {
+  color: var(--ink, #14151f);
+  font-weight: 600;
+}
+
+/* ── Hero response-time promise ── */
+.hero-response-promise {
+  margin-top: 14px;
+  font-size: 0.88rem;
+  color: var(--ink-soft, #4a4e5e);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hero-response-promise i {
+  color: var(--brand-2, #812cea);
+}
+
+/* ── Case Study Section (projects.html) ── */
+.case-study-section {
+  padding: 20px 0 60px;
+}
+.case-study-card {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 0;
+  background: var(--muted, #f5f7fa);
+  border: 1px solid var(--border-soft, rgba(20,21,31,0.08));
+  border-radius: var(--radius-lg, 20px);
+  overflow: hidden;
+  box-shadow: var(--shadow-md, 0 10px 28px rgba(26,96,254,0.1));
+}
+.case-study-media {
+  min-height: 260px;
+  background: #fff;
+}
+.case-study-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.case-study-body {
+  padding: 32px;
+}
+.case-study-client .cs-label {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--brand-2, #812cea);
+  margin-bottom: 6px;
+}
+.case-study-client h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--ink, #14151f);
+  margin: 0 0 20px;
+}
+.case-study-client .cs-industry {
+  font-weight: 500;
+  color: var(--ink-soft, #4a4e5e);
+  font-size: 1rem;
+}
+.cs-block {
+  margin-bottom: 18px;
+}
+.cs-block h4 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink, #14151f);
+  margin-bottom: 6px;
+}
+.cs-block h4 i {
+  color: var(--brand-1, #1a60fe);
+}
+.cs-block p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--ink-soft, #4a4e5e);
+  margin: 0;
+}
+.cs-results {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.cs-results li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--ink-soft, #4a4e5e);
+}
+.cs-results li i {
+  color: var(--accent, #00c9a7);
+  margin-top: 3px;
+}
+@media (max-width: 800px) {
+  .case-study-card {
+    grid-template-columns: 1fr;
+  }
+  .case-study-media {
+    min-height: 200px;
+  }
+}
