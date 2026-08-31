@@ -255,6 +255,21 @@
           <div class="field-error">Please enter a valid email address.</div>
         </div>
 
+        <div class="field" id="field-phone">
+          <label for="phone">Mobile Number</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="98710 72210"
+            inputmode="numeric"
+            required
+          />
+          <div class="field-error">
+            Please enter a valid 10-digit mobile number.
+          </div>
+        </div>
+
         <div class="field" id="field-business">
           <label for="businessType">Business Type</label>
           <select id="businessType" name="businessType" required>
@@ -277,7 +292,7 @@
         </div>
 
         <div class="field" id="field-link">
-          <label for="siteLink">Instagram Username (if any)</label>
+          <label for="siteLink">Instagram Username</label>
           <input
             type="text"
             id="siteLink"
@@ -329,8 +344,23 @@
           </div>
         </div>
 
+        <div class="field" id="field-requirements">
+          <label for="requirements"
+            >Requirements
+            <span style="font-weight: 500; color: var(--slate)"
+              >(optional)</span
+            ></label
+          >
+          <textarea
+            id="requirements"
+            name="requirements"
+            placeholder="Tell us briefly about what you need..."
+            style="min-height: 80px; resize: vertical"
+          ></textarea>
+        </div>
+
         <button type="submit" class="btn" id="submitBtn">
-          <i class="fas fa-bolt"></i> Get My Free Quote
+          <i class="fas fa-bolt"></i> Get My Free Website Quote
         </button>
         <p class="form-note">
           No spam. No obligation. We'll review your requirements and contact
@@ -339,7 +369,7 @@
       </form>
 
       <a
-        href="https://wa.me/919871072210?text=Hi%20WebInstant%2C%20I%27d%20like%20a%20quote%20for%20a%20website."
+        href="https://wa.me/919871072210?text=Hi%20WebInstant%2C%20I%20came%20from%20your%20ad%20and%20I%27d%20like%20a%20quote%20for%20a%20website."
         target="_blank"
         rel="noopener"
         class="wa-link"
@@ -357,6 +387,11 @@
         function isValidEmail(v) {
           return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
         }
+        function isValidPhone(v) {
+          return /^[6-9]\d{9}$/.test(
+            v.replace(/[\s\-()+]/g, "").replace(/^91/, ""),
+          );
+        }
         function isValidLink(v) {
           if (!v) return true;
           return /^(https?:\/\/)?([\w-]+\.)+[\w-]{2,}(\/\S*)?$|^@?[\w.]+$/.test(
@@ -371,6 +406,7 @@
           var valid = true;
           var name = document.getElementById("fullName").value.trim();
           var email = document.getElementById("email").value.trim();
+          var phone = document.getElementById("phone").value.trim();
           var businessType = document.getElementById("businessType").value;
           var siteLink = document.getElementById("siteLink").value.trim();
           var needType = document.getElementById("needType").value;
@@ -381,6 +417,8 @@
           if (name.length < 2) valid = false;
           setInvalid("field-email", !isValidEmail(email));
           if (!isValidEmail(email)) valid = false;
+          setInvalid("field-phone", !isValidPhone(phone));
+          if (!isValidPhone(phone)) valid = false;
           setInvalid("field-business", !businessType);
           if (!businessType) valid = false;
           setInvalid("field-link", !isValidLink(siteLink));
@@ -416,11 +454,13 @@
           var payload = {
             fullName: document.getElementById("fullName").value.trim(),
             email: document.getElementById("email").value.trim(),
+            phone: document.getElementById("phone").value.trim(),
             businessType: document.getElementById("businessType").value,
             siteLink: document.getElementById("siteLink").value.trim(),
             needType: document.getElementById("needType").value,
             budget: document.getElementById("budget").value,
             timeline: document.getElementById("timeline").value,
+            requirements: document.getElementById("requirements").value.trim(),
           };
 
           // ===========================================================
@@ -430,7 +470,7 @@
           //   https://formspree.io/f/abcdwxyz
           // Paste just the "abcdwxyz" part (or the full URL) below.
           // ===========================================================
-          var FORMSPREE_ENDPOINT = "https://formspree.io/f/mjgkbyok";
+          var FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
 
           fetch(FORMSPREE_ENDPOINT, {
             method: "POST",
