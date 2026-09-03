@@ -1,0 +1,21 @@
+# WebInstant
+
+> WebInstant is a Delhi-based web design and development agency that builds fast, mobile-responsive, SEO-ready websites for small businesses, startups, and creators across India. Tagline: "Launch Fast. Look Great."
+
+WebInstant designs and builds custom websites, e-commerce stores, and portfolio sites, and offers ongoing support. Plans start at ₹1,999. Contact: thewebinstant@gmail.com, +91 98710 72210, WhatsApp available.
+
+## Pages
+
+- [Home](https://webinstant.online/): Overview of WebInstant's services, plans, and process.
+- [About](https://webinstant.online/about.html): The team behind WebInstant and the agency's mission.
+- [Services](https://webinstant.online/services.html): Full list of web design and development services offered.
+- [Plans](https://webinstant.online/plans.html): Pricing packages and what's included in each tier.
+- [Projects](https://webinstant.online/projects.html): Portfolio of completed client websites.
+- [Contact](https://webinstant.online/contact.html): Get a free website quote or ask a question.
+- [Get a Quote](https://webinstant.online/form.html): Detailed project intake form for a free quote.
+
+## Policies
+
+- [Terms & Conditions](https://webinstant.online/t_c.html)
+- [Privacy Policy](https://webinstant.online/privacy.html)
+- [Refund Policy](https://webinstant.online/refund.html)
