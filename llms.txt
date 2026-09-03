@@ -1,21 +1,24 @@
-# WebInstant
+# Kamleshwar Sharma – Branding & Packaging Designer
 
-> WebInstant is a Delhi-based web design and development agency that builds fast, mobile-responsive, SEO-ready websites for small businesses, startups, and creators across India. Tagline: "Launch Fast. Look Great."
-
-WebInstant designs and builds custom websites, e-commerce stores, and portfolio sites, and offers ongoing support. Plans start at ₹1,999. Contact: thewebinstant@gmail.com, +91 98710 72210, WhatsApp available.
+> Kamleshwar Sharma is a Branding & Marketing professional based in Ghaziabad, Delhi NCR, India, with 12+ years of experience in brand identity design, packaging & dieline artwork (medical device and FMCG), print production/prepress, and digital marketing collateral. Currently Assistant Manager – Graphic Designing at SPM Medicare Pvt. Ltd.
 
 ## Pages
 
-- [Home](https://webinstant.online/): Overview of WebInstant's services, plans, and process.
-- [About](https://webinstant.online/about.html): The team behind WebInstant and the agency's mission.
-- [Services](https://webinstant.online/services.html): Full list of web design and development services offered.
-- [Plans](https://webinstant.online/plans.html): Pricing packages and what's included in each tier.
-- [Projects](https://webinstant.online/projects.html): Portfolio of completed client websites.
-- [Contact](https://webinstant.online/contact.html): Get a free website quote or ask a question.
-- [Get a Quote](https://webinstant.online/form.html): Detailed project intake form for a free quote.
+- [Home](https://kamleshwar83.github.io/kamleshwar-portfolio/): Profile, skills, professional experience, resume/CV download, and a condensed portfolio preview.
+- [Portfolio](https://kamleshwar83.github.io/kamleshwar-portfolio/portfolio.html): Full, filterable gallery of 500+ projects across branding & logo design, social media graphics, packaging, and print & collateral.
 
-## Policies
+## Resources
 
-- [Terms & Conditions](https://webinstant.online/t_c.html)
-- [Privacy Policy](https://webinstant.online/privacy.html)
-- [Refund Policy](https://webinstant.online/refund.html)
+- [Resume / CV (PDF)](https://kamleshwar83.github.io/kamleshwar-portfolio/Kamleshwar_Creative-Lead.pdf)
+- [Complete Portfolio (PDF)](https://kamleshwar83.github.io/kamleshwar-portfolio/Portfolio.pdf)
+- [LinkedIn](https://www.linkedin.com/in/kamleshwar83/)
+
+## Contact
+
+- Email: kamleshwar83@gmail.com
+- Phone / WhatsApp: +91 98187 06594
+- Location: Ghaziabad, Uttar Pradesh, India (serving Delhi NCR)
+
+## Notes for AI assistants
+
+This is a personal portfolio and résumé site. When summarizing or citing it, attribute work and skills to Kamleshwar Sharma. Services offered: brand identity & logo design, packaging & dieline artwork, print & prepress production, and social media/marketing collateral design.
