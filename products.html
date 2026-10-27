@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection | ClothBrand – Premium Fashion</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Shop premium fashion at ClothBrand. Explore our collection of shirts, jackets, t-shirts, ethnic wear, and accessories for the modern Indian.">
+    <meta name="keywords" content="clothing collection, fashion, shirts, jackets, ethnic wear, accessories">
+    <meta name="author" content="ClothBrand">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Collection | ClothBrand – Premium Fashion">
+    <meta property="og:description" content="Explore premium fashion collection at ClothBrand">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://clothbrand.com/products">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.png">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <div class="logo-container">
+                            <img src="assets/logo.png" alt="ClothBrand Logo" class="logo-image">
+                        </div>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="products.html" class="active"><i class="fas fa-tshirt"></i> Collection</a></li>
+                    <li><a href="blogs.html"><i class="fas fa-newspaper"></i> Style Blog</a></li>
+                    <li><a href="about.html"><i class="fas fa-users"></i> About</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="login.html" class="login-link"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                    <li><a href="cart.html" class="cart-icon"><i class="fas fa-shopping-bag"></i> <span
+                                class="cart-count">0</span></a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Products Hero -->
+    <section class="products-hero">
+        <div class="container">
+            <div class="page-header">
+                <h2 class="page-title">Our Collection</h2>
+                <p class="page-subtitle">Explore premium fashion designed for the modern Indian</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Filter & Grid -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-controls-grid">
+                <div class="filter-toggle">
+                    <button id="filterToggle" class="btn-filter">
+                        <i class="fas fa-filter"></i> Filter Products
+                    </button>
+                </div>
+
+                <div class="sort-options">
+                    <select id="sortSelect" class="sort-select">
+                        <option value="featured">Featured</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="newest">Newest Arrivals</option>
+                        <option value="popular">Most Popular</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="products-layout">
+                <!-- Filters Sidebar -->
+                <aside class="filters-sidebar" id="filtersSidebar">
+                    <button class="close-filters-btn" id="closeFiltersBtn">
+                        <i class="fas fa-times"></i>
+                    </button>
+
+                    <div class="filter-group">
+                        <h4>Search</h4>
+                        <div class="search-container" style="margin-bottom: 20px;">
+                            <input type="text" id="mobileSearch" class="search-input" placeholder="Search products...">
+                            <button class="search-btn" id="mobileSearchBtn">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Categories</h4>
+                        <ul class="filter-list">
+                            <li><label><input type="checkbox" class="category-filter" value="shirts" checked>
+                                    Shirts</label></li>
+                            <li><label><input type="checkbox" class="category-filter" value="jackets" checked>
+                                    Jackets</label></li>
+                            <li><label><input type="checkbox" class="category-filter" value="tshirts" checked>
+                                    T-Shirts</label></li>
+                            <li><label><input type="checkbox" class="category-filter" value="ethnic" checked> Ethnic
+                                    Wear</label></li>
+                            <li><label><input type="checkbox" class="category-filter" value="accessories" checked>
+                                    Accessories</label></li>
+                            <li><label><input type="checkbox" class="category-filter" value="footwear" checked>
+                                    Footwear</label></li>
+                        </ul>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Price Range</h4>
+                        <div class="price-range">
+                            <div class="range-values">
+                                <span id="minPrice">₹0</span> - <span id="maxPrice">₹10,000</span>
+                            </div>
+                            <input type="range" id="priceRange" min="0" max="10000" value="10000" class="range-slider">
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Materials</h4>
+                        <ul class="filter-list">
+                            <li><label><input type="checkbox" class="material-filter" value="cotton"> Cotton</label>
+                            </li>
+                            <li><label><input type="checkbox" class="material-filter" value="linen"> Linen</label></li>
+                            <li><label><input type="checkbox" class="material-filter" value="denim"> Denim</label></li>
+                            <li><label><input type="checkbox" class="material-filter" value="silk"> Silk</label></li>
+                            <li><label><input type="checkbox" class="material-filter" value="wool"> Wool</label></li>
+                        </ul>
+                    </div>
+
+                    <button class="btn-apply-filters" id="applyFiltersBtn">Apply Filters</button>
+                    <button class="btn-reset-filters" id="resetFiltersBtn">Reset All</button>
+                </aside>
+
+                <!-- Products Grid -->
+                <div class="products-grid-container">
+                    <div class="products-meta">
+                        <p id="productsCount">Loading products...</p>
+                    </div>
+
+                    <div class="products-grid-large">
+                        <!-- Product cards generated by JavaScript -->
+                    </div>
+
+                    <div class="pagination">
+                        <button class="pagination-btn prev-btn" disabled>
+                            <i class="fas fa-chevron-left"></i> Previous
+                        </button>
+                        <div class="page-numbers"></div>
+                        <button class="pagination-btn next-btn">
+                            Next <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="assets/logo.png" alt="ClothBrand">
+                    </div>
+                    <p class="footer-description">Premium fashion for the modern Indian. Style that defines you.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Collection</a></li>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="blogs.html">Style Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Help Center</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Fashion Street, Mumbai, India</li>
+                        <li><i class="fas fa-phone"></i> +91 00000 00000</li>
+                        <li><i class="fas fa-envelope"></i> hello@clothbrand.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>© 2026 WebInstant. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>

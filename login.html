@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | ClothBrand – Sign In</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Sign in to your ClothBrand account to track orders, access wishlist, and get exclusive member offers.">
+    <meta name="keywords" content="ClothBrand login, fashion account, track orders, member discounts">
+    <meta name="author" content="ClothBrand">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Login | ClothBrand – Sign In">
+    <meta property="og:description" content="Sign in to your ClothBrand account.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://clothbrand.com/login">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://clothbrand.com/login">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.png">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <div class="logo-container">
+                            <img src="assets/logo.png" alt="ClothBrand Logo" class="logo-image">
+                        </div>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="products.html"><i class="fas fa-tshirt"></i> Collection</a></li>
+                    <li><a href="blogs.html"><i class="fas fa-newspaper"></i> Style Blog</a></li>
+                    <li><a href="about.html"><i class="fas fa-users"></i> About</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="register.html" class="login-link"><i class="fas fa-user-plus"></i> Register</a></li>
+                    <li><a href="cart.html" class="cart-icon"><i class="fas fa-shopping-bag"></i> <span class="cart-count" style="display:none;">0</span></a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Login Hero -->
+    <main class="login-hero">
+        <div class="container">
+            <div class="login-hero-content">
+                <div class="login-hero-text">
+                    <h1>Welcome Back</h1>
+                    <p>Sign in to your ClothBrand account to continue your style journey.</p>
+                    <div class="login-benefits">
+                        <div class="benefit">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span>Track your orders</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-heart"></i>
+                            <span>Access your wishlist</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-tag"></i>
+                            <span>Exclusive member offers</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-star"></i>
+                            <span>Personalized style tips</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image" aria-hidden="true">
+                    <div class="hero-circle">
+                        <img src="assets/logo.png" alt="Fashion Illustration">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Login Section -->
+    <section class="login-section">
+        <div class="container">
+            <div class="login-container">
+                <div class="login-card">
+                    <div class="login-header">
+                        <h2>Sign In</h2>
+                        <p>Enter your credentials to access your account</p>
+                    </div>
+
+                    <form id="loginForm" class="login-form" novalidate>
+                        <div class="form-group">
+                            <label for="loginEmail">Email Address <span class="sr-only">(required)</span></label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                                <input type="email" id="loginEmail" name="email" required placeholder="your@email.com" aria-describedby="emailError" autocomplete="email">
+                            </div>
+                            <div class="error-message" id="emailError" role="alert"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="loginPassword">Password <span class="sr-only">(required)</span></label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-lock" aria-hidden="true"></i>
+                                <input type="password" id="loginPassword" name="password" required placeholder="Enter your password" aria-describedby="passwordError" autocomplete="current-password">
+                                <button type="button" class="password-toggle" id="passwordToggle" aria-label="Show password">
+                                    <i class="fas fa-eye" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div class="error-message" id="passwordError" role="alert"></div>
+                        </div>
+
+                        <div class="form-options">
+                            <div class="remember-me">
+                                <input type="checkbox" id="rememberMe" name="remember">
+                                <label for="rememberMe">Remember me</label>
+                            </div>
+                            <a href="#" class="forgot-password" id="forgotPassword">Forgot password?</a>
+                        </div>
+
+                        <button type="submit" class="login-btn">
+                            <span class="btn-text">Sign In</span>
+                            <div class="loading-spinner" aria-hidden="true"></div>
+                        </button>
+
+                        <div class="login-divider" aria-hidden="true">
+                            <span>or continue with</span>
+                        </div>
+
+                        <div class="social-login">
+                            <button type="button" class="social-btn google-btn" aria-label="Sign in with Google">
+                                <i class="fab fa-google" aria-hidden="true"></i>
+                                <span>Google</span>
+                            </button>
+                            <button type="button" class="social-btn facebook-btn" aria-label="Sign in with Facebook">
+                                <i class="fab fa-facebook" aria-hidden="true"></i>
+                                <span>Facebook</span>
+                            </button>
+                        </div>
+
+                        <div class="login-footer">
+                            <p>Don't have an account? <a href="register.html">Create one now</a></p>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="login-info-card">
+                    <div class="info-card-content">
+                        <h3>New to ClothBrand?</h3>
+                        <p>Join our community of style enthusiasts and discover premium fashion.</p>
+
+                        <div class="info-features">
+                            <div class="info-feature">
+                                <i class="fas fa-shipping-fast"></i>
+                                <div>
+                                    <h4>Fast Delivery</h4>
+                                    <p>Free shipping on orders above ₹2999</p>
+                                </div>
+                            </div>
+                            <div class="info-feature">
+                                <i class="fas fa-undo"></i>
+                                <div>
+                                    <h4>Easy Returns</h4>
+                                    <p>30-day hassle-free return policy</p>
+                                </div>
+                            </div>
+                            <div class="info-feature">
+                                <i class="fas fa-gem"></i>
+                                <div>
+                                    <h4>Premium Quality</h4>
+                                    <p>Curated collection of premium fabrics</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="register.html" class="btn-secondary">Create Account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Forgot Password Modal -->
+    <div class="modal" id="forgotPasswordModal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close dialog">&times;</button>
+            <div class="modal-header">
+                <h3>Reset Your Password</h3>
+                <p>Enter your email address and we'll send you instructions to reset your password.</p>
+            </div>
+            <form id="forgotPasswordForm" novalidate>
+                <div class="form-group">
+                    <label for="resetEmail">Email Address <span class="sr-only">(required)</span></label>
+                    <input type="email" id="resetEmail" required placeholder="your@email.com" aria-describedby="resetEmailError" autocomplete="email">
+                    <div class="error-message" id="resetEmailError" role="alert"></div>
+                </div>
+                <button type="submit" class="reset-btn">
+                    <span class="btn-text">Send Reset Instructions</span>
+                    <div class="loading-spinner" aria-hidden="true"></div>
+                </button>
+                <div class="form-success" id="resetSuccess" role="alert">
+                    <i class="fas fa-check-circle" aria-hidden="true"></i>
+                    <p>Password reset instructions have been sent to your email!</p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Demo Credentials Banner -->
+    <div class="demo-banner" id="demoBanner" role="alert">
+        <div class="container">
+            <p><strong>Demo Tip:</strong> Use email: <code>demo@clothbrand.com</code> and password: <code>demo123</code> for quick login</p>
+            <button class="close-banner" id="closeBanner" aria-label="Close demo tip">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="assets/logo.png" alt="ClothBrand">
+                    </div>
+                    <p class="footer-description">Premium fashion for the modern Indian. Style that defines you.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Collection</a></li>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="blogs.html">Style Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Help Center</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Fashion Street, Mumbai, India</li>
+                        <li><i class="fas fa-phone"></i> +91 00000 00000</li>
+                        <li><i class="fas fa-envelope"></i> hello@clothbrand.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>© 2026 ClothBrand. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>

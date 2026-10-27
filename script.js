@@ -214,9 +214,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// ============================
-// NOTIFICATION SYSTEM
-// ============================
 function showNotification(message, type = "info") {
   const notification = document.createElement("div");
   notification.className = `notification ${type}`;
@@ -228,7 +225,7 @@ function showNotification(message, type = "info") {
           : type === "error"
             ? "exclamation-circle"
             : "info-circle"
-      }"></i>
+      }"></i> 
       <span>${message}</span>
     </div>
     <button class="notification-close"><i class="fas fa-times"></i></button>
@@ -236,13 +233,11 @@ function showNotification(message, type = "info") {
 
   document.body.appendChild(notification);
 
-  // Add close functionality
   const closeBtn = notification.querySelector(".notification-close");
   closeBtn.addEventListener("click", () => {
     notification.remove();
   });
 
-  // Auto-remove after 5 seconds
   setTimeout(() => {
     if (notification.parentNode) {
       notification.remove();
