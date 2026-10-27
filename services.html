@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Web Design & Development Services | WebInstant</title>
+    <title>Web Design &amp; Development Services in India | WebInstant</title>
     <meta
       name="description"
       content="Explore WebInstant's full range of services: business websites, e-commerce stores, portfolio design, SEO optimization, hosting setup, and ongoing maintenance."
@@ -16,7 +16,7 @@
     <meta name="author" content="WebInstant" />
     <meta
       property="og:title"
-      content="Web Design & Development Services | WebInstant"
+      content="Web Design &amp; Development Services in India | WebInstant"
     />
     <meta
       property="og:description"
@@ -34,7 +34,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Web Design & Development Services | WebInstant"
+      content="Web Design &amp; Development Services in India | WebInstant"
     />
     <meta
       name="twitter:description"
@@ -73,7 +73,7 @@
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     /></noscript>
-    <link rel="stylesheet" href="style.min.css" />
+    <link rel="stylesheet" href="style.css" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -158,6 +158,7 @@
                 <a href="services.html" class="nav-link active">Services</a>
                 <a href="plans.html" class="nav-link">Plans</a>
                 <a href="projects.html" class="nav-link">Projects</a>
+                <a href="blog.html" class="nav-link">Blog</a>
                 <a href="contact.html" class="nav-link cta">Contact Us</a>
         </nav>
       </div>
@@ -188,7 +189,7 @@
 
     <main class="services-page">
       <div class="services-grid">
-        <div class="service-card">
+        <div class="service-card" id="portfolio-websites">
           <div class="icon">💼</div>
           <h3>Portfolio Websites</h3>
           <p>Beautiful, responsive portfolios for creators and freelancers.</p>
@@ -197,7 +198,7 @@
             <li>🔍 Filterable Projects</li>
           </ul>
         </div>
-        <div class="service-card">
+        <div class="service-card" id="business-websites">
           <div class="icon">🏢</div>
           <h3>Business Websites</h3>
           <p>
@@ -208,7 +209,7 @@
             <li>📝 Lead Capture Forms</li>
           </ul>
         </div>
-        <div class="service-card">
+        <div class="service-card" id="hosting-domains">
           <div class="icon">🌐</div>
           <h3>Hosting & Domains</h3>
           <p>Fast, secure hosting and domain setup assistance.</p>
@@ -217,7 +218,7 @@
             <li>⚙️ Find a Perfect domain name</li>
           </ul>
         </div>
-        <div class="service-card">
+        <div class="service-card" id="maintenance-support">
           <div class="icon">🔧</div>
           <h3>Maintenance & Support</h3>
           <p>Ongoing updates, backups, and technical assistance.</p>
@@ -226,7 +227,7 @@
             <li>🛠️ Solve Bugs and Errors</li>
           </ul>
         </div>
-        <div class="service-card">
+        <div class="service-card" id="custom-web-design">
           <div class="icon">🎨</div>
           <h3>Custom Web Design</h3>
           <p>Unique designs tailored to your brand’s personality and goals.</p>
@@ -235,7 +236,7 @@
             <li>🖼️ Creative Visual Elements</li>
           </ul>
         </div>
-        <div class="service-card">
+        <div class="service-card" id="speed-optimization">
           <div class="icon">⚡</div>
           <h3>Website Speed Optimization</h3>
           <p>Boost loading times and improve Google PageSpeed scores.</p>
@@ -244,7 +245,7 @@
             <li>📊 Better SEO Rankings</li>
           </ul>
         </div>
-        <div class="service-card">
+        <div class="service-card" id="ecommerce-websites">
           <div class="icon">🛒</div>
           <h3>E-Commerce Websites</h3>
           <p>Sell your products online with a custom, secure store.</p>
@@ -253,7 +254,7 @@
             <li>💳 Payment Gateway Integration</li>
           </ul>
         </div>
-        <div class="service-card">
+        <div class="service-card" id="website-security">
           <div class="icon">🔐</div>
           <h3>Website Security</h3>
           <p>Protect your site from hacks, malware, and vulnerabilities.</p>
@@ -294,6 +295,12 @@
         <!-- Brand -->
         <div class="footer-section">
           <img src="logo.png" alt="WebInstant Logo" class="footer-logo" width="150" height="45" loading="lazy" decoding="async" />
+          <p class="footer-tagline">Fast, mobile-friendly, SEO-ready websites for Indian businesses.</p>
+          <ul class="footer-quick-links">
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="plans.html">Plans</a></li>
+          </ul>
         </div>
 
         <!-- Contact -->
@@ -301,7 +308,7 @@
           <h3>Contact</h3>
           <p>
             Email:
-            <a href="mailto:businesswebinstant@gmail.com"
+            <a href="mailto:thewebinstant@gmail.com"
               >thewebinstant@gmail.com</a
             >
           </p>
@@ -365,7 +372,7 @@
       </div>
     </footer>
 
-    <script src="script.min.js"></script>
+    <script src="script.js"></script>
     <script>
       // Footer year (mobile nav toggle is handled globally in script.js)
       document.getElementById("year").textContent = new Date().getFullYear();

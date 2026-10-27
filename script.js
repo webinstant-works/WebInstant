@@ -244,3 +244,114 @@ function showNotification(message, type = "info") {
     }
   }, 5000);
 }
+// ============================
+// NAVIGATION - ACCESSIBILITY & CLOSE BEHAVIOUR
+// ============================
+(function () {
+  if (!hamburger || !mainNav) return;
+  hamburger.setAttribute("role", "button");
+  hamburger.setAttribute("tabindex", "0");
+  hamburger.setAttribute("aria-label", "Toggle navigation menu");
+  hamburger.setAttribute("aria-controls", "mainNav");
+  hamburger.setAttribute("aria-expanded", "false");
+
+  const closeNav = () => {
+    mainNav.classList.remove("open");
+    hamburger.setAttribute("aria-expanded", "false");
+  };
+
+  hamburger.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      hamburger.click();
+    }
+  });
+  mainNav.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeNav));
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeNav();
+  });
+  document.addEventListener("click", (e) => {
+    if (
+      mainNav.classList.contains("open") &&
+      !mainNav.contains(e.target) &&
+      !hamburger.contains(e.target)
+    ) {
+      closeNav();
+    }
+  });
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) closeNav();
+  });
+})();
+
+// ============================
+// BLOG - ARTICLE ENHANCEMENTS (only runs on blog posts)
+// ============================
+(function () {
+  if (!document.body.classList.contains("blog-post")) return;
+
+  // Reading progress bar
+  const bar = document.getElementById("reading-progress");
+  if (bar) {
+    const update = () => {
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + "%";
+    };
+    window.addEventListener("scroll", update, { passive: true });
+    update();
+  }
+
+  // Table of contents: open on desktop, collapsed on small screens
+  const toc = document.querySelector("details.toc");
+  if (toc) {
+    const mq = window.matchMedia("(min-width: 1000px)");
+    const sync = () => {
+      toc.open = mq.matches;
+    };
+    sync();
+    if (mq.addEventListener) mq.addEventListener("change", sync);
+  }
+
+  // Highlight the current section in the table of contents
+  const tocLinks = document.querySelectorAll(".toc a[href^='#']");
+  if (tocLinks.length && "IntersectionObserver" in window) {
+    const byId = {};
+    tocLinks.forEach((a) => {
+      byId[a.getAttribute("href").slice(1)] = a;
+    });
+    const headingObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            tocLinks.forEach((a) => a.classList.remove("is-active"));
+            const link = byId[entry.target.id];
+            if (link) link.classList.add("is-active");
+          }
+        });
+      },
+      { rootMargin: "-90px 0px -65% 0px" },
+    );
+    Object.keys(byId).forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) headingObserver.observe(el);
+    });
+  }
+
+  // Copy-link button
+  document.querySelectorAll("[data-copy-link]").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const url = btn.getAttribute("data-copy-link") || window.location.href;
+      const label = btn.querySelector("span");
+      try {
+        await navigator.clipboard.writeText(url);
+        if (label) {
+          const old = label.textContent;
+          label.textContent = "Copied!";
+          setTimeout(() => (label.textContent = old), 1800);
+        }
+      } catch (err) {
+        window.prompt("Copy this link:", url);
+      }
+    });
+  });
+})();

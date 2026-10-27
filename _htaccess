@@ -27,10 +27,8 @@
   RewriteRule ^(.*)$ https://webinstant.online/$1 [L,R=301,QSA]
 </IfModule>
 
-# Friendly 404 fallback (points to homepage until a dedicated
-# 404.html is added — replace with your own 404 page for a better
-# lost-visitor experience)
-ErrorDocument 404 /index.html
+# Custom 404 page (returns a real 404 status, which avoids soft-404 issues in Google)
+ErrorDocument 404 /404.html
 
 # ---------------------------------------------------------------
 # 1) EFFICIENT CACHE LIFETIMES
