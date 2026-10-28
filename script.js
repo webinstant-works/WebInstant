@@ -8,6 +8,7 @@ if (hamburger && mainNav) {
   hamburger.addEventListener("click", () => {
     mainNav.classList.toggle("open");
     hamburger.setAttribute("aria-expanded", mainNav.classList.contains("open"));
+    document.body.classList.toggle("nav-open", mainNav.classList.contains("open"));
 
     // Toggle hamburger icon
     const icon = hamburger.querySelector("i");
@@ -33,13 +34,22 @@ if (slides.length && dotsContainer) {
   slides.forEach((_, index) => {
     const dot = document.createElement("span");
     dot.classList.add("dot");
+    dot.setAttribute("role", "button");
+    dot.setAttribute("tabindex", "0");
+    dot.setAttribute("aria-label", "Go to slide " + (index + 1));
+    dot.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        goToSlide(index);
+      }
+    });
     if (index === 0) dot.classList.add("active");
     dot.addEventListener("click", () => goToSlide(index));
     dotsContainer.appendChild(dot);
   });
 }
 
-const dots = document.querySelectorAll(".dot");
+const dots = dotsContainer ? dotsContainer.querySelectorAll(".dot") : [];
 
 function showSlide(index) {
   slides.forEach((slide, i) => {
@@ -131,16 +141,23 @@ function validatePassword(password) {
 // ============================
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
-    e.preventDefault();
     const targetId = this.getAttribute("href");
-    if (targetId === "#") return;
+    if (!targetId || targetId === "#" || targetId.length < 2) return;
+    e.preventDefault();
 
-    const targetElement = document.querySelector(targetId);
+    let targetElement = null;
+    try {
+      targetElement = document.querySelector(targetId);
+    } catch (err) {
+      return;
+    }
     if (targetElement) {
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       window.scrollTo({
-        top: targetElement.offsetTop - 80,
-        behavior: "smooth",
+        top: targetElement.getBoundingClientRect().top + window.pageYOffset - 80,
+        behavior: reduce ? "auto" : "smooth",
       });
+      if (history.replaceState) history.replaceState(null, "", targetId);
     }
   });
 });
@@ -189,7 +206,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const rect = this.getBoundingClientRect();
       tooltip.style.left =
-        rect.left + rect.width / 2 - tooltip.offsetWidth / 2 + "px";
+        Math.max(
+          8,
+          Math.min(
+            window.innerWidth - tooltip.offsetWidth - 8,
+            rect.left + rect.width / 2 - tooltip.offsetWidth / 2,
+          ),
+        ) + "px";
       tooltip.style.top = rect.top - tooltip.offsetHeight - 5 + "px";
 
       this._tooltip = tooltip;
@@ -204,7 +227,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Add active class to current page in navigation
-  const currentPage = window.location.pathname.split("/").pop();
+  const currentPage = window.location.pathname.split("/").pop() || "index.html";
   const navLinks = document.querySelectorAll(".nav-link");
   navLinks.forEach((link) => {
     const linkPage = link.getAttribute("href");
@@ -226,11 +249,12 @@ function showNotification(message, type = "info") {
             ? "exclamation-circle"
             : "info-circle"
       }"></i> 
-      <span>${message}</span>
+      <span></span>
     </div>
     <button class="notification-close"><i class="fas fa-times"></i></button>
   `;
 
+  notification.querySelector("span").textContent = message;
   document.body.appendChild(notification);
 
   const closeBtn = notification.querySelector(".notification-close");
@@ -257,7 +281,13 @@ function showNotification(message, type = "info") {
 
   const closeNav = () => {
     mainNav.classList.remove("open");
+    document.body.classList.remove("nav-open");
     hamburger.setAttribute("aria-expanded", "false");
+    const icon = hamburger.querySelector("i");
+    if (icon) {
+      icon.classList.add("fa-bars");
+      icon.classList.remove("fa-times");
+    }
   };
 
   hamburger.addEventListener("keydown", (e) => {

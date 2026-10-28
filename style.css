@@ -9444,3 +9444,51 @@ code {
     padding: 0 6px;
   }
 }
+
+
+/* ==========================================================
+   RESPONSIVE & ROBUSTNESS HARDENING
+   ========================================================== */
+html { scroll-padding-top: 90px; }
+body { overflow-x: hidden; overflow-wrap: break-word; }
+img, picture, video, canvas, svg, iframe { max-width: 100%; }
+img { height: auto; }
+iframe { border: 0; }
+table { max-width: 100%; }
+pre, code { overflow-wrap: anywhere; }
+pre { max-width: 100%; overflow-x: auto; }
+.table-wrap, .table-responsive { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+/* keep form controls from triggering iOS zoom and from overflowing */
+input, select, textarea, button { max-width: 100%; font-family: inherit; }
+@media (max-width: 768px) {
+  input:not([type="checkbox"]):not([type="radio"]), select, textarea { font-size: 16px; }
+  .main-nav { height: 100vh; height: 100dvh; padding-bottom: max(30px, env(safe-area-inset-bottom)); }
+  .main-nav a, .btn, button { min-height: 44px; }
+  .main-nav a { display: flex; align-items: center; }
+  body.nav-open { overflow: hidden; }
+  .slider-dots .dot { position: relative; }
+  .slider-dots .dot::after { content: ""; position: absolute; inset: -10px; }
+}
+
+/* very small phones (320px) */
+@media (max-width: 360px) {
+  h1 { font-size: clamp(1.6rem, 8vw, 2rem); }
+  h2 { font-size: clamp(1.35rem, 6.5vw, 1.7rem); }
+  .btn, .btn-primary, .btn.outline { white-space: normal; text-align: center; }
+}
+
+/* visible keyboard focus */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible,
+textarea:focus-visible, summary:focus-visible, [role="button"]:focus-visible {
+  outline: 3px solid var(--brand-1, #1a60fe);
+  outline-offset: 2px;
+}
+
+/* respect notches on phones */
+.site-header, header.site-header { padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
