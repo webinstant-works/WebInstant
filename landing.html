@@ -577,8 +577,17 @@ section{padding:76px 0;}
   *{animation:none !important;transition:none !important;}
 }
 </style>
-</head>
+    <link rel="stylesheet" href="promo.css" />
+    <script src="promo.js"></script>
+  </head>
 <body>
+    <div class="promo-bar" data-promo-ui role="region" aria-label="Diwali Sale announcement">
+      <div class="promo-bar-inner">
+        <p><svg class="promo-diya" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2c1.8 2.2 2.6 3.8 2.6 5.2A2.6 2.6 0 0 1 12 9.8 2.6 2.6 0 0 1 9.4 7.2C9.4 5.8 10.2 4.2 12 2z" fill="#f1d68a"/><path d="M3 12h18c0 4.4-3.8 8-9 8s-9-3.6-9-8z" fill="#c8962e"/><path d="M6 21.2h12" stroke="#f1d68a" stroke-width="1.5" stroke-linecap="round"/></svg><strong>Diwali Sale</strong> — Up to <strong><span data-promo-fill="max-pct">30</span>% OFF</strong><span class="promo-bar-sub">on website plans from <span data-promo-fill="low-min">₹6,000</span></span></p>
+        <a class="promo-bar-cta" href="plans.html">View Plans <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+    
 
 <!-- ===================== TOP BAR ===================== -->
 <div class="topbar">
@@ -860,13 +869,13 @@ section{padding:76px 0;}
         <p class="p-note">Single-page site, fully responsive, delivered in 1–4 days</p>
         <a href="#lead-form" class="btn btn-ghost btn-block cta-track" data-cta="pricing_landing">Get My Free Quote</a>
       </div>
-      <div class="price-card featured">
+      <div class="price-card featured" data-promo-price="6000">
         <h3>Business Website</h3>
         <div class="amount">₹6,000 <small>onwards</small></div>
         <p class="p-note">Multi-page site for clinics, gyms, agencies and local businesses</p>
         <a href="#lead-form" class="btn btn-primary btn-block cta-track" data-cta="pricing_business">Get My Free Quote</a>
       </div>
-      <div class="price-card">
+      <div class="price-card" data-promo-price="35000">
         <h3>E-Commerce Website</h3>
         <div class="amount">₹35,000 <small>onwards</small></div>
         <p class="p-note">Full online store with cart, payments and admin tools</p>

@@ -95,6 +95,8 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="promo.css" />
+    <script src="promo.js"></script>
         <!-- Google tag (gtag.js) — replace G-XXXXXXX with your GA4 Measurement ID -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
     <script>
@@ -106,6 +108,13 @@
   </head>
 
     <body>
+    <div class="promo-bar" data-promo-ui role="region" aria-label="Diwali Sale announcement">
+      <div class="promo-bar-inner">
+        <p><svg class="promo-diya" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2c1.8 2.2 2.6 3.8 2.6 5.2A2.6 2.6 0 0 1 12 9.8 2.6 2.6 0 0 1 9.4 7.2C9.4 5.8 10.2 4.2 12 2z" fill="#f1d68a"/><path d="M3 12h18c0 4.4-3.8 8-9 8s-9-3.6-9-8z" fill="#c8962e"/><path d="M6 21.2h12" stroke="#f1d68a" stroke-width="1.5" stroke-linecap="round"/></svg><strong>Diwali Sale</strong> — Up to <strong><span data-promo-fill="max-pct">30</span>% OFF</strong><span class="promo-bar-sub">on website plans from <span data-promo-fill="low-min">₹6,000</span></span></p>
+        <a class="promo-bar-cta" href="plans.html">View Plans <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+    
     <header class="site-header">
         <div class="container header-inner">
             <a class="brand" href="index.html">
@@ -174,6 +183,35 @@
 
     </div>
 </section>
+
+        
+        <!-- ── Diwali Sale (remove or switch off in promo.js) ── -->
+        <section class="promo-feature" data-promo-ui aria-labelledby="promo-feature-title">
+            <div class="promo-feature-card">
+                <div class="promo-feature-head">
+                    <span class="promo-eyebrow"><svg class="promo-diya" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2c1.8 2.2 2.6 3.8 2.6 5.2A2.6 2.6 0 0 1 12 9.8 2.6 2.6 0 0 1 9.4 7.2C9.4 5.8 10.2 4.2 12 2z" fill="#f1d68a"/><path d="M3 12h18c0 4.4-3.8 8-9 8s-9-3.6-9-8z" fill="#c8962e"/><path d="M6 21.2h12" stroke="#f1d68a" stroke-width="1.5" stroke-linecap="round"/></svg>Diwali Sale</span>
+                    <h2 id="promo-feature-title">Light up your business <span>this Diwali</span></h2>
+                    <p>Get a fast, mobile-friendly, SEO-ready website and save on the build. The more complete your website, the more you save.</p>
+                </div>
+                <div class="promo-tiers">
+                    <div class="promo-tier">
+                        <div class="promo-tier-pct"><span data-promo-fill="low-pct">20</span>%<small>OFF</small></div>
+                        <p>On website projects from <strong data-promo-fill="low-min">₹6,000</strong> to ₹9,999</p>
+                        <div class="promo-tier-eg"><s data-promo-fill="low-old">₹6,000</s> &rarr; <b data-promo-fill="low-new">₹4,800</b></div>
+                    </div>
+                    <div class="promo-tier is-top">
+                        <div class="promo-tier-pct"><span data-promo-fill="high-pct">30</span>%<small>OFF</small></div>
+                        <p>On website projects of <strong data-promo-fill="high-min">₹10,000</strong> and above</p>
+                        <div class="promo-tier-eg"><s data-promo-fill="high-old">₹10,000</s> &rarr; <b data-promo-fill="high-new">₹7,000</b> &nbsp;&middot;&nbsp; <s data-promo-fill="high2-old">₹15,000</s> &rarr; <b data-promo-fill="high2-new">₹10,500</b></div>
+                    </div>
+                </div>
+                <div class="promo-feature-cta">
+                    <a href="plans.html" class="promo-btn primary">Explore Plans <span aria-hidden="true">&rarr;</span></a>
+                    <a href="https://wa.me/919871072210?text=Hi!%20I%27d%20like%20to%20know%20more%20about%20the%20Diwali%20Sale%20offer%20on%20website%20plans." target="_blank" rel="noopener noreferrer" class="promo-btn ghost">Ask on WhatsApp</a>
+                </div>
+                <p class="promo-fine">Discount applies to the website build price of eligible plans. Maintenance plans, domain, hosting and other add-ons are not included. <span data-promo-until hidden></span></p>
+            </div>
+        </section>
 
         <!-- ── Industry Badges ── -->
         <div class="industry-badges">
@@ -449,7 +487,7 @@
 
                 <div class="plans-grid">
                     <!-- Plan 1 -->
-          <div class="plan-card">
+          <div class="plan-card" data-promo-price="6000">
             <div class="plan-header">
               <h3>💼 Business Starter</h3>
               <div class="price">₹6,000</div>
@@ -508,7 +546,7 @@
           </div>
 
           <!-- Business Professional -->
-          <div class="plan-card featured">
+          <div class="plan-card featured" data-promo-price="10000">
             <div class="plan-header">
               <h3>⭐ Business Professional</h3>
               <div class="price">₹10,000</div>

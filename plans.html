@@ -56,6 +56,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'; this.onload=null;">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="promo.css" />
+    <script src="promo.js"></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -92,6 +94,13 @@
   </head>
 
   <body>
+    <div class="promo-bar" data-promo-ui role="region" aria-label="Diwali Sale announcement">
+      <div class="promo-bar-inner">
+        <p><svg class="promo-diya" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2c1.8 2.2 2.6 3.8 2.6 5.2A2.6 2.6 0 0 1 12 9.8 2.6 2.6 0 0 1 9.4 7.2C9.4 5.8 10.2 4.2 12 2z" fill="#f1d68a"/><path d="M3 12h18c0 4.4-3.8 8-9 8s-9-3.6-9-8z" fill="#c8962e"/><path d="M6 21.2h12" stroke="#f1d68a" stroke-width="1.5" stroke-linecap="round"/></svg><strong>Diwali Sale</strong> — Up to <strong><span data-promo-fill="max-pct">30</span>% OFF</strong><span class="promo-bar-sub">on website plans from <span data-promo-fill="low-min">₹6,000</span></span></p>
+        <a class="promo-bar-cta" href="plans.html">View Plans <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+    
     <div id="reading-progress"></div>
 
     <header class="site-header">
@@ -139,6 +148,12 @@
     </div>
 
     <main class="plans-page">
+      <div class="promo-strip" data-promo-ui>
+      <span><svg class="promo-diya" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2c1.8 2.2 2.6 3.8 2.6 5.2A2.6 2.6 0 0 1 12 9.8 2.6 2.6 0 0 1 9.4 7.2C9.4 5.8 10.2 4.2 12 2z" fill="#f1d68a"/><path d="M3 12h18c0 4.4-3.8 8-9 8s-9-3.6-9-8z" fill="#c8962e"/><path d="M6 21.2h12" stroke="#f1d68a" stroke-width="1.5" stroke-linecap="round"/></svg><strong>Diwali Sale:</strong> <span data-promo-fill="low-pct">20</span>% OFF website projects from <span data-promo-fill="low-min">₹6,000</span> &middot; <span data-promo-fill="high-pct">30</span>% OFF from <span data-promo-fill="high-min">₹10,000</span></span>
+      <a href="plans.html">See plans &rarr;</a>
+      <small>Applies to the website build price of eligible plans. Maintenance plans, domain, hosting and add-ons are excluded. <span data-promo-until hidden></span></small>
+    </div>
+
       <!-- Portfolio Plans -->
       <section class="plan-category" id="portfolio">
         <h2 class="category-title">
@@ -279,7 +294,7 @@
         </p>
         <div class="plans-grid">
           <!-- Business Starter -->
-          <div class="plan-card">
+          <div class="plan-card" data-promo-price="6000">
             <div class="plan-header">
               <h3>💼 Business Starter</h3>
               <div class="price">₹6,000</div>
@@ -338,7 +353,7 @@
           </div>
 
           <!-- Business Professional -->
-          <div class="plan-card featured">
+          <div class="plan-card featured" data-promo-price="10000">
             <div class="plan-badge">Most Popular</div>
             <div class="plan-header">
               <h3>⭐ Business Professional</h3>
@@ -401,7 +416,7 @@
           <br>
 
           <!-- Business Enterprise -->
-          <div class="plan-card">
+          <div class="plan-card" data-promo-price="15000">
             <div class="plan-badge">Best Value</div>
             <div class="plan-header">
               <h3>🏢 Business Enterprise</h3>
@@ -466,7 +481,7 @@
         </p>
         <div class="plans-grid">
           <!-- E-Commerce Pro -->
-          <div class="plan-card featured">
+          <div class="plan-card featured" data-promo-price="35000">
             <div class="plan-badge">Most Popular</div>
             <div class="plan-header">
               <h3>🚀 E-Commerce Pro</h3>
