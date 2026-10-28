@@ -1,28 +1,10 @@
-/*!
- * WebInstant seasonal promotion (Diwali Sale)
- * ---------------------------------------------------------------
- * HOW TO UPDATE OR SWITCH OFF
- *   - Switch off:   set  enabled: false   (every banner, badge and discounted
- *                   price disappears and normal prices/WhatsApp messages return).
- *   - Auto-expire:  set  endDate: "YYYY-MM-DD"  (last day of the offer, India
- *                   time). After that day the promotion hides itself. Leave ""
- *                   for no end date. No countdown is shown.
- *   - Change tiers: edit  tiers  below. The highest tier whose  min  the price
- *                   reaches wins, so ₹10,000+ gets 30% and ₹6,000-₹9,999 gets 20%.
- *   - Eligibility:  only plan cards / price cards that carry a
- *                   data-promo-price="<rupees>" attribute are discounted. Add or
- *                   remove that attribute to include or exclude a plan.
- *                   Maintenance, domain and hosting do not carry it.
- * After the sale you can also delete promo.js, promo.css, and the elements
- * marked data-promo-ui in the HTML (all are optional once enabled is false).
- */
 (function () {
   "use strict";
 
   var PROMO = {
     enabled: true,
     name: "Diwali Sale",
-    endDate: "", // e.g. "2026-11-15" (inclusive). Empty = no end date.
+    endDate: "2026-11-15", 
     tiers: [
       { min: 6000, percent: 20 },
       { min: 10000, percent: 30 },
@@ -37,18 +19,22 @@
       var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(PROMO.endDate);
       if (m) {
         // end of the last day in India time (UTC+05:30)
-        var endMs = Date.UTC(+m[1], +m[2] - 1, +m[3], 23, 59, 59) - 5.5 * 3600 * 1000;
+        var endMs =
+          Date.UTC(+m[1], +m[2] - 1, +m[3], 23, 59, 59) - 5.5 * 3600 * 1000;
         if (Date.now() > endMs) return false;
       }
     }
     return true;
   }
 
-  var tiers = PROMO.tiers.slice().sort(function (a, b) { return a.min - b.min; });
+  var tiers = PROMO.tiers.slice().sort(function (a, b) {
+    return a.min - b.min;
+  });
 
   function percentFor(price) {
     var pct = 0;
-    for (var i = 0; i < tiers.length; i++) if (price >= tiers[i].min) pct = tiers[i].percent;
+    for (var i = 0; i < tiers.length; i++)
+      if (price >= tiers[i].min) pct = tiers[i].percent;
     return pct;
   }
   function discounted(price, pct) {
@@ -69,7 +55,8 @@
   root.classList.add("promo-on");
 
   function fill() {
-    var low = tiers[0], high = tiers[tiers.length - 1];
+    var low = tiers[0],
+      high = tiers[tiers.length - 1];
     var map = {
       "max-pct": high.percent,
       "low-pct": low.percent,
@@ -93,8 +80,19 @@
     var until = document.querySelectorAll("[data-promo-until]");
     if (PROMO.endDate && until.length) {
       var d = new Date(PROMO.endDate + "T00:00:00Z");
-      var txt = "Offer valid until " + d.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }) + ".";
-      for (var j = 0; j < until.length; j++) { until[j].textContent = txt; until[j].hidden = false; }
+      var txt =
+        "Offer valid until " +
+        d.toLocaleDateString("en-GB", {
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+          timeZone: "UTC",
+        }) +
+        ".";
+      for (var j = 0; j < until.length; j++) {
+        until[j].textContent = txt;
+        until[j].hidden = false;
+      }
     }
   }
 
@@ -102,15 +100,21 @@
     var price = parseInt(card.getAttribute("data-promo-price"), 10);
     var pct = percentFor(price);
     if (!price || !pct) return;
-    var now = discounted(price, pct), save = price - now;
+    var now = discounted(price, pct),
+      save = price - now;
 
     var priceEl = card.querySelector(".price, .amount");
     if (priceEl) {
       var small = priceEl.querySelector("small");
       var suffix = small ? " " + small.outerHTML : "";
       priceEl.innerHTML =
-        '<span class="promo-old"><span class="promo-sr">Original price </span><s>' + inr(price) + "</s></span> " +
-        '<span class="promo-new"><span class="promo-sr">Sale price </span>' + inr(now) + "</span>" + suffix;
+        '<span class="promo-old"><span class="promo-sr">Original price </span><s>' +
+        inr(price) +
+        "</s></span> " +
+        '<span class="promo-new"><span class="promo-sr">Sale price </span>' +
+        inr(now) +
+        "</span>" +
+        suffix;
       priceEl.classList.add("promo-price");
 
       var badge = document.createElement("span");
@@ -134,9 +138,19 @@
       var base = q > -1 ? href.slice(0, q) : href;
       var msg = q > -1 ? decodeURIComponent(href.slice(q + 6)) : "";
       if (msg.indexOf(PROMO.name) > -1) continue;
-      msg = msg.replace(/[.\s]+$/, "") +
-        ". " + PROMO.name + " offer: original price " + inr(price) + ", " + pct + "% OFF, discounted price " + inr(now) +
-        " (saving " + inr(save) + ").";
+      msg =
+        msg.replace(/[.\s]+$/, "") +
+        ". " +
+        PROMO.name +
+        " offer: original price " +
+        inr(price) +
+        ", " +
+        pct +
+        "% OFF, discounted price " +
+        inr(now) +
+        " (saving " +
+        inr(save) +
+        ").";
       a.setAttribute("href", base + "?text=" + encodeURIComponent(msg));
     }
   }
@@ -146,14 +160,19 @@
     var cards = document.querySelectorAll("[data-promo-price]");
     for (var i = 0; i < cards.length; i++) decorate(cards[i]);
   }
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+  if (document.readyState === "loading")
+    document.addEventListener("DOMContentLoaded", init);
   else init();
 
   // exposed for quick checks in the browser console: WIPromo.calc(10000)
   window.WIPromo = {
     calc: function (price) {
       var pct = percentFor(price);
-      return { price: price, percent: pct, final: pct ? discounted(price, pct) : price };
+      return {
+        price: price,
+        percent: pct,
+        final: pct ? discounted(price, pct) : price,
+      };
     },
   };
 })();
