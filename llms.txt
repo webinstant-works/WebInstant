@@ -4,26 +4,26 @@
 
 ## Pages
 
-- [Home](https://webinstant.online/): Overview of WebInstant, featured projects and latest articles.
-- [Services](https://webinstant.online/services.html): Portfolio websites, business websites, hosting and domains, maintenance and support, custom web design, speed optimization, e-commerce and website security.
-- [Plans](https://webinstant.online/plans.html): One-time website plans (portfolio from Rs 1,500, business websites from Rs 6,000, e-commerce from Rs 35,000) and monthly or yearly maintenance plans.
-- [Projects](https://webinstant.online/projects.html): Live websites built for clients.
-- [About](https://webinstant.online/about.html): The team and mission.
-- [Contact](https://webinstant.online/contact.html): Free quote form, WhatsApp and email. Replies within 12 business hours.
-- [Blog](https://webinstant.online/blog.html): Practical website guides for Indian businesses.
+- [Home](https://www.webinstant.online/): Overview of WebInstant, featured projects and latest articles.
+- [Services](https://www.webinstant.online/services.html): Portfolio websites, business websites, hosting and domains, maintenance and support, custom web design, speed optimization, e-commerce and website security.
+- [Plans](https://www.webinstant.online/plans.html): One-time website plans (portfolio from Rs 1,500, business websites from Rs 6,000, e-commerce from Rs 35,000) and monthly or yearly maintenance plans.
+- [Projects](https://www.webinstant.online/projects.html): Live websites built for clients.
+- [About](https://www.webinstant.online/about.html): The team and mission.
+- [Contact](https://www.webinstant.online/contact.html): Free quote form, WhatsApp and email. Replies within 12 business hours.
+- [Blog](https://www.webinstant.online/blog.html): Practical website guides for Indian businesses.
 
 ## Blog articles
 
-- [Why Does Every Business Need a Professional Website in 2026?](https://webinstant.online/blog/why-every-business-needs-a-professional-website-in-2026.html): A professional website builds credibility, helps customers find you on Google, generates leads 24/7 and fuels growth. See why every Indian business needs one.
-- [Website vs Social Media: Why Your Business Needs Both](https://webinstant.online/blog/website-vs-social-media-why-your-business-needs-both.html): Relying only on Instagram, Facebook or WhatsApp is risky. Learn the limits of social media, the benefits of owning a website and how to use both together.
-- [How Much Does a Business Website Cost in India in 2026?](https://webinstant.online/blog/business-website-cost-in-india-2026.html): How much does a business website cost in India in 2026? See price ranges by website type, domain, hosting, maintenance costs and how to pick the right budget.
-- [7 Signs Your Business Needs a Website Redesign](https://webinstant.online/blog/signs-your-business-needs-a-website-redesign.html): Slow loading, poor mobile experience, low enquiries or an outdated look? Learn the 7 clear signs your business website needs a redesign and what to fix first.
-- [How a Website Helps Small Businesses Get More Customers](https://webinstant.online/blog/how-a-website-helps-small-businesses-get-more-customers.html): Learn how local SEO, Google searches, contact forms, WhatsApp integration and service pages turn a small business website into a steady lead generator.
-- [What Pages Should Every Professional Business Website Have?](https://webinstant.online/blog/pages-every-professional-business-website-should-have.html): Plan your site right. Learn which pages every professional business website needs: Home, About, Services, Contact, FAQs, testimonials and legal pages.
-- [Why Every Dentist, Clinic, and Healthcare Professional Needs a Website](https://webinstant.online/blog/why-dentists-clinics-healthcare-professionals-need-a-website.html): A website builds patient trust, showcases services, simplifies appointment enquiries and helps local patients find you. See why clinics and doctors need one.
-- [Business Website vs Landing Page: Which One Does Your Business Need?](https://webinstant.online/blog/business-website-vs-landing-page.html): Business website or landing page? Compare purpose, features, cost and use cases to pick the right option for your goals, budget and ad campaigns in India.
-- [How to Choose the Right Website Development Agency for Your Business](https://webinstant.online/blog/how-to-choose-a-website-development-agency.html): Choosing a web agency? Check portfolios, mobile design, SEO basics, speed, pricing transparency, ownership and support with this practical checklist.
-- [10 Common Website Mistakes That Cost Businesses Customers](https://webinstant.online/blog/common-website-mistakes-that-cost-businesses-customers.html): Slow pages, unclear messaging, poor mobile design, missing contact details and weak CTAs: fix these 10 website mistakes before they cost you customers.
+- [Why Does Every Business Need a Professional Website in 2026?](https://www.webinstant.online/blog/why-every-business-needs-a-professional-website-in-2026.html): A professional website builds credibility, helps customers find you on Google, generates leads 24/7 and fuels growth. See why every Indian business needs one.
+- [Website vs Social Media: Why Your Business Needs Both](https://www.webinstant.online/blog/website-vs-social-media-why-your-business-needs-both.html): Relying only on Instagram, Facebook or WhatsApp is risky. Learn the limits of social media, the benefits of owning a website and how to use both together.
+- [How Much Does a Business Website Cost in India in 2026?](https://www.webinstant.online/blog/business-website-cost-in-india-2026.html): How much does a business website cost in India in 2026? See price ranges by website type, domain, hosting, maintenance costs and how to pick the right budget.
+- [7 Signs Your Business Needs a Website Redesign](https://www.webinstant.online/blog/signs-your-business-needs-a-website-redesign.html): Slow loading, poor mobile experience, low enquiries or an outdated look? Learn the 7 clear signs your business website needs a redesign and what to fix first.
+- [How a Website Helps Small Businesses Get More Customers](https://www.webinstant.online/blog/how-a-website-helps-small-businesses-get-more-customers.html): Learn how local SEO, Google searches, contact forms, WhatsApp integration and service pages turn a small business website into a steady lead generator.
+- [What Pages Should Every Professional Business Website Have?](https://www.webinstant.online/blog/pages-every-professional-business-website-should-have.html): Plan your site right. Learn which pages every professional business website needs: Home, About, Services, Contact, FAQs, testimonials and legal pages.
+- [Why Every Dentist, Clinic, and Healthcare Professional Needs a Website](https://www.webinstant.online/blog/why-dentists-clinics-healthcare-professionals-need-a-website.html): A website builds patient trust, showcases services, simplifies appointment enquiries and helps local patients find you. See why clinics and doctors need one.
+- [Business Website vs Landing Page: Which One Does Your Business Need?](https://www.webinstant.online/blog/business-website-vs-landing-page.html): Business website or landing page? Compare purpose, features, cost and use cases to pick the right option for your goals, budget and ad campaigns in India.
+- [How to Choose the Right Website Development Agency for Your Business](https://www.webinstant.online/blog/how-to-choose-a-website-development-agency.html): Choosing a web agency? Check portfolios, mobile design, SEO basics, speed, pricing transparency, ownership and support with this practical checklist.
+- [10 Common Website Mistakes That Cost Businesses Customers](https://www.webinstant.online/blog/common-website-mistakes-that-cost-businesses-customers.html): Slow pages, unclear messaging, poor mobile design, missing contact details and weak CTAs: fix these 10 website mistakes before they cost you customers.
 
 ## Contact
 

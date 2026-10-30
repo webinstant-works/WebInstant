@@ -6,4 +6,4 @@ Disallow: /cgi-bin/
 Disallow: /tmp/
 Disallow: /logs/
 
-Sitemap: https://webinstant.online/sitemap.xml
+Sitemap: https://www.webinstant.online/sitemap.xml

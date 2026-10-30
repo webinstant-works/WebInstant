@@ -12,7 +12,7 @@
 # Fixes: duplicate-content risk from http/https and www/non-www
 # versions of the site being indexed separately. This site's
 # canonical tags, sitemap.xml and robots.txt all use the
-# non-www, https version (https://webinstant.online/...), so every
+# www, https version (https://www.webinstant.online/...), so every
 # other variant 301-redirects to match it.
 # ---------------------------------------------------------------
 <IfModule mod_rewrite.c>
@@ -22,9 +22,9 @@
   RewriteCond %{HTTPS} off
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,QSA]
 
-  # Force non-www
-  RewriteCond %{HTTP_HOST} ^www\.webinstant\.online$ [NC]
-  RewriteRule ^(.*)$ https://webinstant.online/$1 [L,R=301,QSA]
+  # Force www (matches CNAME, canonical tags, sitemap and robots.txt)
+  RewriteCond %{HTTP_HOST} ^webinstant\.online$ [NC]
+  RewriteRule ^(.*)$ https://www.webinstant.online/$1 [L,R=301,QSA]
 </IfModule>
 
 # Custom 404 page (returns a real 404 status, which avoids soft-404 issues in Google)
