@@ -1,4 +1,4 @@
-  <!doctype html>
+<!doctype html>
   <html lang="en">
     <head>
       <meta charset="UTF-8" />
@@ -2069,10 +2069,28 @@
           pointer-events: none;
         }
 
+        /* Gold accent line along the top */
+        .footer::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 3px;
+          background: linear-gradient(
+            90deg,
+            transparent,
+            var(--gold),
+            var(--electric),
+            transparent
+          );
+          pointer-events: none;
+        }
+
         .footer-grid {
           display: grid;
-          grid-template-columns: 1.8fr 1fr 1fr;
-          gap: 60px;
+          grid-template-columns: 1.7fr 1fr 1.2fr 1.2fr;
+          gap: 48px;
           padding-bottom: 60px;
           border-bottom: 1px solid rgba(255, 255, 255, 0.09);
           position: relative;
@@ -2164,6 +2182,42 @@
           opacity: 1;
         }
 
+        .footer-contact li {
+          display: flex;
+          align-items: flex-start;
+          gap: 12px;
+        }
+
+        .footer-contact li i {
+          width: 32px;
+          height: 32px;
+          flex-shrink: 0;
+          border-radius: 8px;
+          background: rgba(245, 158, 11, 0.14);
+          color: var(--gold);
+          font-size: 0.8rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .footer-contact li a,
+        .footer-contact li span {
+          font-size: 0.88rem;
+          color: rgba(255, 255, 255, 0.68);
+          line-height: 1.5;
+          padding-top: 5px;
+          word-break: break-word;
+        }
+
+        .footer-contact li a::before {
+          display: none;
+        }
+
+        .footer-contact li a:hover {
+          color: var(--gold);
+        }
+
         .footer-bottom {
           padding: 22px 0;
           display: flex;
@@ -2174,17 +2228,26 @@
         }
 
         .footer-bottom p {
-          font-size: 0.8rem;
-          color: var(--white);
+          font-size: 0.82rem;
+          color: rgba(255, 255, 255, 0.6);
+          margin: 0;
         }
 
-        .footer-bottom .credit {
-          color: rgba(255, 255, 255, 0.4);
-          font-size: 0.8rem;
+        .footer-bottom .credit a {
+          color: rgba(255, 255, 255, 0.85);
+          font-weight: 600;
+          padding: 6px 14px;
+          border-radius: 999px;
+          border: 1px solid rgba(255, 255, 255, 0.16);
+          background: rgba(255, 255, 255, 0.05);
+          transition: all var(--transition);
+          display: inline-block;
         }
 
-        .footer-bottom .credit span {
-          color: var(--gold);
+        .footer-bottom .credit a:hover {
+          color: var(--navy-deep);
+          background: var(--gold);
+          border-color: var(--gold);
         }
 
         /* ==============================
@@ -2597,7 +2660,7 @@
             grid-template-columns: 1fr;
             gap: 36px;
           }
-          x .footer-bottom {
+          .footer-bottom {
             flex-direction: column;
             text-align: center;
           }
@@ -3901,11 +3964,31 @@
                 <li><a href="#contact">Get a Quote</a></li>
               </ul>
             </div>
+
+            <!-- Contact column -->
+            <div class="footer-col">
+              <h4>Get in Touch</h4>
+              <ul class="footer-contact">
+                <li>
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                  <a href="mailto:kamleshwar83@gmail.com">kamleshwar83@gmail.com</a>
+                </li>
+                <li>
+                  <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                  <a href="https://wa.me/919818706594" target="_blank" rel="noopener noreferrer">+91 98187 06594</a>
+                </li>
+                <li>
+                  <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                  <a href="https://www.linkedin.com/in/kamleshwar83/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+                </li>
+              </ul>
+            </div>
           </div>
           <!-- /footer-grid -->
 
           <div class="footer-bottom">
-            <p>
+            <p>&copy; <span id="year">2026</span> Kamleshwar Sharma. All rights reserved.</p>
+            <p class="credit">
               <a href="https://www.webinstant.in" target="_blank" rel="noopener">Created By WebInstant</a>
             </p>
           </div>
