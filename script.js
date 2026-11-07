@@ -16,10 +16,8 @@
     $$('a', nav).forEach(function (a) { a.addEventListener('click', function () { nav.classList.remove('open'); }); });
   }
 
-  // Footer year
   $$('#year').forEach(function (y) { y.textContent = new Date().getFullYear(); });
 
-  // Scroll reveal
   var els = $$('.reveal');
   if ('IntersectionObserver' in window && els.length) {
     var io = new IntersectionObserver(function (es) {
