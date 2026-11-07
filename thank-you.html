@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thank You | WebInstant</title>
@@ -28,18 +28,11 @@
     <meta name="twitter:image" content="https://www.webinstant.online/share.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap" media="print" onload="this.media='all'; this.onload=null;">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap"></noscript>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
-      media="print"
-      onload="this.media='all'; this.onload=null;"
-    />
     <noscript
-      ><link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
-    /></noscript>
+      ></noscript>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -51,10 +44,7 @@
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     /></noscript>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="promo.css" />
-    <script src="promo.js"></script>
-
+    <link rel="stylesheet" href="style.css?v=2" />
     <style>
       /* ── Page-specific styles for Thank You page (reuses global tokens) ── */
       .ty-hero {
@@ -266,193 +256,45 @@
     }
     </script>
   </head>
-
-  <body>
-    <div class="promo-bar" data-promo-ui role="region" aria-label="Diwali Sale announcement">
-      <div class="promo-bar-inner">
-        <p><svg class="promo-diya" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2c1.8 2.2 2.6 3.8 2.6 5.2A2.6 2.6 0 0 1 12 9.8 2.6 2.6 0 0 1 9.4 7.2C9.4 5.8 10.2 4.2 12 2z" fill="#f1d68a"/><path d="M3 12h18c0 4.4-3.8 8-9 8s-9-3.6-9-8z" fill="#c8962e"/><path d="M6 21.2h12" stroke="#f1d68a" stroke-width="1.5" stroke-linecap="round"/></svg><strong>Diwali Sale</strong> — Up to <strong><span data-promo-fill="max-pct">30</span>% OFF</strong> <span class="promo-bar-sub">on website plans from <span data-promo-fill="high-min">₹10,000</span></span></p>
-        <a class="promo-bar-cta" href="plans.html">View Plans <span aria-hidden="true">&rarr;</span></a>
-      </div>
-    </div>
-    
-    <div id="reading-progress"></div>
-
-    <header class="site-header">
+<body>
+<header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="index.html">
-          <img src="logo.png" alt="WebInstant Logo" class="logo" width="160" height="45" />
-        </a>
-        <div class="hamburger" id="hamburger">☰</div>
-        <nav class="main-nav" id="mainNav">
-          <a href="index.html" class="nav-link">Home</a>
-          <a href="about.html" class="nav-link">About</a>
-          <a href="services.html" class="nav-link">Services</a>
-          <a href="plans.html" class="nav-link">Plans</a>
-          <a href="projects.html" class="nav-link">Projects</a>
-          <a href="blog.html" class="nav-link">Blog</a>
-          <a href="contact.html" class="nav-link cta">Contact Us</a>
-        </nav>
+        <a class="brand" href="index.html" aria-label="WebInstant home"><img src="logo.png" alt="WebInstant" class="logo" width="160" height="45"></a>
+        <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav"><i class="fas fa-bars"></i></button>
+        <nav class="main-nav" id="mainNav" aria-label="Main navigation"><a href="index.html" class="nav-link">Home</a><a href="about.html" class="nav-link">About</a><a href="services.html" class="nav-link">Services</a><a href="plans.html" class="nav-link">Plans</a><a href="projects.html" class="nav-link">Projects</a><a href="blog.html" class="nav-link">Blog</a><a href="contact.html" class="nav-link cta">Contact Us</a></nav>
       </div>
     </header>
-
-    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-      <div class="container">
-        <ol class="breadcrumb-list">
-          <li><a href="index.html">Home</a></li>
-          <li aria-current="page">Thank You</li>
-        </ol>
-      </div>
-    </nav>
-
-
-    <main>
-      <!-- ── Thank You Hero ── -->
-      <section class="ty-hero">
-        <div class="ty-inner">
-          <div class="ty-eyebrow"><i class="fas fa-paper-plane"></i> Message Sent</div>
-
-          <div class="ty-check-wrap">
-            <svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Success checkmark">
-              <circle class="ty-check-circle" cx="45" cy="45" r="41" />
-              <path class="ty-check-mark" d="M28 46 L40 58 L63 32" />
-            </svg>
-          </div>
-
-          <h1>Thank You! We'll Get Back to You Within 12 Hours</h1>
-          <p class="ty-sub">
-            We've received your enquiry and will respond within 12 business
-            hours — usually much faster. Keep an eye on your inbox and phone.
-          </p>
-
-          <div class="ty-meta">
-            <span><i class="fas fa-clock"></i> Sent: <strong id="tySentTime">--</strong></span>
-            <span class="ty-divider"></span>
-            <span><i class="fas fa-hourglass-half"></i> Expected reply by: <strong id="tyReplyTime">--</strong></span>
-          </div>
-
-          <div class="ty-btns">
-            <a href="index.html" class="ty-btn-primary">
-              <i class="fas fa-house"></i> Back to Home
-            </a>
-            <a href="projects.html" class="ty-btn-ghost">
-              <i class="fas fa-briefcase"></i> View Our Portfolio
-            </a>
-            <a
-              href="https://wa.me/919871072210?text=Hi, I just submitted an enquiry on webinstant.online!"
-              target="_blank"
-              rel="noopener"
-              class="ty-btn-ghost"
-            >
-              <i class="fab fa-whatsapp"></i> WhatsApp Us
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- ── What happens next ── -->
-      <section class="ty-next-section">
-        <h2>What Happens Next?</h2>
-        <div class="ty-steps">
-          <div class="ty-step-card">
-            <div class="ty-step-num">1</div>
-            <h3>We Review Your Enquiry</h3>
-            <p>Our team looks over your project details and requirements.</p>
-          </div>
-          <div class="ty-step-card">
-            <div class="ty-step-num">2</div>
-            <h3>We Reach Out</h3>
-            <p>You'll hear back from us via WhatsApp or email within 12 hours.</p>
-          </div>
-          <div class="ty-step-card">
-            <div class="ty-step-num">3</div>
-            <h3>We Get Started</h3>
-            <p>Once details are confirmed, we kick off your project right away.</p>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
+<main><section class="state-hero"><div class="container"><div class="state-icon"><i class="fas fa-check"></i></div><h1>Thank you — we got your message!</h1><p>We'll reply within 12 business hours, usually much sooner. For anything urgent, message us on WhatsApp.</p><div class="state-btns"><a class="btn primary" href="index.html">Back to home</a><a class="btn outline" href="https://wa.me/919871072210?text=Hi%21%20I%20just%20sent%20a%20message%20from%20the%20website." target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp us</a></div></div></section></main>
+<footer class="site-footer">
       <div class="footer-container">
         <div class="footer-section">
-          <img src="logo.png" alt="WebInstant Logo" class="footer-logo" width="150" height="45" loading="lazy" decoding="async" />
+          <img src="logo.png" alt="WebInstant" class="footer-logo" width="150" height="45" loading="lazy" decoding="async">
           <p class="footer-tagline">Fast, mobile-friendly, SEO-ready websites for Indian businesses.</p>
-          <ul class="footer-quick-links">
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="plans.html">Plans</a></li>
-          </ul>
+          <ul class="footer-quick-links"><li><a href="blog.html">Blog</a></li><li><a href="services.html">Services</a></li><li><a href="plans.html">Plans</a></li></ul>
         </div>
-
         <div class="footer-section">
           <h3>Contact</h3>
-          <p>Email: <a href="mailto:thewebinstant@gmail.com">thewebinstant@gmail.com</a></p>
-          <p>Phone: <a href="tel:+919871072210">+91 98710 72210</a></p>
+          <p><a href="mailto:thewebinstant@gmail.com">thewebinstant@gmail.com</a></p>
+          <p><a href="tel:+919871072210">+91 98710 72210</a></p>
+          <p>Delhi, India · Mon–Sat, 9am–8pm</p>
         </div>
-
         <div class="footer-section">
           <h3>Follow Us</h3>
-          <div style="display: flex; gap: 10px; margin-top: 8px">
+          <div class="footer-social">
             <a href="https://www.linkedin.com/company/web-instant-agency/posts/?feedView=all" target="_blank" rel="noopener" class="social-icon-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
             <a href="https://www.facebook.com/profile.php?id=61578298170309" target="_blank" rel="noopener" class="social-icon-link" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
             <a href="https://www.instagram.com/thewebinstant/" target="_blank" rel="noopener" class="social-icon-link" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
             <a href="https://x.com/TheWebInstant" target="_blank" rel="noopener" class="social-icon-link" aria-label="X (Twitter)"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
           </div>
         </div>
-
         <div class="footer-section">
           <h3>Legal</h3>
-          <ul class="footer-links">
-            <li><a href="t_c.html">Terms &amp; Conditions</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="refund.html">Refund Policy</a></li>
-          </ul>
+          <ul class="footer-links"><li><a href="t_c.html">Terms &amp; Conditions</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="refund.html">Refund Policy</a></li></ul>
         </div>
       </div>
-
-      <div class="footer-bottom">
-        <small>© <span id="year"></span> WebInstant • All rights reserved.</small>
-      </div>
+      <div class="footer-bottom">© <span id="year"></span> WebInstant · All rights reserved.</div>
     </footer>
+<script src="script.js"></script>
 
-    <script src="script.js"></script>
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-
-      // Reading progress
-      const bar = document.getElementById("reading-progress");
-      window.addEventListener("scroll", () => {
-        const h = document.documentElement.scrollHeight - window.innerHeight;
-        bar.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + "%";
-      });
-
-      // ── Current time + expected response window ──
-      // If arriving right after a form submit, we use the time the form was
-      // submitted (stored in sessionStorage by contact.html); otherwise "now".
-      (function () {
-        const fmt = (d) =>
-          d.toLocaleString("en-IN", {
-            hour: "2-digit",
-            minute: "2-digit",
-            hour12: true,
-            day: "2-digit",
-            month: "short",
-            timeZone: "Asia/Kolkata",
-          }) + " IST";
-
-        let sentAt = new Date();
-        try {
-          const stored = sessionStorage.getItem("wi_enquiry_sent_at");
-          if (stored) sentAt = new Date(stored);
-        } catch (e) {
-          /* sessionStorage unavailable — fall back to "now" */
-        }
-
-        const replyBy = new Date(sentAt.getTime() + 12 * 60 * 60 * 1000);
-
-        document.getElementById("tySentTime").textContent = fmt(sentAt);
-        document.getElementById("tyReplyTime").textContent = fmt(replyBy);
-      })();
-    </script>
-  </body>
+</body>
 </html>

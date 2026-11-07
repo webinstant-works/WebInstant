@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About WebInstant | Professional Web Design Agency in India</title>
@@ -44,21 +44,11 @@
     <link rel="canonical" href="https://www.webinstant.online/about.html" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap" media="print" onload="this.media='all'; this.onload=null;">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap"></noscript>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
-      media="print"
-      onload="
-        this.media = 'all';
-        this.onload = null;
-      "
-    />
     <noscript
-      ><link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
-    /></noscript>
+      ></noscript>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -73,10 +63,7 @@
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     /></noscript>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="promo.css" />
-    <script src="promo.js"></script>
-
+    <link rel="stylesheet" href="style.css?v=2" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -111,314 +98,48 @@
       gtag('config', 'G-XXXXXXX');
     </script>
   </head>
-
-  <body>
-    <div class="promo-bar" data-promo-ui role="region" aria-label="Diwali Sale announcement">
-      <div class="promo-bar-inner">
-        <p><svg class="promo-diya" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2c1.8 2.2 2.6 3.8 2.6 5.2A2.6 2.6 0 0 1 12 9.8 2.6 2.6 0 0 1 9.4 7.2C9.4 5.8 10.2 4.2 12 2z" fill="#f1d68a"/><path d="M3 12h18c0 4.4-3.8 8-9 8s-9-3.6-9-8z" fill="#c8962e"/><path d="M6 21.2h12" stroke="#f1d68a" stroke-width="1.5" stroke-linecap="round"/></svg><strong>Diwali Sale</strong> — Up to <strong><span data-promo-fill="max-pct">30</span>% OFF</strong> <span class="promo-bar-sub">on website plans from <span data-promo-fill="high-min">₹10,000</span></span></p>
-        <a class="promo-bar-cta" href="plans.html">View Plans <span aria-hidden="true">&rarr;</span></a>
-      </div>
-    </div>
-    
-    <div id="reading-progress"></div>
-
-    <header class="site-header">
+<body>
+<header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="index.html">
-          <img src="logo.png" alt="WebInstant Logo" class="logo" />
-        </a>
-        <div class="hamburger" id="hamburger">☰</div>
-        <nav class="main-nav" id="mainNav">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="about.html" class="nav-link active">About</a>
-                <a href="services.html" class="nav-link">Services</a>
-                <a href="plans.html" class="nav-link">Plans</a>
-                <a href="projects.html" class="nav-link">Projects</a>
-                <a href="blog.html" class="nav-link">Blog</a>
-                <a href="contact.html" class="nav-link cta">Contact Us</a>
-        </nav>
+        <a class="brand" href="index.html" aria-label="WebInstant home"><img src="logo.png" alt="WebInstant" class="logo" width="160" height="45"></a>
+        <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav"><i class="fas fa-bars"></i></button>
+        <nav class="main-nav" id="mainNav" aria-label="Main navigation"><a href="index.html" class="nav-link">Home</a><a href="about.html" class="nav-link active" aria-current="page">About</a><a href="services.html" class="nav-link">Services</a><a href="plans.html" class="nav-link">Plans</a><a href="projects.html" class="nav-link">Projects</a><a href="blog.html" class="nav-link">Blog</a><a href="contact.html" class="nav-link cta">Contact Us</a></nav>
       </div>
     </header>
-
-    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-      <div class="container">
-        <ol class="breadcrumb-list">
-          <li><a href="index.html">Home</a></li>
-          <li aria-current="page">About</li>
-        </ol>
-      </div>
-    </nav>
-
-
-    <!-- ── Hero ── -->
-    <div class="about-hero">
-      <div class="about-hero-content">
-        <div class="about-hero-eyebrow"><i class="fas fa-info-circle"></i> About Us</div>
-        <h1>We Are <span>WebInstant</span></h1>
-        <p class="hero-sub">
-          A modern web design and development agency built to help creators,
-          entrepreneurs, and businesses launch fast and look great online —
-          every single time.
-        </p>
-      </div>
-    </div>
-
-    <main class="about-page">
-      <!-- ── Mission ── -->
-      <section class="mission-section reveal" id="mission">
-        <div class="mission-box">
-          <h2><i class="fas fa-rocket"></i> Our Mission</h2>
-          <p>
-            Our mission is simple: <strong>Launch Fast. Look Great.</strong> We
-            understand that in today's digital age, first impressions happen
-            online. That's why we combine sleek, professional design with
-            lightning-fast performance to deliver websites that not only look
-            amazing but also convert visitors into customers. Every site we
-            build is mobile-friendly, user-focused, and designed with clarity
-            and simplicity in mind.
-          </p>
-        </div>
-      </section>
-
-      <!-- ── Team ── -->
-      <section class="team-section reveal" id="team">
-        <div class="section-head">
-          <div class="eyebrow"><i class="fas fa-users"></i> The Team</div>
-          <h2>Meet the People Behind WebInstant</h2>
-          <p>
-            A small, focused team obsessed with clean code, great design, and
-            happy clients.
-          </p>
-        </div>
-        <div class="team-grid">
-          <div class="team-card">
-            <div class="avatar">KS</div>
-            <h3>Kanha Sharma</h3>
-            <span class="role">Full-Stack Web Developer</span>
-            <p>
-              Designs and develops fast, responsive websites with beautiful UI
-              and clean architecture, helping businesses stand out online.
-            </p>
-            <div class="social-links">
-              <a href="https://github.com/kanhaprogrammer" aria-label="GitHub"
-                ><i class="fab fa-github"></i
-              ></a>
-              <a
-                href="https://www.linkedin.com/in/kanhaprogrammer"
-                aria-label="LinkedIn"
-                ><i class="fab fa-linkedin"></i
-              ></a>
-              <a
-                href="https://www.instagram.com/kanhaprogrammer"
-                aria-label="Instagram"
-                ><i class="fab fa-instagram"></i
-              ></a>
-              <a href="https://wa.me/919871072210" aria-label="WhatsApp"
-                ><i class="fab fa-whatsapp"></i
-              ></a>
-            </div>
-          </div>
-          <div class="team-card">
-            <div class="avatar">SK</div>
-            <h3>Saurav Kumar</h3>
-            <span class="role">MERN Stack Developer</span>
-            <p>
-              Builds end-to-end web applications with React and Node.js,
-              delivering scalable, high-performance solutions that users love.
-            </p>
-            <div class="social-links">
-              <a href="https://github.com/saurav6202" aria-label="Github"
-                ><i class="fab fa-github"></i
-              ></a>
-              <a
-                href="https://www.linkedin.com/in/saurav-coder/"
-                aria-label="LinkedIn"
-                ><i class="fab fa-linkedin"></i
-              ></a>
-                            <a
-                href="https://www.instagram.com/distracted.saurav/"
-                aria-label="Instagram"
-                ><i class="fab fa-instagram"></i
-              ></a>
-              <a href="https://wa.me/916205059648" aria-label="WhatsApp"
-                ><i class="fab fa-whatsapp"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ── CTA ── -->
-      <div class="about-cta reveal">
-        <div class="about-cta-inner">
-          <h2>Ready to build something great?</h2>
-          <p>
-            Browse our plans or chat with us directly — we'll find the perfect
-            solution for your goals and budget.
-          </p>
-          <div class="about-cta-btns">
-            <a href="plans.html" class="cta-btn-white"
-              ><i class="fas fa-tags"></i> View Plans</a
-            >
-            <a
-              href="https://wa.me/919871072210?text=Hi, I want to work with WebInstant!"
-              target="_blank"
-              rel="noopener"
-              class="cta-btn-ghost"
-              ><i class="fab fa-whatsapp"></i> WhatsApp Us</a
-            >
-          </div>
-          <p class="promo-subtle" data-promo-ui><svg class="promo-diya" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2c1.8 2.2 2.6 3.8 2.6 5.2A2.6 2.6 0 0 1 12 9.8 2.6 2.6 0 0 1 9.4 7.2C9.4 5.8 10.2 4.2 12 2z" fill="#f1d68a"/><path d="M3 12h18c0 4.4-3.8 8-9 8s-9-3.6-9-8z" fill="#c8962e"/><path d="M6 21.2h12" stroke="#f1d68a" stroke-width="1.5" stroke-linecap="round"/></svg>Celebrating Diwali with up to <span data-promo-fill="max-pct">30</span>% off website plans. <a href="plans.html">See plans</a></p>
-        </div>
-      </div>
-    </main>
-    <footer class="site-footer">
+<nav class="breadcrumb-nav" aria-label="Breadcrumb"><div class="container"><ol class="breadcrumb-list"><li><a href="index.html">Home</a></li><li aria-current="page">About</li></ol></div></nav><main><section class="page-hero"><div class="container"><span class="eyebrow">About us</span><h1>A small team that <span class="gradient-text">builds with care</span></h1><p>WebInstant is a Delhi-based web development team helping businesses get online fast.</p></div></section>
+<section class="section"><div class="container"><span class="eyebrow">Our mission</span><p class="mission reveal">Launch Fast. Look Great. We build websites that load quickly, look professional and help your business get found and trusted online.</p></div></section>
+<section class="section soft"><div class="container"><div class="section-head reveal"><span class="eyebrow">The team</span><h2 class="section-title">Meet the people behind your website</h2></div><div class="grid cols-2" style="max-width:820px"><div class="card team-card reveal"><div class="avatar">KS</div><h3>Kanha Sharma</h3><div class="team-role">Full-Stack Web Developer</div><div class="social-row"><a class="social-btn" href="https://github.com/kanhaprogrammer" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a><a class="social-btn" href="https://www.linkedin.com/in/kanhaprogrammer/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a class="social-btn" href="https://www.instagram.com/kanhaprogrammer/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a class="social-btn" href="https://wa.me/919871072210" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div></div><div class="card team-card reveal"><div class="avatar">SK</div><h3>Saurav Kumar</h3><div class="team-role">MERN Stack Developer</div><div class="social-row"><a class="social-btn" href="https://github.com/saurav6202" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a><a class="social-btn" href="https://www.linkedin.com/in/saurav-coder/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a class="social-btn" href="https://www.instagram.com/distracted.saurav/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a class="social-btn" href="https://wa.me/916205059648" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div></div></div></div></section>
+<section class="section"><div class="container"><div class="cta-band reveal"><h2>Ready to build something great?</h2><p>Let's talk about your website. We reply within 12 business hours.</p><div class="btns"><a class="btn light" href="https://wa.me/919871072210?text=Hi%21%20I%27d%20like%20to%20get%20a%20free%20quote%20for%20my%20website." target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a><a class="btn ghost-light" href="contact.html">Contact us</a></div></div></div></section></main>
+<footer class="site-footer">
       <div class="footer-container">
-        <!-- Brand -->
         <div class="footer-section">
-          <img
-            src="logo.png"
-            alt="WebInstant Logo"
-            class="footer-logo"
-            width="150"
-            height="45"
-            loading="lazy"
-            decoding="async"
-          />
+          <img src="logo.png" alt="WebInstant" class="footer-logo" width="150" height="45" loading="lazy" decoding="async">
           <p class="footer-tagline">Fast, mobile-friendly, SEO-ready websites for Indian businesses.</p>
-          <ul class="footer-quick-links">
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="plans.html">Plans</a></li>
-          </ul>
+          <ul class="footer-quick-links"><li><a href="blog.html">Blog</a></li><li><a href="services.html">Services</a></li><li><a href="plans.html">Plans</a></li></ul>
         </div>
-
-        <!-- Contact -->
         <div class="footer-section">
           <h3>Contact</h3>
-          <p>
-            Email:
-            <a href="mailto:thewebinstant@gmail.com"
-              >thewebinstant@gmail.com</a
-            >
-          </p>
-          <p>Phone: <a href="tel:+919871072210">+91 98710 72210</a></p>
+          <p><a href="mailto:thewebinstant@gmail.com">thewebinstant@gmail.com</a></p>
+          <p><a href="tel:+919871072210">+91 98710 72210</a></p>
+          <p>Delhi, India · Mon–Sat, 9am–8pm</p>
         </div>
-
-        <!-- Social Links -->
         <div class="footer-section">
           <h3>Follow Us</h3>
-          <div style="display: flex; gap: 10px; margin-top: 8px">
-            <a
-              href="https://www.linkedin.com/company/web-instant-agency/posts/?feedView=all"
-              target="_blank"
-              rel="noopener"
-              class="social-icon-link"
-              aria-label="LinkedIn"
-              ><i class="fab fa-linkedin-in" aria-hidden="true"></i
-            ></a>
-            <a
-              href="https://www.facebook.com/profile.php?id=61578298170309"
-              target="_blank"
-              rel="noopener"
-              class="social-icon-link"
-              aria-label="Facebook"
-              ><i class="fab fa-facebook-f" aria-hidden="true"></i
-            ></a>
-            <a
-              href="https://www.instagram.com/thewebinstant/"
-              target="_blank"
-              rel="noopener"
-              class="social-icon-link"
-              aria-label="Instagram"
-              ><i class="fab fa-instagram" aria-hidden="true"></i
-            ></a>
-            <a
-              href="https://x.com/TheWebInstant"
-              target="_blank"
-              rel="noopener"
-              class="social-icon-link"
-              aria-label="X (Twitter)"
-              ><i class="fab fa-x-twitter" aria-hidden="true"></i
-            ></a>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/company/web-instant-agency/posts/?feedView=all" target="_blank" rel="noopener" class="social-icon-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61578298170309" target="_blank" rel="noopener" class="social-icon-link" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/thewebinstant/" target="_blank" rel="noopener" class="social-icon-link" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://x.com/TheWebInstant" target="_blank" rel="noopener" class="social-icon-link" aria-label="X (Twitter)"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
           </div>
         </div>
-
-        <!-- Legal -->
         <div class="footer-section">
           <h3>Legal</h3>
-          <ul class="footer-links">
-            <li><a href="t_c.html">Terms &amp; Conditions</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="refund.html">Refund Policy</a></li>
-          </ul>
+          <ul class="footer-links"><li><a href="t_c.html">Terms &amp; Conditions</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="refund.html">Refund Policy</a></li></ul>
         </div>
       </div>
-
-      <div class="footer-bottom">
-        <small
-          >© <span id="year"></span> WebInstant • All rights reserved.</small
-        >
-      </div>
+      <div class="footer-bottom">© <span id="year"></span> WebInstant · All rights reserved.</div>
     </footer>
+<script src="script.js"></script>
 
-    <script src="script.js"></script>
-    <script>
-      // Footer year (mobile nav toggle is handled globally in script.js)
-      document.getElementById("year").textContent = new Date().getFullYear();
-
-      // Reading progress
-      const bar = document.getElementById("reading-progress");
-      window.addEventListener("scroll", () => {
-        const h = document.documentElement.scrollHeight - window.innerHeight;
-        bar.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + "%";
-      });
-
-      // Scroll reveal
-      const revealObs = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e, i) => {
-            if (e.isIntersecting) {
-              e.target.style.transitionDelay = i * 0.08 + "s";
-              e.target.classList.add("visible");
-              revealObs.unobserve(e.target);
-            }
-          });
-        },
-        { threshold: 0.1 },
-      );
-      document
-        .querySelectorAll(".reveal, .team-card, .value-card")
-        .forEach((el) => revealObs.observe(el));
-
-      // Animated stats counter
-      const countObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
-            const el = entry.target;
-            const target = +el.dataset.target;
-            const suffix = el.parentElement
-              .querySelector(".stat-label")
-              .textContent.includes("%")
-              ? "+"
-              : "+";
-            let start = 0;
-            const duration = 1400;
-            const step = Math.ceil(target / (duration / 16));
-            const timer = setInterval(() => {
-              start = Math.min(start + step, target);
-              el.textContent = start + (target >= 100 ? "%" : "+");
-              if (start >= target) clearInterval(timer);
-            }, 16);
-            countObserver.unobserve(el);
-          });
-        },
-        { threshold: 0.5 },
-      );
-      document
-        .querySelectorAll(".stat-number[data-target]")
-        .forEach((el) => countObserver.observe(el));
-    </script>
-  </body>
+</body>
 </html>

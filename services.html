@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web Design &amp; Development Services in India | WebInstant</title>
@@ -44,21 +44,11 @@
     <link rel="canonical" href="https://www.webinstant.online/services.html" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap" media="print" onload="this.media='all'; this.onload=null;">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap"></noscript>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
-      media="print"
-      onload="
-        this.media = 'all';
-        this.onload = null;
-      "
-    />
     <noscript
-      ><link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
-    /></noscript>
+      ></noscript>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -73,9 +63,7 @@
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     /></noscript>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="promo.css" />
-    <script src="promo.js"></script>
+    <link rel="stylesheet" href="style.css?v=2" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -144,319 +132,47 @@
       gtag('config', 'G-XXXXXXX');
     </script>
   </head>
-
-  <body>
-    <div class="promo-bar" data-promo-ui role="region" aria-label="Diwali Sale announcement">
-      <div class="promo-bar-inner">
-        <p><svg class="promo-diya" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2c1.8 2.2 2.6 3.8 2.6 5.2A2.6 2.6 0 0 1 12 9.8 2.6 2.6 0 0 1 9.4 7.2C9.4 5.8 10.2 4.2 12 2z" fill="#f1d68a"/><path d="M3 12h18c0 4.4-3.8 8-9 8s-9-3.6-9-8z" fill="#c8962e"/><path d="M6 21.2h12" stroke="#f1d68a" stroke-width="1.5" stroke-linecap="round"/></svg><strong>Diwali Sale</strong> — Up to <strong><span data-promo-fill="max-pct">30</span>% OFF</strong> <span class="promo-bar-sub">on website plans from <span data-promo-fill="high-min">₹10,000</span></span></p>
-        <a class="promo-bar-cta" href="plans.html">View Plans <span aria-hidden="true">&rarr;</span></a>
-      </div>
-    </div>
-    
-    <div id="reading-progress"></div>
-
-    <header class="site-header">
+<body>
+<header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="index.html">
-          <img src="logo.png" alt="WebInstant Logo" class="logo" width="160" height="45" />
-        </a>
-        <div class="hamburger" id="hamburger">☰</div>
-        <nav class="main-nav" id="mainNav">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="about.html" class="nav-link">About</a>
-                <a href="services.html" class="nav-link active">Services</a>
-                <a href="plans.html" class="nav-link">Plans</a>
-                <a href="projects.html" class="nav-link">Projects</a>
-                <a href="blog.html" class="nav-link">Blog</a>
-                <a href="contact.html" class="nav-link cta">Contact Us</a>
-        </nav>
+        <a class="brand" href="index.html" aria-label="WebInstant home"><img src="logo.png" alt="WebInstant" class="logo" width="160" height="45"></a>
+        <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav"><i class="fas fa-bars"></i></button>
+        <nav class="main-nav" id="mainNav" aria-label="Main navigation"><a href="index.html" class="nav-link">Home</a><a href="about.html" class="nav-link">About</a><a href="services.html" class="nav-link active" aria-current="page">Services</a><a href="plans.html" class="nav-link">Plans</a><a href="projects.html" class="nav-link">Projects</a><a href="blog.html" class="nav-link">Blog</a><a href="contact.html" class="nav-link cta">Contact Us</a></nav>
       </div>
     </header>
-
-    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-      <div class="container">
-        <ol class="breadcrumb-list">
-          <li><a href="index.html">Home</a></li>
-          <li aria-current="page">Services</li>
-        </ol>
-      </div>
-    </nav>
-
-
-    <!-- ── Hero ── -->
-    <div class="services-hero">
-      <div class="services-hero-content">
-        <div class="eyebrow-pill"><i class="fas fa-layer-group"></i> What We Offer</div>
-        <h1>Our <span>Services</span></h1>
-        <p class="hero-sub">
-          We provide full-cycle web services — from planning and design to
-          development, launch, and ongoing support. Every project, handled with
-          care.
-        </p>
-      </div>
-    </div>
-
-    <main class="services-page">
-      <div class="promo-strip" data-promo-ui>
-      <span><svg class="promo-diya" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2c1.8 2.2 2.6 3.8 2.6 5.2A2.6 2.6 0 0 1 12 9.8 2.6 2.6 0 0 1 9.4 7.2C9.4 5.8 10.2 4.2 12 2z" fill="#f1d68a"/><path d="M3 12h18c0 4.4-3.8 8-9 8s-9-3.6-9-8z" fill="#c8962e"/><path d="M6 21.2h12" stroke="#f1d68a" stroke-width="1.5" stroke-linecap="round"/></svg><strong>Diwali Sale:</strong> <span data-promo-fill="low-pct">20</span>% OFF website projects from <span data-promo-fill="low-min">₹6,000</span> &middot; <span data-promo-fill="high-pct">30</span>% OFF from <span data-promo-fill="high-min">₹10,000</span></span>
-      <a href="plans.html">See plans &rarr;</a>
-    </div>
-
-      <div class="services-grid">
-        <div class="service-card" id="portfolio-websites">
-          <div class="icon">💼</div>
-          <h3>Portfolio Websites</h3>
-          <p>Beautiful, responsive portfolios for creators and freelancers.</p>
-          <ul>
-            <li>📂 CMS Integration</li>
-            <li>🔍 Filterable Projects</li>
-          </ul>
-        </div>
-        <div class="service-card" id="business-websites">
-          <div class="icon">🏢</div>
-          <h3>Business Websites</h3>
-          <p>
-            Professional, SEO-ready websites for agencies and local businesses.
-          </p>
-          <ul>
-            <li>📈 SEO-Aware Structure</li>
-            <li>📝 Lead Capture Forms</li>
-          </ul>
-        </div>
-        <div class="service-card" id="hosting-domains">
-          <div class="icon">🌐</div>
-          <h3>Hosting & Domains</h3>
-          <p>Fast, secure hosting and domain setup assistance.</p>
-          <ul>
-            <li>⚙️ Complete Setup & Configuration</li>
-            <li>⚙️ Find a Perfect domain name</li>
-          </ul>
-        </div>
-        <div class="service-card" id="maintenance-support">
-          <div class="icon">🔧</div>
-          <h3>Maintenance & Support</h3>
-          <p>Ongoing updates, backups, and technical assistance.</p>
-          <ul>
-            <li>🛠️ Edit & Manage Your Website Anytime</li>
-            <li>🛠️ Solve Bugs and Errors</li>
-          </ul>
-        </div>
-        <div class="service-card" id="custom-web-design">
-          <div class="icon">🎨</div>
-          <h3>Custom Web Design</h3>
-          <p>Unique designs tailored to your brand’s personality and goals.</p>
-          <ul>
-            <li>🖌️ Brand-Matching Layouts</li>
-            <li>🖼️ Creative Visual Elements</li>
-          </ul>
-        </div>
-        <div class="service-card" id="speed-optimization">
-          <div class="icon">⚡</div>
-          <h3>Website Speed Optimization</h3>
-          <p>Boost loading times and improve Google PageSpeed scores.</p>
-          <ul>
-            <li>🚀 Faster User Experience</li>
-            <li>📊 Better SEO Rankings</li>
-          </ul>
-        </div>
-        <div class="service-card" id="ecommerce-websites">
-          <div class="icon">🛒</div>
-          <h3>E-Commerce Websites</h3>
-          <p>Sell your products online with a custom, secure store.</p>
-          <ul>
-            <li>🛍️ Product & Cart Setup</li>
-            <li>💳 Payment Gateway Integration</li>
-          </ul>
-        </div>
-        <div class="service-card" id="website-security">
-          <div class="icon">🔐</div>
-          <h3>Website Security</h3>
-          <p>Protect your site from hacks, malware, and vulnerabilities.</p>
-          <ul>
-            <li>🛡️ SSL & Firewall Setup</li>
-            <li>🔍 Security Audits</li>
-          </ul>
-        </div>
-      </div>
-      <!-- /.services-grid -->
-
-      <!-- ── CTA ── -->
-      <div class="about-cta reveal">
-        <div class="about-cta-inner">
-          <h2>Not sure which service you need?</h2>
-          <p>
-            Tell us about your business and goals — we'll recommend the right
-            mix of services and a plan that fits your budget.
-          </p>
-          <div class="about-cta-btns">
-            <a href="plans.html" class="cta-btn-white"
-              ><i class="fas fa-tags"></i> View Plans</a
-            >
-            <a
-              href="https://wa.me/919871072210?text=Hi, I want to know more about WebInstant's services!"
-              target="_blank"
-              rel="noopener"
-              class="cta-btn-ghost"
-              ><i class="fab fa-whatsapp"></i> WhatsApp Us</a
-            >
-          </div>
-        </div>
-      </div>
-    </main>
-
-    <footer class="site-footer">
+<nav class="breadcrumb-nav" aria-label="Breadcrumb"><div class="container"><ol class="breadcrumb-list"><li><a href="index.html">Home</a></li><li aria-current="page">Services</li></ol></div></nav><main><section class="page-hero"><div class="container"><span class="eyebrow">Services</span><h1>Everything your business needs to <span class="gradient-text">succeed online</span></h1><p>Eight focused services, one small team. Pick what you need — we'll handle the rest.</p></div></section>
+<section class="section"><div class="container"><div class="grid cols-2"><div class="card reveal"><div class="icon-box"><i class="fas fa-user-tie"></i></div><h3>Portfolio Websites</h3><p>Show your work with a sharp personal site.</p><ul class="ticks"><li>CMS integration</li><li>Filterable projects</li></ul></div><div class="card reveal"><div class="icon-box"><i class="fas fa-store"></i></div><h3>Business Websites</h3><p>Professional multi-page sites that generate leads.</p><ul class="ticks"><li>SEO-aware structure</li><li>Lead capture forms</li></ul></div><div class="card reveal"><div class="icon-box"><i class="fas fa-globe"></i></div><h3>Hosting & Domains</h3><p>We set up the technical side for you.</p><ul class="ticks"><li>Complete setup and configuration</li><li>Help finding the perfect domain name</li></ul></div><div class="card reveal"><div class="icon-box"><i class="fas fa-screwdriver-wrench"></i></div><h3>Maintenance & Support</h3><p>Keep your website fresh and working.</p><ul class="ticks"><li>Edit and manage anytime</li><li>Solve bugs and errors</li></ul></div><div class="card reveal"><div class="icon-box"><i class="fas fa-pen-ruler"></i></div><h3>Custom Web Design</h3><p>Designs made around your brand, not a template.</p><ul class="ticks"><li>Brand-matching layouts</li><li>Creative visual elements</li></ul></div><div class="card reveal"><div class="icon-box"><i class="fas fa-gauge-high"></i></div><h3>Website Speed Optimization</h3><p>Faster sites keep visitors and rank better.</p><ul class="ticks"><li>Faster user experience</li><li>Better SEO rankings</li></ul></div><div class="card reveal"><div class="icon-box"><i class="fas fa-cart-shopping"></i></div><h3>E-Commerce Websites</h3><p>Sell your products online with confidence.</p><ul class="ticks"><li>Product and cart setup</li><li>Payment gateway integration</li></ul></div><div class="card reveal"><div class="icon-box"><i class="fas fa-shield-halved"></i></div><h3>Website Security</h3><p>Protect your site and your customers.</p><ul class="ticks"><li>SSL and firewall setup</li><li>Security audits</li></ul></div></div></div></section>
+<section class="section"><div class="container"><div class="cta-band reveal"><h2>Not sure which service you need?</h2><p>Tell us about your business and we'll recommend the simplest option that works.</p><div class="btns"><a class="btn light" href="https://wa.me/919871072210?text=Hi%21%20I%27m%20not%20sure%20which%20service%20I%20need.%20Can%20you%20help?" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask on WhatsApp</a><a class="btn ghost-light" href="plans.html">View Plans</a></div></div></div></section></main>
+<footer class="site-footer">
       <div class="footer-container">
-        <!-- Brand -->
         <div class="footer-section">
-          <img src="logo.png" alt="WebInstant Logo" class="footer-logo" width="150" height="45" loading="lazy" decoding="async" />
+          <img src="logo.png" alt="WebInstant" class="footer-logo" width="150" height="45" loading="lazy" decoding="async">
           <p class="footer-tagline">Fast, mobile-friendly, SEO-ready websites for Indian businesses.</p>
-          <ul class="footer-quick-links">
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="plans.html">Plans</a></li>
-          </ul>
+          <ul class="footer-quick-links"><li><a href="blog.html">Blog</a></li><li><a href="services.html">Services</a></li><li><a href="plans.html">Plans</a></li></ul>
         </div>
-
-        <!-- Contact -->
         <div class="footer-section">
           <h3>Contact</h3>
-          <p>
-            Email:
-            <a href="mailto:thewebinstant@gmail.com"
-              >thewebinstant@gmail.com</a
-            >
-          </p>
-          <p>Phone: <a href="tel:+919871072210">+91 98710 72210</a></p>
+          <p><a href="mailto:thewebinstant@gmail.com">thewebinstant@gmail.com</a></p>
+          <p><a href="tel:+919871072210">+91 98710 72210</a></p>
+          <p>Delhi, India · Mon–Sat, 9am–8pm</p>
         </div>
-
-        <!-- Social Links -->
         <div class="footer-section">
           <h3>Follow Us</h3>
-          <div style="display: flex; gap: 10px; margin-top: 8px">
-            <a
-              href="https://www.linkedin.com/company/web-instant-agency/posts/?feedView=all"
-              target="_blank"
-              rel="noopener"
-              class="social-icon-link"
-              aria-label="LinkedIn"
-              ><i class="fab fa-linkedin-in" aria-hidden="true"></i
-            ></a>
-            <a
-              href="https://www.facebook.com/profile.php?id=61578298170309"
-              target="_blank"
-              rel="noopener"
-              class="social-icon-link"
-              aria-label="Facebook"
-              ><i class="fab fa-facebook-f" aria-hidden="true"></i
-            ></a>
-            <a
-              href="https://www.instagram.com/thewebinstant/"
-              target="_blank"
-              rel="noopener"
-              class="social-icon-link"
-              aria-label="Instagram"
-              ><i class="fab fa-instagram" aria-hidden="true"></i
-            ></a>
-            <a
-              href="https://x.com/TheWebInstant"
-              target="_blank"
-              rel="noopener"
-              class="social-icon-link"
-              aria-label="X (Twitter)"
-              ><i class="fab fa-x-twitter" aria-hidden="true"></i
-            ></a>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/company/web-instant-agency/posts/?feedView=all" target="_blank" rel="noopener" class="social-icon-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61578298170309" target="_blank" rel="noopener" class="social-icon-link" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/thewebinstant/" target="_blank" rel="noopener" class="social-icon-link" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://x.com/TheWebInstant" target="_blank" rel="noopener" class="social-icon-link" aria-label="X (Twitter)"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
           </div>
         </div>
-
-        <!-- Legal -->
         <div class="footer-section">
           <h3>Legal</h3>
-          <ul class="footer-links">
-            <li><a href="t_c.html">Terms &amp; Conditions</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="refund.html">Refund Policy</a></li>
-          </ul>
+          <ul class="footer-links"><li><a href="t_c.html">Terms &amp; Conditions</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="refund.html">Refund Policy</a></li></ul>
         </div>
       </div>
-
-      <div class="footer-bottom">
-        <small
-          >© <span id="year"></span> WebInstant • All rights reserved.</small
-        >
-      </div>
+      <div class="footer-bottom">© <span id="year"></span> WebInstant · All rights reserved.</div>
     </footer>
+<script src="script.js"></script>
 
-    <script src="script.js"></script>
-    <script>
-      // Footer year (mobile nav toggle is handled globally in script.js)
-      document.getElementById("year").textContent = new Date().getFullYear();
-
-      // Reading progress
-      const bar = document.getElementById("reading-progress");
-      window.addEventListener("scroll", () => {
-        const h = document.documentElement.scrollHeight - window.innerHeight;
-        bar.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + "%";
-      });
-
-      // Scroll reveal
-      const obs = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add("visible");
-              obs.unobserve(e.target);
-            }
-          });
-        },
-        { threshold: 0.08 },
-      );
-      document.querySelectorAll(".reveal").forEach((el) => obs.observe(el));
-
-      // Staggered card reveal
-      const cardObs = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e, i) => {
-            if (e.isIntersecting) {
-              e.target.style.transitionDelay =
-                (e.target.dataset.delay || 0) + "s";
-              e.target.classList.add("visible");
-              cardObs.unobserve(e.target);
-            }
-          });
-        },
-        { threshold: 0.08 },
-      );
-      document.querySelectorAll(".reveal-card").forEach((el, i) => {
-        el.dataset.delay = (i % 4) * 0.1;
-        cardObs.observe(el);
-      });
-
-      // Filter logic
-      const filterBtns = document.querySelectorAll(".filter-btn");
-      const serviceCards = document.querySelectorAll(".service-card");
-      const emptyState = document.getElementById("emptyState");
-
-      filterBtns.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const filter = btn.dataset.filter;
-          filterBtns.forEach((b) => b.classList.remove("active"));
-          btn.classList.add("active");
-
-          let count = 0;
-          serviceCards.forEach((card) => {
-            const match = filter === "all" || card.dataset.category === filter;
-            card.style.display = match ? "" : "none";
-            if (match) {
-              card.classList.remove("visible");
-              void card.offsetWidth;
-              card.style.transitionDelay = count * 0.08 + "s";
-              setTimeout(() => card.classList.add("visible"), 20);
-              count++;
-            }
-          });
-          emptyState.style.display = count === 0 ? "block" : "none";
-        });
-      });
-    </script>
-  </body>
+</body>
 </html>

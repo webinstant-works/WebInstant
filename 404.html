@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>404 - Page Not Found | WebInstant</title>
@@ -32,18 +32,11 @@
     <meta name="twitter:image" content="https://www.webinstant.online/share.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap" media="print" onload="this.media='all'; this.onload=null;">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap"></noscript>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
-      media="print"
-      onload="this.media='all'; this.onload=null;"
-    />
     <noscript
-      ><link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
-    /></noscript>
+      ></noscript>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -55,10 +48,7 @@
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     /></noscript>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="promo.css" />
-    <script src="promo.js"></script>
-
+    <link rel="stylesheet" href="style.css?v=2" />
     <style>
       /* ── Page-specific styles for 404 (reuses global tokens from style.css) ── */
       .err-hero {
@@ -300,223 +290,46 @@
       gtag('config', 'G-XXXXXXX');
     </script>
   </head>
-
-  <body>
-    <div class="promo-bar" data-promo-ui role="region" aria-label="Diwali Sale announcement">
-      <div class="promo-bar-inner">
-        <p><svg class="promo-diya" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2c1.8 2.2 2.6 3.8 2.6 5.2A2.6 2.6 0 0 1 12 9.8 2.6 2.6 0 0 1 9.4 7.2C9.4 5.8 10.2 4.2 12 2z" fill="#f1d68a"/><path d="M3 12h18c0 4.4-3.8 8-9 8s-9-3.6-9-8z" fill="#c8962e"/><path d="M6 21.2h12" stroke="#f1d68a" stroke-width="1.5" stroke-linecap="round"/></svg><strong>Diwali Sale</strong> — Up to <strong><span data-promo-fill="max-pct">30</span>% OFF</strong> <span class="promo-bar-sub">on website plans from <span data-promo-fill="high-min">₹10,000</span></span></p>
-        <a class="promo-bar-cta" href="plans.html">View Plans <span aria-hidden="true">&rarr;</span></a>
-      </div>
-    </div>
-    
-    <div id="reading-progress"></div>
-
-    <header class="site-header">
+<body>
+<header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="index.html">
-          <img src="logo.png" alt="WebInstant Logo" class="logo" width="160" height="45" />
-        </a>
-        <div class="hamburger" id="hamburger">☰</div>
-        <nav class="main-nav" id="mainNav">
-          <a href="index.html" class="nav-link">Home</a>
-          <a href="about.html" class="nav-link">About</a>
-          <a href="services.html" class="nav-link">Services</a>
-          <a href="plans.html" class="nav-link">Plans</a>
-          <a href="projects.html" class="nav-link">Projects</a>
-          <a href="blog.html" class="nav-link">Blog</a>
-          <a href="contact.html" class="nav-link cta">Contact Us</a>
-        </nav>
+        <a class="brand" href="index.html" aria-label="WebInstant home"><img src="logo.png" alt="WebInstant" class="logo" width="160" height="45"></a>
+        <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav"><i class="fas fa-bars"></i></button>
+        <nav class="main-nav" id="mainNav" aria-label="Main navigation"><a href="index.html" class="nav-link">Home</a><a href="about.html" class="nav-link">About</a><a href="services.html" class="nav-link">Services</a><a href="plans.html" class="nav-link">Plans</a><a href="projects.html" class="nav-link">Projects</a><a href="blog.html" class="nav-link">Blog</a><a href="contact.html" class="nav-link cta">Contact Us</a></nav>
       </div>
     </header>
-
-    <main>
-      <!-- ── 404 Hero ── -->
-      <section class="err-hero">
-        <div class="err-inner">
-          <div class="err-eyebrow"><i class="fas fa-satellite"></i> Lost in Space</div>
-
-          <!-- Lost astronaut illustration -->
-          <svg class="err-astro" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a lost astronaut floating among stars">
-            <circle cx="34" cy="30" r="1.6" fill="#fff" opacity="0.8"/>
-            <circle cx="168" cy="52" r="2" fill="#fff" opacity="0.7"/>
-            <circle cx="150" cy="150" r="1.6" fill="#fff" opacity="0.7"/>
-            <circle cx="26" cy="150" r="1.8" fill="#fff" opacity="0.8"/>
-            <circle cx="100" cy="14" r="1.4" fill="#fff" opacity="0.6"/>
-            <!-- backpack -->
-            <rect x="82" y="90" width="36" height="46" rx="10" fill="#d9e2ff"/>
-            <!-- body -->
-            <ellipse cx="100" cy="110" rx="34" ry="40" fill="#f4f6fb"/>
-            <!-- helmet -->
-            <circle cx="100" cy="72" r="34" fill="#f4f6fb" stroke="#c9d3f5" stroke-width="2"/>
-            <circle cx="100" cy="72" r="24" fill="#8fc7ff" opacity="0.55"/>
-            <path d="M88 66 q12 14 26 2" stroke="#2e4a8f" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.5"/>
-            <!-- arms -->
-            <path d="M68 100 q-20 6 -22 26" stroke="#f4f6fb" stroke-width="14" fill="none" stroke-linecap="round"/>
-            <path d="M132 100 q20 -4 26 14" stroke="#f4f6fb" stroke-width="14" fill="none" stroke-linecap="round"/>
-            <!-- legs -->
-            <path d="M86 146 q-4 20 -14 28" stroke="#f4f6fb" stroke-width="14" fill="none" stroke-linecap="round"/>
-            <path d="M114 146 q4 20 16 24" stroke="#f4f6fb" stroke-width="14" fill="none" stroke-linecap="round"/>
-            <!-- cut tether -->
-            <path d="M46 128 q-10 -8 -18 -4" stroke="#ffd166" stroke-width="2.5" fill="none" stroke-dasharray="4 4" stroke-linecap="round"/>
-          </svg>
-
-          <div class="err-code">404</div>
-          <h1>Houston, We Have a Problem.</h1>
-          <p class="err-sub">
-            The page you're looking for has drifted off into space — it may
-            have been moved, renamed, or never existed. Let's get you back on
-            course.
-          </p>
-
-          <!-- Site search -->
-          <div class="err-search">
-            <div class="err-search-wrap">
-              <i class="fas fa-search"></i>
-              <input
-                type="text"
-                id="err404Search"
-                placeholder="Search for a page… (e.g. plans, contact)"
-                autocomplete="off"
-              />
-              <button type="button" id="err404SearchBtn">Search</button>
-            </div>
-            <div class="err-search-results" id="err404Results"></div>
-          </div>
-
-          <div class="err-btns">
-            <a href="index.html" class="err-btn-primary">
-              <i class="fas fa-house"></i> Go Back Home
-            </a>
-            <a
-              href="https://wa.me/919871072210?text=Hi, I landed on a broken link on webinstant.online and need some help."
-              target="_blank"
-              rel="noopener"
-              class="err-btn-ghost"
-            >
-              <i class="fab fa-whatsapp"></i> Chat With Us
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- ── Quick links ── -->
-      <section class="err-links-section">
-        <h2>Or Jump Straight To…</h2>
-        <div class="err-links-grid">
-          <a href="index.html" class="err-link-card"><i class="fas fa-house"></i> Home</a>
-          <a href="about.html" class="err-link-card"><i class="fas fa-users"></i> About</a>
-          <a href="services.html" class="err-link-card"><i class="fas fa-layer-group"></i> Services</a>
-          <a href="plans.html" class="err-link-card"><i class="fas fa-tags"></i> Plans</a>
-          <a href="projects.html" class="err-link-card"><i class="fas fa-briefcase"></i> Projects</a>
-          <a href="contact.html" class="err-link-card"><i class="fas fa-envelope"></i> Contact</a>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
+<main><section class="state-hero"><div class="container"><div class="state-code">404</div><h1>This page took a wrong turn</h1><p>The page you're looking for doesn't exist or has moved. Let's get you back on track.</p><div class="state-btns"><a class="btn primary" href="index.html">Back to home</a><a class="btn outline" href="contact.html">Contact us</a></div></div></section>
+<section class="section"><div class="container"><div class="grid cols-3"><a class="link-card" href="services.html"><i class="fas fa-layer-group"></i> Services</a><a class="link-card" href="plans.html"><i class="fas fa-tags"></i> Plans</a><a class="link-card" href="projects.html"><i class="fas fa-folder-open"></i> Projects</a></div></div></section></main>
+<footer class="site-footer">
       <div class="footer-container">
         <div class="footer-section">
-          <img src="logo.png" alt="WebInstant Logo" class="footer-logo" width="150" height="45" loading="lazy" decoding="async" />
+          <img src="logo.png" alt="WebInstant" class="footer-logo" width="150" height="45" loading="lazy" decoding="async">
           <p class="footer-tagline">Fast, mobile-friendly, SEO-ready websites for Indian businesses.</p>
-          <ul class="footer-quick-links">
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="plans.html">Plans</a></li>
-          </ul>
+          <ul class="footer-quick-links"><li><a href="blog.html">Blog</a></li><li><a href="services.html">Services</a></li><li><a href="plans.html">Plans</a></li></ul>
         </div>
-
         <div class="footer-section">
           <h3>Contact</h3>
-          <p>Email: <a href="mailto:thewebinstant@gmail.com">thewebinstant@gmail.com</a></p>
-          <p>Phone: <a href="tel:+919871072210">+91 98710 72210</a></p>
+          <p><a href="mailto:thewebinstant@gmail.com">thewebinstant@gmail.com</a></p>
+          <p><a href="tel:+919871072210">+91 98710 72210</a></p>
+          <p>Delhi, India · Mon–Sat, 9am–8pm</p>
         </div>
-
         <div class="footer-section">
           <h3>Follow Us</h3>
-          <div style="display: flex; gap: 10px; margin-top: 8px">
+          <div class="footer-social">
             <a href="https://www.linkedin.com/company/web-instant-agency/posts/?feedView=all" target="_blank" rel="noopener" class="social-icon-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
             <a href="https://www.facebook.com/profile.php?id=61578298170309" target="_blank" rel="noopener" class="social-icon-link" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
             <a href="https://www.instagram.com/thewebinstant/" target="_blank" rel="noopener" class="social-icon-link" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
             <a href="https://x.com/TheWebInstant" target="_blank" rel="noopener" class="social-icon-link" aria-label="X (Twitter)"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
           </div>
         </div>
-
         <div class="footer-section">
           <h3>Legal</h3>
-          <ul class="footer-links">
-            <li><a href="t_c.html">Terms &amp; Conditions</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="refund.html">Refund Policy</a></li>
-          </ul>
+          <ul class="footer-links"><li><a href="t_c.html">Terms &amp; Conditions</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="refund.html">Refund Policy</a></li></ul>
         </div>
       </div>
-
-      <div class="footer-bottom">
-        <small>© <span id="year"></span> WebInstant • All rights reserved.</small>
-      </div>
+      <div class="footer-bottom">© <span id="year"></span> WebInstant · All rights reserved.</div>
     </footer>
+<script src="script.js"></script>
 
-    <script src="script.js"></script>
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-
-      // Reading progress
-      const bar = document.getElementById("reading-progress");
-      window.addEventListener("scroll", () => {
-        const h = document.documentElement.scrollHeight - window.innerHeight;
-        bar.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + "%";
-      });
-
-      // ── Simple client-side site search (no backend required) ──
-      const SITE_PAGES = [
-        { title: "Home", url: "index.html", icon: "fa-house", keywords: "home main landing launch fast look great" },
-        { title: "About Us", url: "about.html", icon: "fa-users", keywords: "about team company mission who we are" },
-        { title: "Services", url: "services.html", icon: "fa-layer-group", keywords: "services web design development seo hosting maintenance ecommerce" },
-        { title: "Plans & Pricing", url: "plans.html", icon: "fa-tags", keywords: "plans pricing cost price packages portfolio business ecommerce" },
-        { title: "Projects / Portfolio", url: "projects.html", icon: "fa-briefcase", keywords: "projects portfolio work case studies examples" },
-        { title: "Contact Us", url: "contact.html", icon: "fa-envelope", keywords: "contact quote whatsapp email phone enquiry get in touch" },
-        { title: "Terms & Conditions", url: "t_c.html", icon: "fa-file-contract", keywords: "terms conditions legal agreement" },
-        { title: "Privacy Policy", url: "privacy.html", icon: "fa-user-shield", keywords: "privacy policy data cookies" },
-        { title: "Refund Policy", url: "refund.html", icon: "fa-rotate-left", keywords: "refund policy money back cancellation" },
-      ];
-
-      const searchInput = document.getElementById("err404Search");
-      const searchBtn = document.getElementById("err404SearchBtn");
-      const resultsBox = document.getElementById("err404Results");
-
-      function runSearch() {
-        const q = searchInput.value.trim().toLowerCase();
-        if (!q) {
-          resultsBox.classList.remove("show");
-          resultsBox.innerHTML = "";
-          return;
-        }
-        const matches = SITE_PAGES.filter(
-          (p) =>
-            p.title.toLowerCase().includes(q) || p.keywords.includes(q)
-        );
-        if (matches.length === 0) {
-          resultsBox.innerHTML = `<div class="err-search-empty">No matching pages found — try "services" or "contact".</div>`;
-        } else {
-          resultsBox.innerHTML = matches
-            .map(
-              (p) =>
-                `<a href="${p.url}"><i class="fas ${p.icon}"></i> ${p.title}</a>`
-            )
-            .join("");
-        }
-        resultsBox.classList.add("show");
-      }
-
-      searchInput.addEventListener("input", runSearch);
-      searchInput.addEventListener("keydown", (e) => {
-        if (e.key === "Enter") {
-          e.preventDefault();
-          const first = resultsBox.querySelector("a");
-          if (first) window.location.href = first.getAttribute("href");
-        }
-      });
-      searchBtn.addEventListener("click", runSearch);
-    </script>
-  </body>
+</body>
 </html>
